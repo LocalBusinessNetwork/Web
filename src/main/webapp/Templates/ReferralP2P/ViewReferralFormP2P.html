@@ -1,0 +1,72 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ViewReferralFormP2P.html -->			
+
+	<div class="referralFormHeader P2P">
+		
+			<table>
+				<tr>
+					<td class="referralPictureCell myReferrals">
+						<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+							<img class="referralTypeIcon typeIcon-cust-for-part" src="<%= rwFB.CDN%>/STN/Images/activity-icon_referral-received.png">
+							<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+							<img class="referralStatusIcon statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+							<img class="referralStatusIcon statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONFIRMED.png">
+							<img class="referralStatusIcon statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_ACCEPTED.png">
+						</div>
+					</td>
+					<td>
+					<div class="referralFormHeader-textbox">
+						<div style="padding-bottom:10px">
+								<span class="Zlhs $.getP2PConditionalClass(model,'isMember','') Zrhs"><a href="#lookupPartnerProfile/Zlhs $.getP2PAttr(model,'toId') + '/' + $.getP2PAttr(model,'to_partyType') Zrhs" class="partnerName light drillDown" >Zlhs $.getP2PAttr(model,'to_fullName') + $.getPositionComma(model) Zrhs</a> was referred to you by <a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName light drillDown">Zlhs model.get('from_fullName') Zrhs</a></span>
+								<span class="Zlhs $.getP2PConditionalClass(model,'isContact','') Zrhs"><b>Zlhs $.getP2PAttr(model,'to_fullName') + $.getPositionComma(model) Zrhs</b> was referred to you by <a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName light drillDown">Zlhs model.get('from_fullName') Zrhs</a></span>
+						</div>
+						<div>Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>	
+
+
+						<div class="Zlhs $.getP2PStatusClass(model,'unread','') Zrhs">
+							
+							<div class="referralFormHeader-statusDetail"><span class="acceptInvite referralAction" confirmation="true" confirmtemplate="AcceptReferralConfirmationNoArch" setfieldlist="status" setvallist="ACCEPTED">Accept</span> the introduction to add <a class="partnerName light">Zlhs $.getP2PAttr(model,'to_firstName') Zrhs</a> to your network.</div>
+						</div>
+						<div class="Zlhs $.getP2PStatusClass(model,'waitingForMe','') Zrhs">
+							
+							<div class="referralFormHeader-statusDetail"><span class="acceptInvite referralAction" confirmation="true" confirmtemplate="AcceptReferralConfirmationNoArch" setfieldlist="status" setvallist="ACCEPTED">Accept</span> the introduction to add <a class="partnerName light">Zlhs $.getP2PAttr(model,'to_firstName') Zrhs</a> to your network.</div>
+						</div>
+						
+					</div>
+					</td>
+					
+					<td class="referralPictureCell extraRefDetail right">
+						
+						Zlhs $.getImage(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+						<div style="font-size:8pt">Zlhs model.get('from_firstName') Zrhs</div>
+					</td>
+					<td class="referralPictureCell extraRefDetail right">
+						
+						<img src="Zlhs (!_.isUndefined($.getP2PAttr(model,'to_photoUrl')))?$.getP2PAttr(model,'to_photoUrl'):'<%= rwFB.CDN%>/images/icons/User.png' Zrhs">
+						<div style="font-size:8pt">Zlhs $.getP2PAttr(model,'to_firstName') Zrhs</div>
+					</td>	
+				</tr>
+			</table>
+		
+		
+	</div>
+	
+		<div class="notePaper referralForm">
+			
+			<table class="offer table">
+				<tr>
+					<td class="referralFormTitle">Power Partner Referral</td>
+					
+				</tr>
+				<tr>
+					<td class="referralFormBox" colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div class="referralFormComments referralFormReason">"Zlhs $.getLIList(model.get('comments')) Zrhs"</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	
+<!-- includeFieldDescription is in rwapi -->

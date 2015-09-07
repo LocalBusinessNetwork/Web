@@ -1,0 +1,10 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; var fldname = f["fldname"];var label = f["label"];var required = f["required"]; var readOnlyFld = f["readOnly"];%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<div class="bulletGroupContainer"><p id='<%= fldname%>' bulletlist class="bulletHeading"><%= label%></p></div> 
+<% } else { %>
+<textarea id='<%= fldname%>' value="" style="min-height:120px" placeholder="<%= (required == true) ? 'required' :'optional'%>"></textarea>
+<% } %>
+<!-- this template is used in conjunction with the Snippets template.  At the time of read-only rendering, separate <li>'s are 
+created for each line entered into the textarea - using html fragments in Snippets--> 
+

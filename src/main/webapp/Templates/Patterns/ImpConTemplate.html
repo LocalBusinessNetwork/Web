@@ -1,0 +1,92 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div style="right: 5px;left: 5px;position: absolute;top: 0;height: 50px;color: white;">
+		<table width="100%">
+			<tr>
+				<td width="33%">
+				<a id="cancelImport" class="button">Cancel</a>
+					<!--<img src='/images/icons/Cancel.png' width=30 height=30/></a>-->
+				</td>
+				<td id="pickTitle" style="text-align:center;width:33%;font-size:14pt">Import Contacts</td>
+				<td style="text-align:right;height:45px"> <a class='button' href="<%= rwcore.getLov('ONLINEHELP', 'IMPORTCONTACTS').get('Url')%>" alt="<%= rwcore.getLov('ONLINEHELP', 'IMPORTCONTACTS').get('DisplayVal')%>" target="_blank"> Learn More</a>
+				<a id="SyncContacts" class="button" style="display:none"">Upload</a>
+					<!--<img src='<%= rwFB.CDN%>/images/icons/Upload.png' width=30 height=30/></a>-->
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="ImportableContactsTemplate" style="display:none">
+			<a pinToggle id="Zlhs model.cid Zrhs">
+				<img style ="position: absolute;" src='<%= rwFB.CDN%>/images/uncheckedBoxThumb.png'/>
+				<h3>Zlhs model.attributes.firstName Zrhs&nbsp;Zlhs model.attributes.lastName Zrhs</h3>
+				<p> Zlhs model.attributes.jobTitle Zrhs <p>
+				<p> Zlhs model.attributes.emailAddress Zrhs <p>
+				<p> W:Zlhs model.attributes.workPhone Zrhs | M:Zlhs model.attributes.mobilePhone Zrhs <p>
+			</a>
+			<a id="" href="#"></a>
+	</div>
+	
+	<div id="ImportableContacts" style="overflow-y: hidden;position: absolute;top: 50px;bottom: 55px;background-color: white;border-radius: 10px;left: 5px;right: 5px">
+	
+		<ul data-role='listview' data-inset="true" data-split-theme="a">
+		<% if ( window.browser == "msie" ) { %>
+		<li>
+				<a id="pickOutlook" href="#">
+					<img src='<%= rwFB.CDN%>/images/icons/outlook.png'/>
+					<h3>Microsoft Outlook</h3>
+					<p> Microsoft Contacts Address Book <p>
+				</a>
+				<a id="" href="#"></a>
+		</li>
+		<% if ( window.browserVersion != "9")  { %>
+		<li>
+				<input name="vcffilename" id="vCard_Pick" type="file" multiple style="display:none"/>
+				<a id="pickVCF" href="#">
+					<img src='<%= rwFB.CDN%>/images/icons/vCard.png'/>
+					<h3>vCards file</h3>
+					<p> Exported from LinkedIn or Google <p>
+				</a>
+				<a id="" href="#"></a>
+		</li>
+		<li>
+				<input name="csvfilename" id="csv_Pick" type="file" multiple style="display:none"/>
+				<a id="pickCSV" href="#">
+					<img src='<%= rwFB.CDN%>s/images/icons/vCard.png'/>
+					<h3>CSV file</h3>
+					<p> Saved from various apps like outlook, google, yahoo etc.<p>
+				</a>
+				<a id="" href="#"></a>
+		</li>
+		<%} } else { %>
+		<li>
+				<input name="vcffilename" id="vCard_Pick" type="file" multiple style="display:none"/>
+				<a id="pickVCF" href="#">
+					<img src='<%= rwFB.CDN%>/images/icons/vCard.png'/>
+					<h3>vCards file</h3>
+					<p> Exported from LinkedIn or Google <p>
+				</a>
+				<a id="" href="#"></a>
+		</li>
+		<li>
+				<input name="csvfilename" id="csv_Pick" type="file" multiple style="display:none"/>
+				<a id="pickCSV" href="#">
+					<img src='<%= rwFB.CDN%>/images/icons/vCard.png'/>
+					<h3>CSV file</h3>
+					<p> Saved from various apps like outlook, google, yahoo etc.<p>
+				</a>
+				<a id="" href="#"></a>
+		</li>
+		<% }%>
+		</ul>
+	
+	</div>
+	<div id="helpText" style="display:none;position: absolute;margin-top:5px;left:5px;right:5px;bottom: 5px;color: white;text-shadow: none;">
+	<table width="100%">
+	<tr>
+	<td><span>Check the contacts you wish to import Or</span><td>
+	<td><input type='checkbox' id='selectAll' name='selectAll' value="1" class="custom" data-mini="true"></input>
+	<label for='selectAll'>Select All</label>
+	</td>
+	</tr>
+	</table>
+	</div>
+

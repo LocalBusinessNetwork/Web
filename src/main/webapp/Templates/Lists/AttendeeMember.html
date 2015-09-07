@@ -1,0 +1,15 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT" template="AttendeeMember">
+<a id="Zlhs model.id Zrhs">
+	Zlhs $.getImageTN(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','meetingAttendees ui-li-thumb')Zrhs
+	
+	<span class="Zlhs ($.hasVal(model.get('guestType')))?model.get('guestType'):'ismember'Zrhs buttonRightRow">
+		 			<!-- regular -->
+		 			<!-- base case - regular attendee -->
+		 			<h3 class="referralListItemTopLine regular existingmember">	Zlhs model.get('fullName')Zrhs</h3>	 			
+		 			<p class="referralListItemBottomLine regular existingmember"> Zlhs $.getPositionDetail(model.get('jobTitle'),model.get('business'),"")Zrhs</p>
+	</span>
+	<div class="Zlhs $.getConditionalVal(model.get('status'),'INVITED','button checkin','hidden') Zrhs" source="thirdParty" checkInButtonId="Zlhs model.get('id') Zrhs" style="padding:10px">Check In</div>
+	<div class="Zlhs $.getConditionalVal(model.get('status'),'CHECKEDIN','button checkout','hidden') Zrhs" source="thirdParty" checkInButtonId="Zlhs model.get('id') Zrhs" style="padding:10px">Remove</div>
+	
+					
+</a>

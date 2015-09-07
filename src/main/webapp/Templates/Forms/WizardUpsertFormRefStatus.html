@@ -1,0 +1,109 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div class="wizardUpdateStatusHeaderThumb">
+		<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+			<tr>
+		
+				<td class="referralPictureCell">
+					
+
+					<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+						<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-unread" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_UNREAD.png">
+						<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_ACCEPTED.png">
+						<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONFIRMED.png">
+						<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONVERTED.png">
+						
+					</div>
+					
+				</td>
+		
+				<td style="padding-top:5px;padding-bottom:5px" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		
+						<span class="referralListItemTopLine referralContactLink regular"><a class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> referred <span class="contactName">Zlhs model.get('contact_fullName') Zrhs</span> to you.</span>
+						
+						<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+		
+				</td>
+				
+				<td class="referralPictureCell extraRefDetail">
+					<div>Zlhs model.get('from_firstName') Zrhs</div>
+					Zlhs $.getImageTN(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+					
+				</td>	
+
+			</tr>
+		</table>
+	</div>
+	<div class="selectReferralStatus">
+		<ul data-role="listview" data-inset="true" class="editformfields">
+			<% for (var i=0;i < attributes.length;i++) {
+			var a = attributes[i]; 
+			if ($.hasVal(data)){
+				a.dynamicFilterValue = data.get(a['dynamicFilterField']);
+			}
+			var re = new RegExp(/\[(.*?)\]/g);
+			var label = a["label"];
+			var fieldNameAry = label.match(re);
+			
+			if ($.hasVal(fieldNameAry) && fieldNameAry.length > 0){
+
+				for (j=0;j<fieldNameAry.length;j++){
+					var field = fieldNameAry[j];
+					var fieldName = field.replace("[","");
+					fieldName = fieldName.replace("]","");
+					var getFieldExp = "Zlhs model.get('"+fieldName+"')Zrhs";
+					label = label.replace(field,getFieldExp);
+				}
+			}
+
+			
+			{%>
+			
+			<li class="wizardFormLine">
+				<div class="narrowFormLabel">
+					<%= label%>
+					<div class="narrowFieldDescription"><%=$.includeFieldDescription(a["description"])%></div>
+				</div><div><%= fieldRenderer(a,false)%></div>
+			</li>
+			<% }}%>
+		</ul>
+	
+		<div class="newStatusExplain">
+			<div>
+				<div class="confirmIntro">Select a new status</div>
+				<div class="arrowFrame">
+					<div class="arrow-left"></div>
+					<div class="arrowBody"></div>
+				</div>
+			</div>
+			<div class="confirmBody-Explanations">
+				<div>
+					<div class="term">"Claimed"</div>
+					<div>Lead has been accepted by you.
+					</div>
+				</div>
+				<hr>
+				<div>
+					<div class="term">"Contacted - Active"</div>
+					<div>Lead has been contacted by you</div>
+				</div>
+				<hr>
+				<div>
+					<div class="term">"Converted"</div>
+					<div>Lead has been converted into a sale</div>
+				</div>
+				<hr>
+				<div>
+					<div class="term">"Closed - No Sale"</div>
+					<div>Lead is not an active opportunity.</div>
+				</div>
+				<hr>
+				<div>
+					<div class="term">"Ignored"</div>
+					<div>Lead has been set aside. Zlhs model.get('from_fullName') Zrhs won't be notified..</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+<!-- includeFieldDescription is in rwapi -->

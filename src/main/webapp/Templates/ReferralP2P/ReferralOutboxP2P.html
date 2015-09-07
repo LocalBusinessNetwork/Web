@@ -1,0 +1,65 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralOutboxP2P.html -->
+<table style="width:100%" table-layout:fixed" class="expandableListRow home outBox">
+	<tr>
+		<td class="referralPictureCell iconCell">
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+	
+			
+		<td style="padding-top:5px;padding-bottom:5px">
+	 		
+				<span class="referralListItemTopLine">Your introduction of <a href="Zlhs $.getP2POutPartyHREF(model,'toId') Zrhs" class="partnerName">Zlhs model.get('to_fullName') Zrhs</a> to <a class="partnerName" href="Zlhs $.getP2POutPartyHREF(model,'toId2') Zrhs">Zlhs model.get('to_fullName2') Zrhs</a></span> 	
+				
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+				
+				
+
+			
+		</td>
+		<td class="referralPictureCell extraRefDetail">
+			<div style="font-size:8pt">Zlhs model.get('to_firstName') Zrhs</div>
+			Zlhs $.getImageTN(model,'to_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+		</td>
+		<td class="referralPictureCell extraRefDetail">
+			<div style="font-size:8pt">Zlhs model.get('to_firstName2') Zrhs</div>
+			Zlhs $.getImageTN(model,'to_photoUrl2','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+		</td>	
+	
+		<td class="expandCollapseCell collapsed" stateCell="Zlhs model.get('id') Zrhs" referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInviteDetail">
+			<div class="accept expand"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+		</td>
+		
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" detailNode="Zlhs model.get('status') Zrhs">
+		<div class="notePaper" style='padding:20px'>
+			<table width='100%' class="offer" style="border-spacing:0">
+				<tr>
+					<td style='font-size:24pt; font-weight:bold;color:darkblue;font-family:Arial;'>Power Partner Referral</td>
+					
+				</tr>
+				<tr>
+					<td style='border:2px solid darkblue' colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div style="padding:5px; font-size:12pt;min-height:60px;">Zlhs  $.getLIList(model.get('comments')) Zrhs</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	</div>
+
+
+
+
+

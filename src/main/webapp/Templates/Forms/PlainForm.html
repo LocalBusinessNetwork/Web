@@ -1,0 +1,16 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<table class="nextPrevButtons" style="width:100%;margin-bottom:30px">
+	<tr>
+		<td style="text-align:left"><div class="button" id="prevRec" style="width:60px">Previous</div></td>
+		<td style="text-align:right"><div class="button" id="nextRec" style="width:60px">Next</div></td>
+	</tr>
+</table>
+<ul data-role="listview" data-inset="true" class="formfields">
+<% for (var i=0;i < attributes.length;i++) {var a = attributes[i]; if (a.dataType != 'hidden'){%>
+<li><table width="100%"><tr><td width="25%" align="right"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+<% } else {%>
+<li style="display:none;"><%= fieldRenderer(a,true)%></li>
+<% }}; %>
+</ul>
+ 

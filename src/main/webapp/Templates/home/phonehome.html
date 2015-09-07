@@ -1,0 +1,37 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+			<div data-role="header" class = "phoneHeader">
+			<!-- <div data-role="header" class="phoneHeader">-->
+				<div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar">
+				<!-- <div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar"> -->
+					<div id="title" class="ReferralWireName" style="display:inline;line-height:41px"><%= rwFB.HeaderName%></div>
+					<a style="cursor:pointer;position:absolute;right:5px;top:10px" id="menuButton">
+						<img id="menuIcon" width="50px" height="20px" src="<%= rwFB.CDN%>/images/icons/menuIcon2.png"/>
+					</a> 					
+				</div>
+			</div>
+
+
+			<div class="subMenuBody" style="padding-top:7px">
+
+				<div style="margin-top: -20px;" section applet="" template="HomePageTitleSummary" renderer="SimpleView" model="self"></div>
+				
+				<div id="refer" style="margin-bottom:15px; height:26px;font-size:13pt;margin-left: 10px;margin-right: 10px;font-weight:bold !important" class="button blue">Make a referral !</div>
+				<!-- 
+				<div id="postUpdate" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="true" style="margin-bottom:10px">
+					<h2>Share an Update</h2>
+					<textarea id="message" style="height:60px;width: 96%;margin-left: 2%;"rows="" cols=""></textarea>
+					<div class="buttonWrap"><input id="postAMessage" type="button" value="post" class="button"></input></div>
+				</div>
+				 -->
+			
+			
+				<div id="inbox" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="recommended cPanel">
+					<h2>Community Activity</h2>
+					<div section applet="ActivityList" template="RStreamList" renderer="ListView" model="StandardCollection" sortBy="timestamp" sortDir="DESC"></div>
+				</div>
+				
+			</div>
+
+															

@@ -1,0 +1,79 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralInboxP2P.html -->
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+		
+		<td class="referralPictureCell iconCell">
+			
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<!-- <img class="referralTypeIcon typeIcon-cust-for-part statusIcon-unread" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_UNREAD.png">
+				<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_ACCEPTED.png">
+				<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONFIRMED.png">
+				<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONVERTED.png"> -->
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+
+		<td style="padding-top:5px;padding-bottom:5px">
+				<span class="Zlhs $.getP2PTopLineClass(model,'isMember') Zrhs"><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> would like to introduce you to <a href="#lookupPartnerProfile/Zlhs $.getP2PAttr(model,'toId') + '/' + $.getP2PAttr(model,'to_partyType') Zrhs" class="partnerName">Zlhs $.getP2PAttr(model,'to_fullName') + $.getPositionComma(model) Zrhs</a> </span>
+				<span class="Zlhs $.getP2PTopLineClass(model,'isContact') Zrhs"><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> would like to introduce you to <b>Zlhs $.getP2PAttr(model,'to_fullName') + $.getPositionComma(model) Zrhs</b> </span>
+				
+				
+				<div class="Zlhs $.getP2PStatusClass(model,'unread','referralListItemBottomLine extraRefDetail')Zrhs">Zlhs model.get('comments') Zrhs</div>
+				<div class="Zlhs $.getP2PStatusClass(model,'waitingForMe','referralListItemBottomLine extraRefDetail') Zrhs">Zlhs model.get('comments') Zrhs</div>
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+				
+				
+		</td>
+		
+		
+		<td class="referralPictureCell extraRefDetail">
+						
+			Zlhs $.getImage(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			<div style="font-size:8pt">Zlhs model.get('from_firstName') Zrhs</div>
+		</td>
+		<td class="referralPictureCell extraRefDetail right">
+			
+			<img src="Zlhs (!_.isUndefined($.getP2PAttr(model,'to_photoUrl')))?$.getP2PAttr(model,'to_photoUrl'):'<%= rwFB.CDN%>/images/icons/User.png' Zrhs">
+			<div style="font-size:8pt">Zlhs $.getP2PAttr(model,'to_firstName') Zrhs</div>
+		</td>
+		
+			
+		
+		<td class="Zlhs $.getConditionalVal($.getP2PAcceptStatus(model),'UNREAD','expandCollapseCell unread','expandCollapseCell collapsed') Zrhs" stateCell="Zlhs model.get('id') Zrhs" inboxToggle referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInviteDetail">
+			<div class="accept expand"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+			<div class="accept acknowledge">Accept</div>
+		</td>	
+
+
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		<div class="notePaper" style='padding:20px;'>
+			
+			<table width='100%' class="offer" style="border-spacing:0">
+				<tr>
+					<td style='font-size:24pt; font-weight:bold;color:darkblue;font-family:Arial;'>Power Partner Referral</td>
+					
+				</tr>
+				<tr>
+					<td style='border:2px solid darkblue' colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div style="padding:5px; font-size:12pt;min-height:60px;">Zlhs $.getLIList(model.get('comments')) Zrhs</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	</div>
+
+
+
+

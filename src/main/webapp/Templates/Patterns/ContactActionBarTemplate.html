@@ -1,0 +1,28 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+<div data-role="navbar" class="footericon mainPanelFooterNav" data-grid="b">
+	<ul>
+	<%  
+	var selectedClass = "selectedContextFooter";
+	_.each(attributes, function(a) {
+		var drillDown = a.drilldown;
+		var iconId = a.icon_id;
+		var className = "";
+		if (clickRoute == drillDown){
+			iconId += "_sel"
+			className = selectedClass;
+		}
+		
+		var dKey = a['drilldown_key'];
+		var drillExpr = "";
+	
+		if ($.hasVal(dKey))
+			drillExpr = "/Zlhs model.get('"+ dKey+"')Zrhs";
+	
+		%>
+			<li><a href="#<%= a['drilldown']%><%= drillExpr%>" class="<%= className%>" id="<%= iconId%>" data-icon="custom"><%= a['name']%>	</a></li>
+	<% }); %>
+	</ul> 
+</div>
+

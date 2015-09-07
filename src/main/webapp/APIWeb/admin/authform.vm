@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ReferralWire Inc</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Add some nice styling and functionality.  We'll just use Twitter Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Nobile:400,700' rel='stylesheet' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/faviconRW.ico' />
+
+</head>
+
+  
+
+<body style="border:3px solid #333;">
+
+    <div class="container"> 
+    <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">Please sign in to grant access to your <strong>STNConnect</strong> Account</h6>
+        </div>
+        
+        <div class="panel-body">
+            <form name="loginform" action="javascript:RWire.authenticate()" accept-charset="UTF-8" role="form">
+                <fieldset>
+                    <div class="form-group has-success has-feedback">
+                        <input class="form-control" placeholder="Login Email" id="username" name="username" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" id="password" name="password" type="password" value="">
+                    </div>
+                    <div class="form-group has-success has-feedback">
+                    <button type="button" class="btn btn-primary" type="submit" onclick="javascript:RWire.authenticate()" >Login</button>
+                    <button type="button" class="btn btn-warning" onclick="javascript:RWire.cancelLogin()">Cancel</button>
+                    </div>
+                </fieldset>
+                <input id="client_id" type="hidden" value="$client_id"/>
+                <input id="client_secret" type="hidden" value="$client_secret"/>
+                <input id="grant_type" type="hidden" value="$grant_type"/>
+                <input id="response_type" type="hidden" value="$response_type"/>
+                <input id="code" type="hidden" value="$code"/>
+          </form>
+      </div>
+      <div class="panel-footer">
+        <h6><small> By granting access you agree to the $resourcer User Agreement and Privacy Policy </small></h6>
+      </div>
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="/APIWeb/js/rw.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script>
+
+    window.onload = function ()
+    {
+      window.RWire.init({appId : '$$client_id'});
+    }
+
+    window.RWire.authenticate = function () {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open('POST',
+      window.location.origin + '/authz/newtoken' + '?username=' + $('#username').val() + 
+          '&password=' +  $('#password').val() +  
+          '&grant_type=' + $('#grant_type').val() +
+          '&client_id=' + $('#client_id').val() + 
+          '&client_secret=' + $('#client_secret').val() +  
+          '&response_type=' + $('#response_type').val() + 
+          '&code=' + $('#code').val() ,
+      false);
+      xmlHttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+      xmlHttp.send();
+      if ( xmlHttp.status == 400 )
+      {
+        alert(xmlHttp.response);
+      }
+      else {
+        window.parent.postMessage(JSON.parse(xmlHttp.responseText).access_token, window.name);
+      }
+    };
+
+    window.RWire.cancelLogin = function () {
+      window.parent.postMessage("CANCELED", window.name);
+    };
+
+
+  </script>
+
+
+</body>
+
+</html>
+

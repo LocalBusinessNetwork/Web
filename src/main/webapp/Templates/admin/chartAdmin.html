@@ -1,0 +1,103 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div id="chartMenu" style="position:relative; top:-10px;">
+<div style="position:relative; height:2px;background:blue"></div>
+<table  align="center" >
+    <tr>
+        <td>
+            <div>
+                <div>Reports</div>
+                <select id="report">
+                  <option selected value="{'dataclass': 'rwParty', 'contextVar' : {'name' : 'partytype', 'value' : 'PARTNER' }, 'Title' : 'Members Chart', 'actor' : 'AnalyticsMgr', 'act' : 'getChart2', 'series' : 'members'}">For Members</option>
+                  <option value="{'dataclass': 'rwParty', 'contextVar' : {'name' : 'partytype', 'value' : 'BUSINESS' }, 'Title' : 'Chapters Chart', 'actor' : 'AnalyticsMgr', 'act' : 'getChart2', 'series' : 'chapters'}">For Chapters</option>
+                  <option value="{ 'dataclass' : 'rwReferral', 'Title' : 'Referrals Chart', 'actor' : 'AnalyticsMgr', 'act' : 'getChart2', 'series' : 'referrals'}">For Referrals</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div>
+                <div>Tracking Metric</div>
+                <select id="filter">
+                 <optgroup label="Member Metrics">
+                   <option selected value="[{ 'ftype' : 'expr', 'expression' : { 'partytype' : '%partytype%' }, 'contextVar' : 'partytype'}]">All Members</option>
+                   <option value="[{ 'ftype' : 'expr', 'expression' : { 'partytype' : '%partytype%' }, 'contextVar' : 'partytype'},{ 'ftype' : 'time',  'fieldname' : 'rw_created_on',  'contextVar' : 'since_date'} ]"> Registered Members</option>
+                   <option value="[{ 'ftype' : 'expr', 'expression' : { 'partytype' : '%partytype%' }, 'contextVar' : 'partytype'},{'ftype' : 'time', 'fieldname' : 'lastlogin_date', 'contextVar' : 'since_date'} ]">Logged In Members</option>
+                </optgroup>
+                <optgroup label="Chapter Metrics">
+                  <option value="[{ 'ftype' : 'expr', 'expression' : { 'partytype' : '%partytype%' }, 'contextVar' : 'partytype'}]">All Chapters</option>
+                  <option value="[{ 'ftype' : 'expr', 'expression' : { 'partytype' : '%partytype%' }, 'contextVar' : 'partytype'},{ 'ftype' : 'time',  'fieldname' : 'rw_created_on',  'contextVar' : 'since_date'} ]"> Registered Chapters</option>
+                </optgroup>
+                <optgroup label="Referral Metrics">
+                  <option value="[{'ftype' : 'time', 'fieldname' : 'rw_created_on', 'contextVar' : 'since_date'}]">All Referrals</option>       
+                  <option value="[{ 'ftype' : 'expr', 'expression' : {'status':{ '$in' :['ACCEPTED','CONFIRMED']}}},{'ftype' : 'time', 'fieldname' : 'rw_created_on', 'contextVar' : 'since_date'}]">Active Referrals</option>       
+                  <option value="[{ 'ftype' : 'expr', 'expression' : {'status':{ '$in' :['CONVERTED']}}},{'ftype' : 'time', 'fieldname' : 'rw_created_on', 'contextVar' : 'since_date'}]">Completed Referrals</option>
+                  <option value="[{ 'ftype' : 'expr', 'expression' : { 'status' : 'UNREAD' }},{'ftype' : 'time', 'fieldname' : 'rw_created_on', 'contextVar' : 'since_date'} ]">Inactive Referrals</option>
+                </optgroup>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div>
+                <div>Tracking Period</div>
+                <select id="period">
+                    <option selected value="">All</option>
+                    <option value="1">Last 24hrs</option>  
+                    <option value="7">Last 7 days</option>  
+                    <option value="28">Last 4 Weeks</option>  
+                    <option value="84">Last 3 Months</option>
+                    <option value="168">Last 6 Months</option>
+                    <option value="365">Last 12 Months</option>
+                 </select>
+            </div>
+        </td>
+        <td>
+        <td>
+            <div>
+                <div>Grouping</div>
+                <select id="groupby">
+                  <optgroup label="Member Grouping">
+                    <option selected value="{ 'aggregate' : { 'name' : 'Total', 'fn': '$sum' }}">Members Total</option>
+                    <option value="{ 'field' : { 'name' : 'profession' }, 'aggregate' : { 'name' : 'profession', 'fn': '$sum' } }">Members per Profession</option>
+                    <option value="{ 'field' : { 'name' : 'OrgId' }, 'aggregate' : { 'name' : 'OrgId', 'fn': '$sum' } }">Members per Chapter</option>
+                    <option value="{ 'field' : { 'name' : 'postalCodeAddress_work' }, 'aggregate' : { 'name' : 'postalCodeAddress_work', 'fn': '$sum' } }">Members per Zipcode</option>
+                    <option value="{ 'field' : { 'name' : 'stateAddress_work' }, 'aggregate' : { 'name' : 'stateAddress_work', 'fn': '$sum' } }">Members per State</option>
+                    <option value="{ 'field' : { 'name' : 'gender' }, 'aggregate' : { 'name' : 'gender', 'fn': '$sum' } }">Members per Gender</option>
+                  </optgroup>
+                  <optgroup label="Chapter Grouping">
+                    <option value="{ 'aggregate' : { 'name' : 'Total', 'fn': '$sum' }}">Chapters Total</option>
+                    <option value="{ 'field' : { 'name' : 'postalCodeAddress_work' }, 'aggregate' : { 'name' : 'postalCodeAddress_work', 'fn': '$sum' } }">Chapters per Zipcode</option>
+                    <option value="{ 'field' : { 'name' : 'stateAddress_work' }, 'aggregate' : { 'name' : 'stateAddress_work', 'fn': '$sum' } }">Chapters per State</option>
+                  </optgroup>
+                  <optgroup label="Referral Grouping">
+                    <option value="{ 'aggregate' : { 'name' : 'Total', 'fn': '$sum' }}">Referrals Total</option>
+                    <option value="{ 'field' : { 'name' : 'referralType' }, 'aggregate' : { 'name' : 'referralType', 'fn': '$sum' } }">Referrals per Type</option>
+                    <option value="{ 'field' : { 'name' : 'fromChapter' }, 'aggregate' : { 'name' : 'fromChapter', 'fn': '$sum' } }">Referrals per Chapter</option>
+                    <option value="{ 'field' : { 'name' : 'urgency' }, 'aggregate' : { 'name' : 'urgency', 'fn': '$sum' } }">Referrals per Urgency</option>
+                  </optgroup>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div>
+                <div>Chart Type</div>
+                <select id="type">
+                    <option selected value="column">Columns</option>
+                    <option value="bar">Bars</option>  
+                    <option value="line">Lines</option>
+                    <option value="area">Area</option>
+                 </select>
+            </div>
+        </td>
+    </tr>
+</table>
+<br>
+<table align="center">
+<tr>
+<td>
+      <div id="showchart" class="button">Show Chart</div>
+</td>
+</tr>
+</table>
+
+<div id="chartContainer" style="position:relative"></div>
+
+</div>

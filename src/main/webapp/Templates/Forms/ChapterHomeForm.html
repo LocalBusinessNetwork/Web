@@ -1,0 +1,136 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+	<div class="Zlhs (model.get('id') != rwFB.OrgId)?'button joinChapter':'hidden' Zrhs">Join Now!</div>
+	<div class="Zlhs (model.get('id') == rwFB.OrgId)?'myChapterFlag':'hidden' Zrhs">This is my home chapter!</div>
+	<!-- <div class="button joinChapter">Join Now!</div>-->
+	
+	
+	<table width="100%" class="profile-table">
+		<tr>
+			<td class="profile-table-leftCol">
+			
+			
+
+			
+					<div class="profileHeaderSection chapter-header">
+
+						<table width="100%">
+							<tr>
+								<td class="partnerName">Zlhs model.get('businessName') Zrhs</td>
+							</tr>
+							<tr>
+								<td class="Zlhs $.getFormattedVal(model.get('dateFounded'),'chapter-founded','hidden') Zrhs"><span class="founded-label">Founded &nbsp;</span><span class="founded-date">Zlhs $.getFormattedDate(model.get('dateFounded').$date) Zrhs</span></td>
+							</tr>
+							<tr>
+								<td class="profile-location">Zlhs model.get('location') Zrhs</td>
+							</tr>
+						</table>
+				
+					</div>
+					<div class="profileBio">
+						<div class="img">
+							Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/chapterPlaceholder.png','')Zrhs
+						</div> 
+						<span class="profile-ambassadorName">Introduction</span>
+						
+						<p>Zlhs $.getFormattedValInner(model.get('greeting'),'\n','<p>','') Zrhs</p> 
+					</div>	
+					
+
+					
+					
+					<!--nextDate-->
+					
+				
+			
+			</td>
+			<!-- right side of page -->
+			<td class="profile-table-rightCol">
+					<div class="profileHeaderSection chapter">
+
+						<div class="profile-header-address">
+							<div>
+									<div class="profile-header-address-label">Ambassador</div>
+									<div class="profile-header-address-value"><a href="#memberProfile/Zlhs model.get('ambassadorId') Zrhs">Zlhs model.get('ambassador_fullName') Zrhs</a></div>
+							</div>
+							<div>
+									<div class="profile-header-address-label">Primary Phone</div>
+									<div class="profile-header-address-value">Zlhs model.get('ambassador_workPhone') Zrhs</div>
+							</div>
+							<div>
+									<div class="profile-header-address-label">Mobile</div>
+									<div class="profile-header-address-value">Zlhs model.get('ambassador_mobilePhone') Zrhs</div>
+							</div>
+							<div>
+									<div class="profile-header-address-label">Email</div>
+									<div class="profile-header-address-value"><a href="mailto:Zlhs model.get('ambassador_emailAddress') Zrhs">Zlhs model.get('ambassador_emailAddress') Zrhs</a></div>
+							</div>
+						</div>
+						<div class="socialLogos chapter">
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('faceBookPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/faceBookLogo.png"/></a>','<img class="hidden" src="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('linkedInPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/linkedInLogo.png"/></a>','<img class="hidden" classrc="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('twitterPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/youtubeLogo.png"/></a>','<img class="hidden" src="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('meetupPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/meetupLogo.png"/></a>','<img class="hidden" src="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('webPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/webPageIcon.png"/></a>','<img class="hidden" src="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs
+								
+						</div>		
+				
+					</div>
+				<!-- render.options.profileChartView.render(render.options.profileChartView.model).el.outerHTML -->
+					<div class="profile-ambassador-bio">
+						<div class="img">
+							Zlhs $.getImage(model,'ambassador_photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','')Zrhs
+						</div> 
+						<span class="profile-ambassadorName">Zlhs model.get('ambassador_fullName') Zrhs</span>
+						<p>Zlhs $.getFormattedValInner(model.get('ambassador_bio'),'\n','<p>','') Zrhs</p>
+				
+					</div>
+
+			</td>
+			
+		</tr>
+	</table>
+	<table class="profile-details">
+		<tr class="profile-details-title">
+			<td>When
+			</td>
+			<td>Where
+			</td>
+		</tr>
+		<tr class="profile-details-body">
+			<td class="profile-details-body-leftCol">
+				<img src="<%= rwFB.CDN%>/images/calendar.jpg">
+				<div class="profile-meeting-info">
+					<div>This chapter meets Zlhs model.get('meetingFrequency') Zrhs on</div>
+					<div>Zlhs rwcore.getLovDisplayVal('WEEKDAY',model.get('meetingDayOfWeek')) + 's at ' + $.getTimeStringDetail(model,'meetingHour','h:MM TT') Zrhs</div>					
+				</div>
+				<table>
+					<tr>
+						<td>
+							<div id="clockTarget" style="height: 150px;width: 140px;">
+						</td>
+					</tr>	
+				</table>
+			</td>
+			<td class="profile-details-body-rightCol">
+				<table>
+					<tr>
+						<td>
+							<div>
+								<div class="profile-establishmentName">Zlhs model.get('establishmentName') Zrhs</div>
+								<div>Zlhs model.get('streetAddress1_work') + " " + model.get('streetAddress2_work') Zrhs</div>
+								<div>Zlhs model.get('cityAddress_work') +", " + model.get('stateAddress_work') + ", " + model.get('postalCodeAddress_work') Zrhs</div>
+							</div>
+							
+						</td>
+						<td>
+							<div class="profile-establishmentLogo">
+								Zlhs $.getImage(model,'logoUrl','<%= rwFB.CDN%>/images/emptyPic.png','')Zrhs
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div id="mapTarget" ></div>
+			</td>
+		</tr>
+	</table>

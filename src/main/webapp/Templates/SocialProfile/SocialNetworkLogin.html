@@ -1,0 +1,23 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:18:59 GMT">
+<div style="height:100%;width:100%;position:relative;border-radius:4px">
+	<div class="confirmHeader">
+
+				<span id="pickTitle" class="confirmTitle"><%= options.title%></span>
+		
+
+	</div>
+	<div class="confirmBody">
+		<div class="confirmMsg">It may take few seconds to get this information. If you continue to see this message, please click on the help button.</div>
+		<table width="100%">
+			<tr>
+				<td width="50%" style="text-align:right">
+					<img src="<%= rwFB.CDN%>/images/funnelAccept.png"  style="width:80%">
+				</td>
+				<td>
+					<div popEvent class="button confirmButton" confirmevent="SocialHelp" id="SocialHelp">Help</div>
+					<div popEvent class="button confirmButton" id="SocialCancel">Cancel</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

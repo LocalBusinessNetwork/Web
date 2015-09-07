@@ -1,0 +1,37 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- PartnerReferralInboxInvite.html -->
+
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+	
+		<td class="referralPictureCell">
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+		<td style="padding-top:5px;padding-bottom:5px">				
+				<span class="referralListItemTopLine">Invitation: <a class="partnerName">Zlhs model.get('from_firstName') Zrhs</a> would like to connect <span class="extraRefDetail"> with you.</span></span>
+				<div class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','referralListItemBottomLine extraRefDetail','hidden') Zrhs">Zlhs model.get('comments') Zrhs</div>
+				<div class="Zlhs $.getConditionalVal(model.get('status'),'ACCEPTED','referralListItemBottomLine','hidden') Zrhs">You <font class="Zlhs 'status-' + model.get('status') + ' referralType-' + model.get('referralType')Zrhs"> Zlhs $.formatOutBoxStatusShort(model) Zrhs</font> the invitation. You and Zlhs model.get('from_firstName') Zrhs are now connected!</div>
+		</td>
+	
+		<td class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','expandCollapseCell unread','expandCollapseCell collapsed') Zrhs" stateCell="Zlhs model.get('id') Zrhs" inboxToggle referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInviteDetail">
+			<div class="accept expand"> <img style="float:left" class ="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class ="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+			<div class="accept acknowledge">Accept</div>
+		</td>
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+

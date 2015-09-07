@@ -1,0 +1,12 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="Zlhs $.getFormattedVal(model.get('id'),'cPanel std','hidden') Zrhs">
+	<h2><%= metaApplet.singularTitle %></h2>
+	<div class="cPanel std">
+		<ul data-role="listview" data-inset="true" class="formfields">
+		<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+		<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><div class="phoneFormLabel"><%= a["label"]%>:</div><div><%= fieldRenderer(a,true)%></div></li>
+		<% }}; %>
+		</ul>
+	</div>
+</div>

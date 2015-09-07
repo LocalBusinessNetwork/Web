@@ -1,0 +1,26 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div style="font-size: 18pt;padding-bottom: 15px;color: black; font-weight:bold">Personalized referral qualification questions for your partners</div> 
+
+<ul data-role="listview" data-inset="true" class="formfields">
+<% for (var i=0;i <= 3;i++) {var a = attributes[i]; %>
+<li><table width="100%"><tr><td width="25%" align="right"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+<% }; %>
+</ul>
+
+<div style="font-size: 18pt;padding-bottom: 15px;color: black; font-weight:bold">Personalize your email preferences </div> 
+
+<ul data-role="listview" data-inset="true" class="formfields">
+<% for (var i=4;i <= 7;i++) {var a = attributes[i]; %>
+<li><table width="100%"><tr><td width="25%" align="right"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+<% }; %>
+</ul>
+
+<!--
+<div style="font-size: 18pt;padding-bottom: 15px;padding-top: 20px;color: black; font-weight:bold">Partners should introduce you to a prospect in an email by saying...</div>
+ 
+<ul data-role="listview" data-inset="true" class="formfields">
+var a = attributes[4];
+<li><table width="100%"><tr><td width="25%" align="right"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+ 
+</ul>
+-->

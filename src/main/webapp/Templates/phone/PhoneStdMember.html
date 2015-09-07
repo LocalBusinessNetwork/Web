@@ -1,0 +1,34 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div style="display:inline-block;width:100%;padding-top:15px;padding-bottom: 30px">
+
+             
+       <div class="memberPicLevelFrame" style="float:left;display:inline;height: 115px">
+			<div class="paragraphBlock" style="max-width:90px;max-height:100px;overflow:hidden;">
+	       	<!--<img src="<%= rwFB.CDN%>/images/icons/Contact_jumbo.png"/>-->
+			Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','profilePhoto')Zrhs
+	       </div>
+	       Zlhs $.getLevelBadge(model,"phone") Zrhs
+	   </div>
+       
+       
+       <div class="paragraphBlock" style="display:inline;font-size:14px;position: absolute;left: 100px;right: 0;">
+
+		       	<table class="paragraphBodyText" style="width:100%">
+		          	<tr>
+		          		<td class="paragraphNameText partnerName light">Zlhs $.getConditionalVal(model.get('personalTitle'),'DOCTOR','Dr.','') + ' ' + model.get('firstName') + ' ' + model.get('lastName')Zrhs</td>
+		          	</tr>
+		          	<tr>
+		          		<td>Zlhs $.getPosition(model.get('jobTitle'),model.get('business')) Zrhs </td>
+		          	</tr>
+		
+		          	
+		        </table>
+	    </div>
+</div>
+<div class="phoneBadgeBar">Zlhs $.getBadges(model,"phone") Zrhs</div>
+		<ul data-role="listview" data-inset="true" class="formfields">
+		<% for (var i=0;i < (attributes.length);i++) {var a = attributes[i]; %>
+		<li><div class="phoneFormLabel"><%= a["label"]%>:</div><div><%= fieldRenderer(a,true)%></div></li>
+		<% }; %>
+		</ul>
+

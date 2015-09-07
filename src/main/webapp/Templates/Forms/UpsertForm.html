@@ -1,0 +1,26 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+			
+	<div style="right: 5px;left: 5px;position: absolute;top: 0;height: 50px;color: white;">
+		<table width="100%">
+			<tr>
+				<td width="100px"><a id="cancel" class="button">Cancel</a></td>
+				<td style="text-align:center;font-size:18pt;text-shadow:none" id="appletTitle"><%= applet['editTitle']%></td>
+				<td width="100px"style="text-align:right;height:45px">
+					<a id="save" class="button">Done</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="overflow-y: scroll;position: absolute;top: 50px;bottom: 10px;background-color: white;border-radius: 10px;left: 5px;right: 5px">
+	
+		<ul data-role="listview" data-inset="true" class="editformfields">
+			<% for (var i=0;i < attributes.length;i++) {var a = attributes[i]; if (a.dataType != 'hidden'){%>
+			<li class="<%= a.className%>"><table width="100%"><tr><td width="25%" align="right" class="upsertLabel"><div><%= a["label"]%>:</div><%=$.includeFieldDescription(a["description"])%></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,false)%></td></tr></table></li>
+			<% } else {%>
+			<li style="display:none;"><%= fieldRenderer(a,true)%></li>
+			<% }}; %>
+		</ul>
+		
+
+	</div>
+<!-- includeFieldDescription is in rwapi -->

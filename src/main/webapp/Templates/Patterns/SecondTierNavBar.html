@@ -1,0 +1,56 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<style>
+	
+	.twoTierNavFirst,.twoTierNavMiddle,.twoTierNavLast {
+		cursor:pointer;
+	}
+	
+	.twoTierNavFirst {
+		border-top-left-radius: 16px;	
+		border-bottom-left-radius: 16px;
+	}
+	.twoTierNavMiddle {
+
+	}
+	
+	.twoTierNavLast {
+		border-top-right-radius: 16px;	
+		border-bottom-right-radius: 16px;
+	}
+	
+</style>
+<div data-role="navbar" data-iconpos="bottom" class="socialLinks secondTier">
+	<ul>
+		
+		<% for (var i=0;i < secondTierNav.length;i++) {
+		
+		var a = secondTierNav[i];
+		var itemClass = "twoTierNavMiddle";
+		var iconId = a.iconId;
+		var route = a.route;
+		if (i==0){itemClass = "twoTierNavFirst";}
+		if (i==secondTierNav.length-1){itemClass = "twoTierNavLast";}
+		var clickRoute = Backbone.history.fragment.split("/")[0];
+		if (a.route == clickRoute || a.state == "selected"){itemClass += " ui-btn-active"}
+		var route = ($.hasVal(a.route))?"#" + a.route:"";
+		if ($.hasVal(a.key)){route += "/" + model.get(a.key);}
+		if ($.hasVal(a.routeParams)){
+			for (var item in a.routeParams){
+				route += "/" + a.routeParams[item];
+			}
+		}
+		if ($.hasVal(route)){
+		%>
+			<li><a id="<%= iconId%>" class="<%= itemClass%>" href="<%= route%>" data-icon="custom"><%= a.label%></a></li>
+		<% } else {%>	
+			<li><a id="<%= iconId%>" class="<%= itemClass%>" data-icon="custom"><%= a.label%></a></li>
+		<% }}; %>
+		
+	</ul>
+</div>
+
+
+
+
+

@@ -1,0 +1,17 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% 
+
+for (var j=0;j < attributes.part.length;j++) {
+var f = attributes.part[j]; 
+var fldname = f["fldname"]; 
+var required = f["required"]; 
+var readOnlyFld = f["readOnly"]; 
+var max=f["maxLength"];
+var placeholder = f.label;
+%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<span id='<%= fldname%>'></span>
+<% } else { %>
+<input type='text' id='<%= fldname%>' value="" maxlength="<%= ($.hasVal(max))?max:300 %>" placeholder="<%= placeholder%>" class="Zlhs $.getFormattedVal(model.get('<%= fldname %>'),'savedSearchSet','')Zrhs""></input>
+<% }} %>
+

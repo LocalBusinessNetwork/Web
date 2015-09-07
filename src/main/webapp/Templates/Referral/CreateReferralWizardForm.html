@@ -1,0 +1,43 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+		
+	<div style="overflow-y: scroll;position: absolute;top: 10px;bottom: 10px;background-color: white;border-radius: 10px;left: 5px;right: 5px">
+		<div id="customQuestions" class="Zlhs $.getFormattedVal(model.get('question1'),'upsertFormSectionHeader','hidden') Zrhs" >It would help <font style="color:black">Zlhs model.get('to_firstName')Zrhs</font> to understand the following about Zlhs model.get('contact_firstName')Zrhs:</div>
+		<ul data-role="listview" data-inset="true" class="Zlhs $.getFormattedVal(model.get('question1'),'editformfields','hidden') Zrhs">
+		<% var customQStartIndex = 1 /*first custom question in the attribute array*/%>
+			<li class="Zlhs $.getFormattedVal(model.get('question1'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+1],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question2'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+2],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+3],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question3'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+4],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+5],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question4'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+6],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+7],false)%></div></li>
+			
+			
+		</ul>
+		<div id="customQuestions" class="Zlhs $.getFormattedVal(model.get('question1'),'upsertFormSectionHeader','hidden') Zrhs" style="color:black;font-weight:bold;padding-bottom:10px">Other:</div>
+		<ul data-role="listview" data-inset="true" class="editformfields">
+		<% for (var i=0;i < (attributes.length-8);i++) {var a = attributes[i]; 
+		var re = new RegExp(/\[(.*?)\]/g);
+			var label = a["label"];
+			var fieldNameAry = label.match(re);
+			if ($.hasVal(fieldNameAry) && fieldNameAry.length > 0){
+				for (j=0;j<fieldNameAry.length;j++){
+					var field = fieldNameAry[j];
+					var fieldName = field.replace("[","");
+					fieldName = fieldName.replace("]","");
+					var getFieldExp = "Zlhs model.get('"+fieldName+"')Zrhs";
+					label = label.replace(field,getFieldExp);
+				}
+			}
+		
+		%>
+		<li class="wizardFormLine"><div><%= label%></div><div><%= fieldRenderer(a,false)%></div></li>
+		<% }; %>
+		</ul>
+		
+		<div style="font-weight:normal" class="Zlhs (model.get('referralType') == 'CUST_FOR_PART')?'upsertFormSectionHeader':'hidden' Zrhs">
+		<b>Next Steps:</b> Zlhs model.get('to_firstName') Zrhs will receive a new-referral notification.  Zlhs model.get('to_firstName') Zrhs will have access to Zlhs $.addPossessiveSuffix(model.get('contact_firstName')) Zrhs contact information after accepting the referral. 
+		<p><b>Note:</b>&nbsp;&nbsp;Partners who aren't already members will receive an invitation to join via email. Referral details will be accessible to new members after they register.
+		</p>  
+		</div>
+
+
+	</div>
+<!-- includeFieldDescription is in rwapi -->

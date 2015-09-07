@@ -1,0 +1,26 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+			
+	<div class ="mainPanelHeader searchView" style="text-align:center;padding-top: 12px;height: 38px;">
+
+		 <span class="rw_searchMenu" style="position:absolute;left:3px;height: 45px;">
+		 	<span id="cancelSearch" class="button">Cancel</span>
+		 	<span id="clearSearch" class="button">Clear</span>
+		 	<span id="execSearch" class="button">Go!</span>
+		 </span>
+		 <span style="position:absolute;left:50%">
+		 	<div id="wizardStationTitle" class="stationTitle searchTitle">
+		 		<span><%= title%></span>
+		 	</div>
+
+		 </span>
+		 <span style="position:absolute;right:3px;height: 45px;margin-top:4px">
+			<span id="deleteSearch" class="button" style="display:none">Delete Filter</span>
+			<span id="hideSearch" class="button" style="display:none">Hide Filter</span>
+			<span id="saveSearch" class="button" style="display:none">Save Filter</span>
+		 </span>
+	</div>
+
+	<div id="appletFrame" class="wizardViewAppletFrame savedSearchFrame">
+		<%= formHTML%>
+	</div>
+<!-- includeFieldDescription is in rwapi -->

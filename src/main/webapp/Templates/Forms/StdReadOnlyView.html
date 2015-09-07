@@ -1,0 +1,9 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<table width="100%" align="center">
+<% _.each(attributes, function(a) { var fldname =  a["fldname"]; if (a.dataType != 'hidden'){%>
+<tr>
+<td align='right' width='50%'><span><%= a["label"]%>:</span><td>
+<td align='left'><%= fieldRenderer(a, true)%></td>
+</tr>
+<% }}); %>
+</table>

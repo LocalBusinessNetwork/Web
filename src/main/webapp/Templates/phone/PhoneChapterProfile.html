@@ -1,0 +1,72 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:34:59 GMT">
+
+
+<div class="cHomeOuter">
+	  <div class="Zlhs (model.get('id') == rwFB.OrgId)?'homeChapterLabel':'hidden' Zrhs">This is my home chapter!</div>
+	  <div class="cHomeTitle">Zlhs model.get('businessName') Zrhs</div>
+	  <div class="cHomeSubTitle">Zlhs model.get('cityAddress_work') + ', ' + model.get('stateAddress_work') Zrhs</div>
+
+	  <div class="cHomeStatFrame"><div class="cHomeStatSecond">Founded<font>Zlhs $.getDateString(model,'dateFounded') Zrhs</font></div></div>	
+	  <div class="cHomePicFrame">
+       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+		Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/chapterPlaceholder.png','cHomePic')Zrhs
+       </div>
+      
+		<div style="width:100%;padding:15px;height: 40px;">
+			  <div class="cHomeAmbassadorFrame">
+		       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+				<img class="cHomeAmbassadorPhoto" src="Zlhs ($.hasVal(model.get('ambassador_photoUrl')))?model.get('ambassador_photoUrl'):'<%= rwFB.CDN%>/images/icons/UserWBack.png' Zrhs"/>
+		       </div>
+		       <div class="cHomeAmbassadorCard" style="display:inline;font-size:14px">
+		
+				       	<div class="cHomeAmbassadorName">Zlhs model.get('ambassador_fullName') Zrhs</div>
+				        <div class="cHomeAmbassadorTitle">Lead Amabassador </div>
+				        <div class="cHomeAmbassadorFBPage"> Zlhs $.getFormattedVal($.urlPrefix(model.get('ambassador_faceBookPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/faceBookLogo.png"/></a>','<img src="<%= rwFB.CDN%>/images/emptyPic.png"/>')  Zrhs</div>
+				       
+				
+
+			    </div>
+		</div>
+	    
+		<hr></hr>
+      
+		<div class="phoneChapterMeeting">      
+	      	<div class="phoneMeetingWhen">
+					<img src="<%= rwFB.CDN%>/images/calendar.jpg">
+				<div class="profile-meeting-info">
+					<div>This chapter meets Zlhs model.get('meetingFrequency') Zrhs on</div>
+					<div class="profile-meeting-info-time">Zlhs rwcore.getLovDisplayVal('WEEKDAY',model.get('meetingDayOfWeek')) + 's at ' + $.getTimeStringDetail(model,'meetingHour','h:MM TT') Zrhs</div>					
+				</div>
+
+							
+			</div>
+			<hr></hr>
+			<div class="phoneMeetingWhere">	
+				<img src="<%= rwFB.CDN%>/images/icons/mapPinLargeBlack.png">
+				<div>
+					<div class="phonelocationIntro">We meet at</div>
+					
+						<div class="profile-establishmentName">Zlhs model.get('establishmentName') Zrhs</div>
+						<div>Zlhs model.get('streetAddress1_work') Zrhs</div>
+						<div>Zlhs model.get('cityAddress_work') +", " + model.get('stateAddress_work') + ", " + model.get('postalCodeAddress_work') Zrhs</div>
+					
+					</div>
+				
+<!-- http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003  -->
+							
+	       </div>
+	   </div>
+	   
+	   <hr></hr>
+	   
+	   <div class="cHomeGreetingFrame">
+	    	<div style="font-weight:bold;padding-bottom:8px">Welcome!</div>
+	    	<div>Zlhs model.get('greeting') Zrhs</div>
+	    </div>
+       
+</div>
+
+
+			
+		
+			

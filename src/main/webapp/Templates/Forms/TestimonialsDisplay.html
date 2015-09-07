@@ -1,0 +1,36 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div>
+				<!--<a id="initReferral" class="initReferral"   toId="Zlhs model.get('id')Zrhs" to_fullName="Zlhs model.get('fullName')Zrhs">
+		<div class="button wide">Refer</div></a> -->
+				
+				<ul class="testimonial">
+									
+					<% for (var i=0;i < attributes.length;i=i+3) {
+					var a = attributes[i];
+					var thisTitle = a['fldname'];
+					var b = attributes[i+1]; 
+					var thisText = b['fldname'];
+					var c =  attributes[i+2];
+					var thisSource = c['fldname'];
+					debugger;%>
+						<li style="position:relative" class="Zlhs $.getFormattedVal(model.get('<%= thisTitle%>'),'testimonial','hidden')Zrhs">
+							<div class="testimonialTitle">Zlhs model.get('<%= thisTitle%>')Zrhs</div>
+							<div class="testimonialText">Zlhs model.get('<%= thisText%>')Zrhs</div>
+							<div class="testimonialSource">-- Zlhs model.get('<%= thisSource%>')Zrhs</div>
+						</li>
+					<% }; %>
+														
+					
+					
+				</ul>
+				
+
+
+				
+	</div>
+
+	
+
+
+	

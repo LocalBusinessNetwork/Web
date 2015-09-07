@@ -1,0 +1,38 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<!--
+	<div style="right: 5px;left: 5px;position: absolute;top: 0;height: 50px;color: white;">
+		<table width="100%">
+			<tr>
+				<td width="33%"><a href="#" id="cancelError" class="button">Dismiss</a></td>
+				<td id="pickTitle" style="text-align:center;width:33%;font-size:14pt">Error</td>
+				<td style="text-align:right;height:45px">
+				</td>
+			</tr>
+		</table>
+	</div>
+	-->
+	<div class="popUpHeader">
+		<div class="popUpHeaderInner">
+			<a id="cancelError" class="button">Dismiss</a>
+			<span id="pickTitle" class="popUpHeaderTitle">Error</span>
+		</div>
+	</div>
+	
+	<div id="ErrorMsg" style="overflow-y: scroll;position: absolute;top: 50px;bottom: 10px;background-color: white;border-radius: 10px;left: 5px;right: 5px">
+	<% if ( status == 0 || status == 500 || status == null || status == undefined ) { %>
+		<div style="left:10px">
+			<%= msg%>
+		</div>
+	<%  } else if ( status < 99999 ) { var x = $(msg); %>
+	<div style="margin-left:20px;margin-top:20px;margin-right:20px;position:absolute;overflow-y:scroll">
+	<span class="bulletHeading"><%= _.isUndefined(x[3].textContent) ? x[3].innerHTML : x[3].textContent %></span>
+	</div>
+	<!-- span class="bulletHeading"><%= _.isUndefined(x[8].innerText) ? x[6].innerText : x[8].innerText  %></span-->
+	<% } else { %>
+		<h1>The following fields are required:</h1>
+		<% _.each(msg, function(item) { %>
+		<span class="bulletHeading"><%= item%></span>
+		<% }); %>
+	<% } %>	
+	</div>
+

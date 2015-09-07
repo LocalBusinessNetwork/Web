@@ -1,0 +1,52 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+			
+	<div class ="mainPanelHeader" style="text-align:center;padding-top: 12px;height: 38px;">
+
+		 <span class="rw_appletMenu" style="position:absolute;left:3px;height: 45px;">
+		 	<span id="cancel" class="button">Cancel</span>
+		 	<span id="back" class="button" style="display:none">Back</span>
+		 </span>
+		 <span style="position:absolute;left:50%">
+		 	<div id="wizardStationTitle" class="stationTitle">
+		 		Step 1: <%= stations[0]%>
+		 	</div>
+
+		 	
+		 </span>
+		 <span style="position:absolute;right:3px;height: 45px;margin-top:4px">
+			<span id="next" class="button">Next</span>
+			<span id="back" class="button" style="display:none">Back</span>
+			<span id="save" class="button" style="display:none">Done</span>
+		 </span>
+	</div>
+
+	
+	<div id="trainFrame">
+		<div id="train">
+			<div class="trainStation">
+				<div class="trainCircle active"></div><div class="trainLabel"><%= stations[0]%></div>
+			</div>	
+		<% for (i=1;i<stations.length;i++) {%>
+		    <div class="trainTrack"></div>
+		    <div class="trainStation">
+		        <div class="trainCircle"></div>
+		        <div class="trainLabel"><%= stations[i]%></div>
+		    </div>
+		<% };%>
+		</div>
+		<div id="wizardStationTitlePhone" class="stationTitle"><!-- only appears in smartphone -->
+			Step 1: <%= stations[0]%>
+		</div>
+
+		<% if( !_.isUndefined (helpUrl) ) { %> 
+		<div style="padding-left:78%;margin-top:10px"><a class='button' href="<%= helpUrl()%>" target="_blank">Learn More</a></div>
+		<% } %>
+		
+	</div>
+	
+	<div id="appletFrame" class="wizardViewAppletFrame">
+		<%= firstAppletHTML %>
+	</div>
+
+	
+<!-- includeFieldDescription is in rwapi -->

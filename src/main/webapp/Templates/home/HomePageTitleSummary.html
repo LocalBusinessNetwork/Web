@@ -1,0 +1,35 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+ 
+<div class="titleSummary">
+	<div class="titleSummaryInner">
+	<font class="titleSummaryIntro">Welcome <%= model.get('fullName')%>!</font>
+	<div style="padding-top:10px" class="<%= $.hasVal(model.get('org_businessName'))?'':'hidden'%>"> Member: <span class="titleChapterName"><%= model.get('org_businessName')%></span> </div>
+	<!--<p> %=$.getTitleSummaryNews(model.get('NewReferralsRcvd'),model.get('NewReferralsSent'))% </p>-->
+	</div>
+</div>
+
+<div class="getStartedTitle">Get Started!</div>
+<div id="quicklinks" class="<%= $.getFormattedVal(model.get('OrgId'),'','noChapter') %>">
+	<a href="#Profile">
+		<div class="quicklinkItemFrame">
+			<div class="quicklinkItem"><img src="<%= rwFB.CDN%>/images/icons/editProfile.png">Edit your profile!</div>
+		</div>
+	</a>
+	
+	<a href="#" onclick="window.open('http://www.youtube.com/watch?feature=player_profilepage&v=4INiCtpeu4g', '_blank', 'location=yes');">
+		<div class="quicklinkItemFrame">
+			<div class="quicklinkItem"><img src="<%= rwFB.CDN%>/images/icons/videoCamera.png">View tutorial!</div>
+		</div>
+	</a>
+	<a id="findChapter" href="#OrgList">
+		<div class="quicklinkItemFrame">
+			<div class="quicklinkItem"><img src="<%= rwFB.CDN%>/images/icons/chaptersBlack.png">Find a chapter!</div>
+		</div>
+	</a>
+</div>
+
+<!-- 
+<div style="background-color:white; font-size:14pt; border:solid black 1px; border-radius:9px; box-shadow: 5px 5px 5px; margin-left:-5px; margin-right:-5px; margin-bottom:30px;padding:15px">
+	<font style="font-weight:bold; font-size:15pt;">Welcome back <%= model.get('fullName')%></font><p><%=$.getTitleSummaryNews(1,0)%></p>
+</div>
+ -->

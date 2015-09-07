@@ -1,0 +1,50 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+       <!-- Chapter Container -->
+        <div class="<%= $.getFormattedVal(model.get('OrgId'),'dashboard-chapter-container','hidden') %>">
+        	<div class="header">
+            	<h1>My Chapter</h1>
+                <!-- <div class="action"><a href="#">edit</a></div> -->
+                <div class="clear"></div>
+            </div>
+            
+            <div class="img"><a href="#OrgList/<%= model.get('OrgId')%>">
+            <img src="<%= model.get('org_photoUrl') %>"/></a></div>
+            <div class="stn-info">
+            	<a href="#OrgList/<%= model.get('OrgId')%>"><h1><%= model.get('org_businessName') %></h1>
+                <div class="location"><%= model.get('org_cityAddress_work') %>, <%= model.get('org_stateAddress_work') %></div>
+                </a>
+                <div class="ambassador">Ambassador: <a href="#memberProfile/<%= model.get('org_ambassadorId')%>"><%= model.get('org_ambassador_fullName') %></a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="<%= $.getFormattedVal(model.get('OrgId'),'hidden','dashboard-chapter-container') %>">
+        	<div class="header">
+            	<h1>My Chapter</h1>
+                <!-- <div class="action"><a href="#">edit</a></div> -->
+                <div class="clear"></div>
+            </div>
+            <div class="img"><img style="border-width:0"  src="<%= rwFB.CDN%>/images/icons/chaptersBlack.png"/></div>
+            <div class="stn-info">
+            	<h1>Choose a Chapter!</h1>
+                <div class="location"><a href="#OrgListMap">View Map</a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="dashboard-profile-container">
+            <div class="header">
+                <h1>Update My Profile</h1>
+                <div class="action"><a class='button' href="<%= rwcore.getLov('ONLINEHELP', 'PROFILEMGMT').get('Url')%>" target="_blank" alt="<%= rwcore.getLov('ONLINEHELP', 'PROFILEMGMT').get('DisplayVal')%>"> Learn More</a></div>
+                <div class="clear"></div>
+            </div>
+            <div class="img"><a href="#Profile"><img src="<%= model.get('photoUrl') %>"/></a></div>
+            <div class="stn-info">
+                <a href="#Profile"><h1><%= model.get('fullName') %></h1></a>
+                <div class="rank"><%= $.getMemberType(model) %></div>
+                <div class="location"><%= $.getCityState(model) %></div>
+                <div class="clear"></div>
+            </div>
+            </a>
+        </div>
+        <!-- END Profile Container -->

@@ -1,0 +1,53 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ViewReferralFormInvite.html -->
+			
+
+	<div class="referralFormHeader invite">
+
+		<table>
+				<tr>
+					<td class="referralPictureCell myReferrals">
+						<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+							<img class="referralTypeIcon typeIcon-cust-for-part" src="<%= rwFB.CDN%>/STN/Images/activity-icon_referral-received.png">
+							<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+							<img class="referralStatusIcon statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+							<img class="referralStatusIcon statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONFIRMED.png">
+							<img class="referralStatusIcon statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_ACCEPTED.png">
+						</div>
+					</td>
+					<td>
+					<div class="referralFormHeader-textbox">
+						<div class=""><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs/PARTNER" class="partnerName light drillDown">Zlhs model.get('from_fullName') Zrhs</a> invited you to connect on Zlhs $.getFormattedDate(model.get('rw_created_on').$date) Zrhs.</div>
+						<div class="referralFormHeader-statusDetail">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+						<div class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','','hidden')Zrhs">
+							<div class="referralFormHeader-statusDetail"><span class="acceptInvite referralAction" confirmation="true" confirmtemplate="AcceptReferralConfirmationNoArch" setfieldlist="status" setvallist="ACCEPTED">Accept</span> the invitation to add <a class="partnerName light">Zlhs model.get('from_firstName') Zrhs</a> to your network.</div>
+						</div>
+					</div>
+					</td>
+					<td class="referralPictureCell myReferrals">
+						Zlhs $.getImage(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+					</td>
+				</tr>
+		</table>
+		
+	</div>
+	
+		<div class="notePaper referralForm">
+			
+			<table class="offer table">
+				<tr>
+					<td class="referralFormTitle">Partner Invitation</td>
+					
+				</tr>
+				<tr>
+					<td class="referralFormBox" colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div class="referralFormReason">"Zlhs $.getLIList(model.get('comments')) Zrhs"</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	
+<!-- includeFieldDescription is in rwapi -->

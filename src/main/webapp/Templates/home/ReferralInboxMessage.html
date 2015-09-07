@@ -1,0 +1,41 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralInboxMessage.html -->
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+
+		<td class="referralPictureCell iconCell">
+			<img class="referralTypeIcon" src="/images/icons/message.png">
+		</td>	
+
+		<td style="padding-top:5px;padding-bottom:5px" inboxDetailNode="Zlhs model.get('status') Zrhs">
+
+				<span class="referralListItemTopLine referralContactLink regular">Message from <a href="#memberProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a></span>
+				
+				<div class="referralListItemBottomLine">Zlhs model.get('subject') Zrhs</div>
+
+		</td>
+		
+		<td class="referralPictureCell extraRefDetail">
+			<div>Zlhs model.get('from_firstName') Zrhs</div>
+			Zlhs $.getImageTN(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>	
+
+
+		<td class="expandCollapseCell collapsed" stateCell="Zlhs model.get('id') Zrhs" referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInmailDetail">
+			<div class="accept expand"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+		</td>
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+
+

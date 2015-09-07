@@ -1,0 +1,162 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<style>
+	.metricHeader {
+		width:90%;
+	}
+	
+	.metricHeader table {
+		width:100%;
+	}
+	
+	.metricHeader table td {
+		
+	}
+	.myMetric, .rw_details table tr td:first-child.myMetric {
+		font-size:106pt;
+		font-family:bebasneue;
+		width:120px;
+		text-align:center;
+	}
+
+	.metricNarrative {
+		width:320px;
+	}
+	.metricNarrative div{
+		font-size:11pt;
+		font-style:italic;
+		width:100%;
+		margin-bottom:10px;
+	}		
+	.peerGroupSelector  {
+		max-width: 340px;
+		
+	}
+	
+	.peerGroupSelector .ui-controlgroup .ui-checkbox label, .ui-controlgroup .ui-radio label{
+		font-size:11pt;
+	}
+	
+	.peerGroupSelector .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size:11pt;
+	}
+	.peerGroupTitle {
+		font-family:century;
+	}
+	
+	.chartTitle {
+		font-size:20pt;
+		color:gray;
+		text-align:center;
+		font-family:century;
+	}
+	
+	.chartSubTitle {
+		text-align:center;
+		font-family:century;
+	}
+	.metricNarrative .congratulations {
+		font-size: 24pt;
+		font-style: initial;
+		font-family: bebasneue;
+		color:#E49D21;
+	}
+	
+	.metricHeader .ui-field-contain .ui-controlgroup-controls {
+		width:100%;
+	}
+</style>
+
+<div class="metricHeader">
+		
+	<table>
+		<tr>
+			<td class="myMetric">
+				<div id="myMetric1">0</div>
+			</td>
+			<td >
+				<div class="metricNarrative" id='lbc_header'></div>
+				<div class="metricNarrative" id="lbc_prospects_chapter" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've made <span id="myMetric2"> 0 </span> prospect referrals  in the last eight weeks</div>
+					<div class="distanceFromBoard">You're <b><i>ON</i></b> the "Prospect Referrals Made" leader board for the <a id="chapterLink" href="#"><span id="chapterName">[Chapter]</span></a> chapter!</div>
+				</div>
+				<div class="metricNarrative" id="lbc_converted_chapter" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've  Converted <span id="myMetric2"> 0 </span> referrals  in the last eight weeks</div>
+					<div class="distanceFromBoard">You're <b><i>ON</i></b> the "Referrals Converted" leader board for the <a id="chapterLink" href="#"><span id="chapterName">[Chapter]</span></a> chapter!</div>
+				</div>
+				<div class="metricNarrative" id="lbc_invited_chapter" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've Iniveted <span id="myMetric2"> 0 </span> members in the last eight weeks</div>
+					<div class="distanceFromBoard">You're <b><i>ON</i></b> the "Members Invited" leader board for the <a id="chapterLink" href="#"><span id="chapterName">[Chapter]</span></a> chapter!</div>
+				</div>
+				<div class="metricNarrative" id="lbc_prospects_self_professionAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've made <span id="myMetric2"> 0 </span> prospect referrals  in the last eight weeks. See how members are doing with in your profession.</div>
+				</div>
+				</div>
+					<div class="metricNarrative" id="lbc_converted_self_professionAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've converted <span id="myMetric2"> 0 </span> prospect referrals  in the last eight weeks. See how members are doing with in your profession.</div>
+				</div>
+				</div>
+					<div class="metricNarrative" id="lbc_invited_self_professionAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've invited <span id="myMetric2"> 0 </span> members in the last eight weeks. See how members are doing with in your profession.</div>
+				</div>
+				<div class="metricNarrative" id="lbc_prospects_self_networkAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've made <span id="myMetric2"> 0 </span> prospect referrals  in the last eight weeks. See how members are doing with in the netowrk.</div>
+				</div>
+				</div>
+					<div class="metricNarrative" id="lbc_converted_self_networkAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've converted <span id="myMetric2"> 0 </span> prospect referrals  in the last eight weeks. See how members are doing with in the network.</div>
+				</div>
+				</div>
+					<div class="metricNarrative" id="lbc_invited_self_networkAvg" style="display:none">
+					<div class="congratulations">Congratulations!</div>
+					<div class="leaderBoardSummaryText">You've invited <span id="myMetric2"> 0 </span> members in the last eight weeks. See how members are doing with in the network.</div>
+				</div>
+				
+			</td>
+			<td>
+			<div class="peerGroupSelector">
+				<div class="peerGroupSelectorTitle">See your performance within:</div>
+				<div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup" >
+		         	<input type="radio" name="dimension" value="_chapter" id="chapter" databind="false" checked="checked" />
+		         	<label for="chapter">Your chapter</label>
+		         	<input type="radio" name="dimension" value="_self_professionAvg"  id="profession" databind="false" />
+		         	<label for="profession">Your professional category</label>
+		         	<input type="radio" name="dimension" value="_self_networkAvg" id="network" databind="false" />
+		         	<label for="network">The Network</label>		         	
+				</fieldset>
+				</div>
+			</div>
+			</td>
+			
+		</tr>	
+	</table>
+
+	<div class="chartTitle" id="lbc_header"></div>
+
+	<div class="chartTitle" id="lbc_prospects_chapter" style="display:none">Leader board for prospect referrals made</div>
+	<div class="chartTitle" id="lbc_converted_chapter" style="display:none">Leader board for  Referrals Converted</div>
+	<div class="chartTitle" id="lbc_invited_chapter" style="display:none">Leader board for Member Invitations</div>
+	<div class="chartTitle" id="lbc_prospects_self_professionAvg" style="display:none">Your prospect referrals and  average in your profession</div>
+	<div class="chartTitle" id="lbc_converted_self_professionAvg" style="display:none">Your Converted referrals and average in your profession</div>
+	<div class="chartTitle" id="lbc_invited_self_professionAvg" style="display:none">Your Invitations and average in your profession</div>
+	<div class="chartTitle" id="lbc_prospects_self_networkAvg" style="display:none">Your prospect referrals and  average in the network</div>
+	<div class="chartTitle" id="lbc_converted_self_networkAvg" style="display:none">Your Converted referrals and average in the network</div>
+	<div class="chartTitle" id="lbc_invited_self_networkAvg" style="display:none">Your Invitations and average in in the network</div>
+
+	
+	<label for="weeks_slider"><div class="chartSubTitle" id="lbc_header"></div></label>
+	<!-- <input type="range" name="weeks_slider" id="weeks_slider" value="8" min="4" max="16" data-highlight="true" step="2" /> -->
+	<div class="chartSubTitle" id="_chapter" style="display:none"><span id="chapterName"> [Chapter] </span> Group - <u>Last 12 Weeks</u></div>
+	<div class="chartSubTitle" id="_self_professionAvg" style="display:none"><u>Last Weeks</u></div>
+	<div class="chartSubTitle" id="_self_networkAvg" style="display:none"><u>Last Weeks</u></div>
+
+</div>
+

@@ -1,0 +1,44 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+			<div data-role="header" class = "phoneHeader">
+			<!-- <div data-role="header" class="phoneHeader">-->
+				<div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar">
+				<!-- <div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar"> -->
+					<div id="title" class="ReferralWireName" style="display:inline;line-height:41px"><%= rwFB.HeaderName%></div>
+					<a style="cursor:pointer;position:absolute;left:5px;top:1px" id="menuButton">
+						<img id="menuIcon" width="40px" height="40px" src="<%= rwFB.CDN%>/STN/Images/menuIconWhite.png"/>
+					</a> 					
+				</div>
+			</div>
+
+
+			<div class="subMenuBody home">
+
+				<!-- <div style="margin-top: -20px;" section applet="" template="STN_PhoneHomePageTitleSummary" renderer="SimpleView" model="self"></div> -->
+				<div class="quick-links">
+                	<div class="quick-links-item">
+                		<a href="#phoneUpcomingEvents"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_events.png" alt="Address Book"/></a>
+                	</div>
+                	<div class="quick-links-item">
+                		<a href="#nearMeAlt"><img id="nearMeButtonActive" src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_near-me.png" alt="Near Me"/></a>
+                		<a href="#nearMeAlt"><img id="nearMeButtonInActive" src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_near-me_inactive.png" alt="Near Me"/></a>
+                	</div>
+                	<div class="quick-links-item">
+                		<a id="refer"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_new-referral.png" alt="Manage Referrals"/></a>
+                	</div>
+                	<div class="quick-links-item">
+                		<a id="inviteWizard"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_invite-new-members.png" alt="Invite New Members"/></a>
+                	</div>
+                </div>
+                
+    			<div id="myEventsList" section applet="MyNextEvent" template="STN_PhoneEventHomeList" style="clear:both" options="filter=false,noRecordsMsg='hidden',fillRemainder=true,ulClass='masterDetailList phoneHome',listItemClass='nopicklist'" renderer="ListView" model="StandardCollection" sortBy="denorm_datetime" sortDir="ASC" act="getNextEvent"> </div>
+	       	    <div class="phoneActivityStreamTitle">Updates</div>
+				<div id="referralInboxView" section applet="ReferralNewsFeed" act="NewsFeed" style="clear:both" template="rwApp.getReferralInboxHomeTemplate" options="filter=false,fillRemainder=true,noRecordsMsg='You have received no referrals in the last two weeks',listItemClass='rw_expandable',ulClass='InBoxItems'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="rw_created_on" sortDir="DESC" progressiveRender="true">
+				</div>
+			
+					
+				
+			</div>
+
+															

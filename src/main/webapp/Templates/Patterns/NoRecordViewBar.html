@@ -1,0 +1,11 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+<div data-role="navbar" class="footericon mainPanelFooterNav" data-grid="d" style="position:absolute;bottom:0">
+	<ul>
+	<% _.each(attributes, function(a) { %>
+
+		<li><a href="#<%= a['drilldown']%>" class="<%= a['className']%>" rel="external" id="<%= a['icon_id']%>" data-icon="custom"><%= a['name']%>	</a></li>
+	<% }); %>
+	</ul> 
+</div>

@@ -1,0 +1,35 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- STN -->
+<!-- <iframe src="http://resource.successfulthinkersnetwork.com/index.php/stn-connect/speaker-info/" class="stnSpeakerIframe"></iframe>-->
+<div class="Zlhs $.getConditionalVal(model.get('isSpeaker'),'true','isSpeaker','isNotSpeaker')Zrhs">
+	<div class="speakerInvitationMessage">
+		<a href="http://resource.successfulthinkersnetwork.com/index.php/stn-programs-2/success-speaks-out/" target="_blank">
+			<img src="/STN/Images/speaker-bio-banner_not-certified.jpg">
+		</a>
+	</div>
+	<div class="speakerWelcomeMessage">
+		<img src="/STN/Images/speaker-bio-banner_certified.jpg">
+	</div>
+
+	<div class="paragraphBlock">
+	       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+			Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','profilePhoto')Zrhs
+	       </div>
+	       <div class="paragraphBlock">
+	       	<table class="paragraphBodyText">
+	          	<tr>
+	          		<td class="paragraphNameText">Zlhs $.getConditionalVal(model.get('personalTitle'),'DOCTOR','Dr.','') + ' ' + model.get('firstName') + ' ' + model.get('lastName')Zrhs</td>
+	          	</tr>
+	          	<tr>
+	          		<td>Zlhs $.getPosition(model.get('jobTitle'),model.get('business')) Zrhs </td>
+	          	</tr>
+	      </table>
+	 </div>
+	<div class="cPanel std">
+		<ul data-role="listview" data-inset="true" class="formfields">
+		<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+		<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+		<% }}; %>
+		</ul>
+	</div>
+</div>

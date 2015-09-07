@@ -1,0 +1,23 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+ 
+    <div class="activity-header-container">
+       	<div class="col">
+           	<h1>Recent Activity</h1>
+               <span>Last Two Weeks</span>
+        </div>
+        <div class="col">
+        	<div class="count"><%= model.get('LastTwoWeeksReferralsSent') %></div>
+            <div class="count-title">Referrals</div>
+            <div class="count-descr">Sent By You</div>
+        </div>
+        <div class="col">
+           	<div class="count"><%= model.get('LastTwoWeeksReferralsRcvd') %></div>
+            <div class="count-title">Referral Requests</div>
+            <div class="count-descr">Sent To You</div>
+        </div>
+        <div class="col">
+           	<div class="count"><%= model.get('LastTwoWeeksMembersInvitedByMe') %></div>
+            <div class="count-title">New Members</div>
+            <div class="count-descr">Invited By You</div>
+        </div>
+    </div>

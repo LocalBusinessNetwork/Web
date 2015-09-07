@@ -1,0 +1,54 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+<div id="closeContextMenu" class="closeContextMenu" style="height: 42px;background-color: #000;position: absolute;top: 0;left: 0;right: 0;"><a class="closeMenu" data-rel="close">
+	<img src="<%= rwFB.CDN%>/images/icons/closeIconWhite.png" ><span>Close Menu</span></a>
+</div>
+<div id="contextMenuBody" style="position:absolute; top:42px;left:0;right:0;">
+
+<%  
+	for (var i = 0; i < menuNav.length; i++) {
+	var top = menuNav[i];
+	
+	var iconSrc = "/images/icons/" + top.iconSrc;
+	var route = ($.hasVal(top.subMenus))?"expand":top.route;
+	var actionImgClass = ($.hasVal(top.subMenus))?"menuToggle":"menuNavigate";
+	var actionImgSrc = ($.hasVal(top.subMenus))?"expandIconWhite.png":"navigateWhiteIcon.png";
+	
+	actionImgSrc = "/images/icons/" + actionImgSrc;
+	var hide = (top.hasOwnProperty('hideIf'))?top.hideIf(model):false;
+	var topClassVal = (hide)?"hidden":"topMenuItem";
+	
+%>
+	<div class="<%= topClassVal %>">
+		
+		<div id="<%= top.id %>" class="menuItemDetail" route="<%= route %>">
+			<img class="menuIcon" src="<%= iconSrc %>">
+			<span><%= top.label %></span>
+			<img class="<%= actionImgClass %>" src="<%= actionImgSrc %>">
+		</div>
+		<% if ($.hasVal(top.subMenus)) { 
+			var groupId = top.id + "_sub";
+		%>
+			<div id="<%= groupId %>" class="subMenus">
+				<% for (var j=0;j < top.subMenus.length; j++) {
+					var subMenu = top.subMenus[j]; 	
+					iconSrc = "/images/icons/" + subMenu.iconSrc;
+					var hide = subMenu.hideIf(model);
+					var classVal = (hide)?"hidden":"menuItemDetail";
+													
+				%>
+					<div class="<%= classVal %>" route="<%= subMenu.route %>">
+						<img class="menuIcon" src="<%= iconSrc %>">
+						<span><%= subMenu.label %></span>
+						<img class="menuNavigate" src="/images/icons/navigateBlackIcon.png">
+					</div>
+				<% } %>
+			</div>
+		<% } %>	
+	</div>
+<% } %>
+
+
+</div>
+

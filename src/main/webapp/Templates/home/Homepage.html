@@ -1,0 +1,52 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div data-role="header" class="catalogHeader ui-header ui-bar-a" role="banner" style="height:50px;text-align:center">
+		<span id="navigationButton" class="button menuLaunch home" style="position: absolute;top: 10px;		left: 10px;">Menu</span>
+		
+		<span class="ui-title" role="heading" aria-level="1" style="font-size:16pt">Welcome to <font style="font-family: courier;font-size: 20pt;font-weight: normal;color: firebrick;text-shadow: 0 -1px 1px rgba(0,0,0,1);">ReferralWire</font></span>
+		
+		<span id="logout" style="cursor:pointer;position:absolute;right:5px;top:10px;padding-top: 5px;padding-bottom: 5px;padding-left: 15px;padding-right: 15px;" class="button" onclick="window.location='#signout'">Logout</span>
+
+</div>
+
+<div style="overflow-y:scroll;bottom:0" class="mainPanelBody">
+	<div class="menuPull"></div>
+	<div class="pullTab menuPull" style="margin-top: -80px;"><div class="grip"></div><div class= "grip gsmall"></div></div>
+	<table width="100%" style="table-layout:fixed" >
+		<tr>
+			<td width="65%" class="dashColumns">
+		
+			<div id="HomePageTitleView" style="margin-top: -20px;" section applet="" template="HomePageTitleSummary" renderer="SimpleView" model="self"></div>
+			<div id="refer" class="button blue">Make a referral !</div>
+			<div id="referralInbox" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="cPanel tooltip" tooltipSource="homePageInbox">
+				<h2>Referrals Received - Last 2 Weeks</h2>
+				<div id="referralInboxView" section  applet="ReferralInbox" act="InBox" template="rwApp.getReferralInboxHomeTemplate" options="filter=false,noRecordsMsg='You have received no referrals in the last two weeks',listItemClass='rw_expandable'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="rw_created_on" sortDir="DESC">
+				</div>
+				<div class="collapsibleFooter" style="background-color:#3A3A3A"><a href="#referralInbox" style="text-shadow: none;">See more referrals that you've accepted.</a></div>
+			</div>
+			<div id="referralOutbox" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="cPanel tooltip" tooltipSource="homePageOutbox">
+				<h2>Referrals From You: Recently <u>Updated</u> by Your Partners</h2>
+				<div id="referralOutboxView" section  applet="ReferralOutbox" act="OutBox" template="rwApp.getReferralOutboxHomeTemplate" options="filter=false,noRecordsMsg='Your partners have not updated referrals from you in the last two weeks',listItemClass='rw_expandable'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="statusChangeDate" sortDir="DESC">
+				</div>
+				<div class="collapsibleFooter" style="background-color:#3A3A3A"><a href="#referralOutbox" style="text-shadow: none;">See more that you've given.</a></div>
+			</div>
+			</td>
+			<td width="35%" style="vertical-align:top">
+			<div id="referralGauges" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="cPanel tooltip" tooltipSource="referralGauges">
+					<h2>Referrals & Invites - Last 2 Weeks</h2>
+					<div id="referralGaugesView" section applet="gauges" template="HomePageReferralChartPanel" renderer="SimpleView" model="self"></div>
+			
+			</div>
+			<div id="postUpdate" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="recommended cPanel tooltip" tooltipSource="postUpdate">
+				<h2>Share an Update</h2>
+				<textarea id="message" style="height:80px;width: 96%;margin-left: 2%;"rows="" cols=""></textarea>
+				<div class="buttonWrap"><input id="postAMessage" type="button" value="post" class="button"></input></div>
+			</div>
+			<div id="referralStream" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="false" class="recommended cPanel">
+				<h2>Community Activity</h2>
+				<div id="referralStreamView" section limit="20" applet="ActivityList" template="RStreamList" renderer="ListView" model="StandardCollection" sortBy="timestamp" sortDir="DESC"></div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+

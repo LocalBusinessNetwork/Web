@@ -1,0 +1,44 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralInboxUnread.html -->
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+
+		<td class="referralPictureCell iconCell">
+			
+				<img class="referralTypeIcon" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_UNREAD.png">
+				
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>	
+		<td style="padding-top:5px;padding-bottom:5px" class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','','hidden') Zrhs">
+
+				<span class="referralListItemTopLine"><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> referred a prospect to you.</span>
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+
+		</td>
+		
+		<td class="referralPictureCell extraRefDetail">
+			<div>Zlhs model.get('from_firstName') Zrhs</div>
+			Zlhs $.getImage(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>	
+
+		<td class="expandCollapseCell" stateCell="Zlhs model.get('id') Zrhs" inboxToggle referralStatus="Zlhs model.get('status') Zrhs" claimOrArchive toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInboxDetail">
+			<!-- <img src="Zlh $.getConditionalVal(model.get('status'),'UNREAD','images/icons/flagRedIconSmall.png','images/icons/addIconBlueTall.png') Zrh"> -->
+			<!-- <div class="accept">Claim?</div> -->
+			<div class="accept">Claim?</div>
+			
+		</td>
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+
+

@@ -1,0 +1,59 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div class="PhoneMemberProfile">
+	  <div class="paragraphBlock" style="float:left;display:inline">
+       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+		<img class="profilePhoto" src="Zlhs ($.hasVal(model.get('photoUrl_pub')))?model.get('photoUrl_pub'):'<%= rwFB.CDN%>/images/icons/UserWBack.png' Zrhs"/>
+       </div>
+       <div class="paragraphBlock" style="display:inline;font-size:14px">
+
+		       	<table class="paragraphBodyText">
+		          	<tr>
+		          		<td class="paragraphNameText partnerName light">Zlhs $.getConditionalVal(model.get('personalTitle_pub'),'DOCTOR','Dr.','') + ' ' + model.get('firstName_pub') + ' ' + model.get('lastName_pub')Zrhs</td>
+		          	</tr>
+		          	<tr>
+		          		<td>Zlhs $.getPosition(model.get('jobTitle_pub'),model.get('business_pub')) Zrhs </td>
+		          	</tr>
+		
+		          	
+		        </table>
+	    </div>
+</div>
+
+
+
+
+	
+	<div class="phoneQualificationsDetails">
+
+		<div style="">
+		
+		<div class="Zlhs $.hasVal(model.get('funfact'))?'bulletHeading':'hidden'Zrhs">Fun Fact (Icebreaker)</div>
+		<div>Zlhs model.get('funfact')Zrhs</div>
+		
+			<%=fieldRenderer(attributes[0],true)%>
+			
+
+			<%=fieldRenderer(attributes[1],true)%>
+			
+		
+			<%=fieldRenderer(attributes[2],true)%>
+			
+		
+			<%=fieldRenderer(attributes[3],true)%>
+			
+			<p id="powerPartners" class="Zlhs $.getFormattedVal(model.get('powerpartner1'),'bulletHeading','hidden') Zrhs" style="display: block;">Power Partner Categories</p>
+			<ul class="profileBulletList creditList">
+				<li class="Zlhs $.getFormattedVal(model.get('powerpartner1'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner1') Zrhs</li>
+				<li class="Zlhs $.getFormattedVal(model.get('powerpartner2'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner2') Zrhs</li>
+				<li class="Zlhs $.getFormattedVal(model.get('powerpartner3'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner3') Zrhs</li>
+			</ul>
+			
+		</div>	
+
+
+	</div>
+</div>
+			
+		
+			

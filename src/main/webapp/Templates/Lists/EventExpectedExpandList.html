@@ -1,0 +1,87 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<table style="width:100%" table-layout:fixed" class="expandableListRow home">
+	<tr>
+		<td style="width:82px;overflow:hidden">
+			<div class="dateIconContainer small">
+					<div class="dayLabel">Zlhs model.get('day')Zrhs</div>
+					<div class="dateLabel" style="font-family: arial;">Zlhs  model.get('date') Zrhs</div>
+					<img class="dateIcon" src="<%= rwFB.CDN%>/images/icons/dateIcon.png">
+			</div>
+		</td>	
+		<td style="padding-top:5px;padding-bottom:5px">
+	 			<!-- for prospect recommendation -->
+	 			<div>
+		 			<!-- regular -->
+		 			<div class="referralListItemTopLine regular">Zlhs model.get('event_title')Zrhs</div>
+		 			<!-- smartphone -->
+					<div class="referralListItemTopLine phone">Zlhs model.get('event_title')Zrhs</div>
+					<div class="referralListItemBottomLine phone">Zlhs $.getTimeStringDetail(model,'datetime','h:MM TT') + ' on ' + $.getMonthAndDate(model,'datetime') +  ' at ' + model.get('locationName') Zrhs</div>
+					 	 					
+				</div>
+		</td>
+		
+		
+		<!-- only shown on the phone -->
+		<td style="display:none;" class="expandCollapseCell" stateCell="Zlhs model.get('id') Zrhs" recommendToggle referralStatus="ACCEPTED" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs">
+			<img src="<%= rwFB.CDN%>/images/icons/addIconBlueTall.png">
+			<span toggleAction="ACCEPTED"  style="display:block;font-size:10px;position:absolute;bottom:0;padding-left:12px;color:#6C9EDA;">Expand</span>
+		</td>
+	
+		
+	</tr>		
+</table>
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail open" detailNodeState="hidden" detailNode="ACCEPTED">
+		<div class="notePaper" style='padding:20px;'>
+		<div class="expandedEventTitle">Zlhs model.get('event_title') Zrhs</div>
+		
+		
+			<div class="eventButtonBar">
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<div class="Zlhs $.getConditionalVal(model.get('status'),'INVITED','button blue checkin','hidden') Zrhs" checkInButtonId="Zlhs model.get('id') Zrhs">Check In</div>
+								<div class="Zlhs $.getConditionalVal(model.get('status'),'CHECKEDIN','checkInConfirmation','hidden') Zrhs">You have checked in!</div>
+							</td>
+							<td style="width:50%">
+								<div class="button blue addGuest" recordId="Zlhs model.get('id') Zrhs">Register Guest</div>
+							</td>
+							
+						</tr>
+					</table>	
+					 
+			</div>
+
+			<div class="eventDetails">
+						<div style="padding-right:10px">
+							<span class="eventInLinePhoto">
+								
+								Zlhs $.getImage(model,'Org_photoUrl','<%= rwFB.CDN%>/images/icons/chapterPlaceholder.png','')Zrhs
+							</span>
+							
+							<div class="eventInLineSubTitle">Agenda</div>
+							<span class="eventText">Zlhs $.getFormattedValInner(model.get('event_agenda'),'\n','<p>','To be announced')Zrhs</span>
+							
+						</div>
+						<div style="clear:both;padding-top:30px;padding-right:10px">
+							<span class="eventInLinePhoto">
+								
+								Zlhs $.getImage(model,'speaker1_photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','')Zrhs
+							</span>
+							
+								<div class="eventInLineSubTitle">Zlhs model.get('speaker1_fullName') Zrhs</div>
+								<span class="eventText">Zlhs $.getFormattedValInner(model.get('speaker1_bio'),'\n','<p>','')Zrhs</span>
+							
+						</div>
+			</div>
+			
+
+
+		</div>
+		
+	</div>
+
+
+
+
+

@@ -1,0 +1,98 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+					
+<div class="attendanceChartTitle">Attendance - Last Eight Weeks</div>
+<div class="rw_details twolist mainList" style="background: rgba(211, 211, 211,.5)">
+	<table class="attendanceChart-table">
+		<tr><!-- row header -->
+			<td style="width:200px;height:40px;text-align:center;font-weight:bold"></td><!-- column header -->
+			
+			<% for (var i=0;i < indexes.colIndex.length; i++) {var colName = indexes.colIndex[i];  %>
+			<td style="height:40px;text-align:center;font-weight:bold"><%= dateFormat(new Date(colName),"m/d/yy") %></td>
+			<% }; %>
+			<td></td>
+		</tr>
+		<% for (var j=0;j < indexes.rowIndex.length; j++) { var rowName = indexes.rowIndex[j] %>
+		<tr>
+				<td><%= rowName %></td>
+				<% for (var i=0;i < indexes.colIndex.length; i++) {
+					var colName = indexes.colIndex[i];
+					console.log("rowName " + rowName + "; colName = " + colName);
+					var rowObj = indexes.rowObjects[rowName];  
+					var primaryKey = ($.hasVal(rowObj[colName]))?rowObj[colName]:""
+					
+					var status = ($.hasVal(primaryKey))?data.get(primaryKey).get('status'):"NOTAVAILABLE";
+					var cellClass = (status=='CHECKEDIN')?"wasPresent":"wasAbsent";
+					
+					switch(status){
+					
+					case 'NOTAVAILABLE': 
+					  cellClass = "notAvailable";
+					  break;
+					case 'CHECKEDIN':
+					  cellClass = "wasPresent";
+					  break;
+					case 'INVITED':
+					  cellClass = 'wasAbsent'
+					  break;  
+					default:
+					 cellClass = 'notAvailable'
+					  
+					}
+					
+					
+					
+					%>
+					
+				<td class="<%= cellClass %>"></td>
+				<% } %>
+				<td></td>
+		</tr>
+			<% } %>
+		
+		
+		<% for (var j=0;j < indexes.guestRowAry.length; j++) { 
+			var rowName = (j==0)?"Total visitors":"Total new members"
+			if ((j==0 && indexes.totalFloaters > 0 ) || (j==1 && indexes.totalNewMembers > 0 )){  
+		%>
+		<tr>
+				<td style="font-weight:bold"><%= rowName %></td>
+				<% for (var i=0;i < indexes.colIndex.length; i++) {
+					var colName = indexes.colIndex[i];
+					console.log("rowName " + rowName + "; colName = " + colName);
+					
+					var rowObj = indexes.guestRowAry[j];  
+					var totalGuests = ($.hasVal(rowObj[colName]))?rowObj[colName]:""
+					
+					var cellClass = (totalGuests > 0)?'wasPresent':'notAvailable';
+					
+					var firstRowClass = (j==0 || indexes.totalFloaters == 0)?"totalSeparator":"";
+					%>
+					
+				<td class="<%= cellClass %> totals <%= firstRowClass %>"><%= totalGuests%></td>
+				<% } %>
+				<td></td>
+		</tr>
+			<% }} %>
+		
+		
+		
+			
+	
+	</table>
+	<div class="attendanceLegend">
+		<table>
+			<tr>
+				<td class="wasPresent"></td>
+				<td style="padding-left:10px;padding-right:30px">Present</td>
+				<td class="wasAbsent"></td>
+				<td style="padding-left:10px;padding-right:30px"">Absent</td>
+				<td class="notAvailable"></td>
+				<td style="padding-left:10px">Not Available</td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
+
+

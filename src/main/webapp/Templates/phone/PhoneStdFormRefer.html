@@ -1,0 +1,28 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+		<a id="initReferral" toId="Zlhs model.get('id')Zrhs" to_fullName="Zlhs model.get('fullName')Zrhs">
+		<div class="button wide">Refer</div></a> 
+<div style="display:inline-block;width:100%">
+	  <div class="paragraphBlock" style="float:left;display:inline">
+       	<!--<img src="<%= rwFB.CDN%>/images/icons/Contact_jumbo.png"/>-->
+		Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','profilePhoto')Zrhs
+       </div>
+       <div class="paragraphBlock" style="display:inline;font-size:14px">
+
+		       	<table class="paragraphBodyText">
+		          	<tr>
+		          		<td class="paragraphNameText">Zlhs $.getConditionalVal(model.get('personalTitle'),'DOCTOR','Dr.','') + ' ' + model.get('firstName') + ' ' + model.get('lastName')Zrhs</td>
+		          	</tr>
+		          	<tr>
+		          		<td>Zlhs $.getPosition(model.get('jobTitle'),model.get('business')) Zrhs </td>
+		          	</tr>
+		
+		          	
+		        </table>
+	    </div>
+</div>
+		<ul data-role="listview" data-inset="true" class="formfields">
+		<% for (var i=0;i < (attributes.length);i++) {var a = attributes[i]; %>
+		<li><div class="phoneFormLabel"><%= a["label"]%>:</div><div><%= fieldRenderer(a,true)%></div></li>
+		<% }; %>
+		</ul>
+

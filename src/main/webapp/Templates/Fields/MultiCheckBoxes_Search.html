@@ -1,0 +1,21 @@
+<META HTTP-EQUIV="EXPIRES" upd="foo" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% if ( readonly == true ) { %>
+<span>Zlhs rwcore.getLovDisplayVal ("<%= model.models[0].get('LovType')%>", model.get('<%= fldname%>'))Zrhs</span>
+<% } else { 
+	var lovType = (!_.isUndefined(model.models) && model.models.length > 0)?model.models[0].get('LovType'):"";
+	%>
+	<div id="<%= fldname%>" class="multicheck-search-container" order="<%= order%>" lovType="<%= lovType%>">
+		 <ul data-role="listview" fldname="<%= fldname %>" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Type to add items" data-inset="true">
+		 <% _.each(model.models, function(l) {
+		 	var id = (l.attributes[key]).replace(/\s/g,'');
+		 	var liId = fldname + "-" + id + "-typeahead";
+		 	var aId = fldname + "-" + id + "-link"
+		 	
+		 %>
+	    	<li id="<%= liId %>" multicheckbox_search="<%= fldname %>" name="<%= l.attributes[key] %>" displayField="<%= display %>" displayListField="<%= displayListField %>" displayVal="<%= l.attributes[display] %>"><a id="<%= aId %>"><%= l.attributes[display] %></a></li>
+	    <% }); %>
+		</ul>
+	</div>
+
+
+<% } %>

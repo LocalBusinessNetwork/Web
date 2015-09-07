@@ -1,0 +1,18 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% if ( readonly == true ) { %>
+<span>Zlhs model.get('<%= fldname%>')</span>
+<% } else { %>
+
+	 <form>
+	 	<% _.each(model.models, function(l) { %>
+		    <label>
+		        <input type="radio" fldname='<%= fldname%>' hasPickMap='true' pickedRecordId="<%= l.get('id')%>" name='<%= fldname%>' id="<%= fldname%>" value="<%= l.attributes[radioField]%>"><%=l.attributes[radioField]%>
+		    </label>
+	    <% }); %>
+	    
+	   	    
+	</form>
+
+<% } %>
+ 
+ 

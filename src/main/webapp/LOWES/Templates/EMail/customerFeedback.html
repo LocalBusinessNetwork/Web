@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Successful Thinkers</title>
+</head>
+
+<body>
+
+<div style="background-color: #466bb0; width: 100%; margin:0; padding:0; font-family:arial; font-size: 12px;">
+
+<div style="width: 648px; margin: 0 auto;"><img src="http://resource.successfulthinkersnetwork.com/stn-member/images/emails/email-header_members.jpg" width="648" height="90" alt=""/></div>
+<div style="width: 588px; margin: 0 auto 25px; padding:30px; background-color: #FFF; text-align: left; color: #818181; font-size: 16px; line-height: 20px; border-radius: 8px; -moz-border-radius: 8px;">
+
+		Hi $data.get("contact_firstName"),<p>
+	
+		I recently shared your contact information with my colleague, $data.get("to_fullName") at $data.get("to_business"). 
+		
+		I hope $data.get("to_firstName") has been able to contact you and be of service. 
+		Please let me know confidentially if you think I should refer other clients and contacts to  $data.get("to_firstName").<br>
+		
+		<div style="width: 290px; margin: 50px auto 30px;"><a style="display:block; color: #FFF; background-color: #e39720; border-radius: 5px; -moz-border-radius: 5px; font-size: 18px; line-height: 70px; width: 290px; height: 70px; text-align: center; text-decoration: none" href="$com.get("rootUrl")/rwCFB?type=1&token=$data.get("token")&decision=Yes">I recommend $data.get("to_fullName")</a></div>
+
+		<div style="width: 290px; margin: 50px auto 30px;"><a style="display:block; color: #FFF; background-color: #e39720; border-radius: 5px; -moz-border-radius: 5px; font-size: 18px; line-height: 70px; width: 290px; height: 70px; text-align: center; text-decoration: none" href="$com.get("rootUrl")/rwCFB?type=1&token=$data.get("token")&decision=NoC">No comments</a></div>
+
+		If you have any questions, reservations or concerns, please do not hesitate to send me an 
+		email directly at <a href="mailto:$data.get("from_emailAddress")">$data.get("from_emailAddress")</a> 
+		
+		Thank you for your feedback! <p>
+		Sincerely,<br>
+		$data.get("from_fullName")<br>
+
+</div>
+</div>
+</body>
+</html>

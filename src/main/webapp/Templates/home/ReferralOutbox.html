@@ -1,0 +1,54 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralOutbox.html -->
+<table style="width:100%" table-layout:fixed" class="expandableListRow home outBox">
+	<tr>
+		<td class="referralPictureCell iconCell">
+			
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-cust-for-part base-sent" src="<%= rwFB.CDN%>/STN/Images/activity-icon_referral-sent.png">
+				<img class="referralStatusIcon typeIcon-cust-for-part statusIcon-nosale" src="<%= rwFB.CDN%>/STN/Images/activity-icon_negativeFeedback.png">
+				<img class="referralStatusIcon typeIcon-cust-for-part statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_ACCEPTED.png">
+				<img class="referralStatusIcon typeIcon-cust-for-part statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONFIRMED.png">
+				<img class="referralStatusIcon typeIcon-cust-for-part statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_ACCEPTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>	
+
+		<td style="padding-top:5px;padding-bottom:5px">
+	 		
+	 			<!-- regular -->
+	 			<span class="referralListItemTopLine regular">You referred <a class="partnerName" href="#lookupPartnerProfile/Zlhs model.get('toId') Zrhs">Zlhs model.get('to_fullName') Zrhs</a> to <span  class="contactName">Zlhs model.get('contact_fullName') Zrhs</span><img src="<%= rwFB.CDN%>/images/thumbsUp.png" style="height:16px" class="Zlhs $.getConditionalVal(model.get('CFB_Answer1'),'Yes','','hidden') Zrhs"></span>
+	 			<!-- smartphone --> 	
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>				
+			
+		</td>
+		<td class="referralPictureCell extraRefDetail">
+			<div>Zlhs model.get('to_firstName') Zrhs</div>
+			Zlhs $.getImageTN(model,'to_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			
+		</td>	
+		
+		<td class="expandCollapseCell collapsed" stateCell="Zlhs model.get('id') Zrhs" referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralOutboxDetail">
+			<div class="accept expand"> <img class="extraRefDetail" style="float:left" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img class="extraRefDetail" style="float:left" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+		</td>
+		
+		
+		
+		
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" detailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+
+

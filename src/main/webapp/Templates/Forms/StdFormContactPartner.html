@@ -1,0 +1,71 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div class="paragraphBlock" style="width:100%">
+       	<!--<img src="<%= rwFB.CDN%>/images/icons/Contact_jumbo.png"/>-->
+       <table style="width:100%">
+       		<tr>
+       			<td>
+       				<div>
+						<img class="profilePhoto addressbook" src="Zlhs $.getAltValue(model.get('photoUrl_pub'),'<%= rwFB.CDN%>/images/icons/UserWBack.png')Zrhs"/>
+					</div>
+				</td>
+	       
+	       		<td style="vertical-align:top">
+			       	<table class="paragraphBodyText" style="width:100%">
+			          	<tr>
+			          		<td class="Zlhs $.getConditionalVal(model.get('type'),'REFERRAL_PARTNER','paragraphNameText partnerName light','paragraphNameText contactName light')Zrhs">Zlhs $.getConditionalVal(model.get('personalTitle_pub'),'DOCTOR','Dr.','') + ' ' + model.get('firstName_pub') + ' ' + model.get('lastName_pub')Zrhs</td>
+			          	</tr>
+			          	<tr>
+			          		<td>Zlhs $.getPosition(model.get('jobTitle_pub'),model.get('business_pub')) Zrhs </td>
+			          	</tr>
+			          	<!-- 
+			          	<tr>
+			          		<td>
+					          	<div style="padding-top:5px; font-size:12pt;" class="Zlhs $.getConditionalVal(model.get('enrichmentStatus'),'CONFIRMED_MATCH','','hidden')Zrhs">
+									<table style="width:100%">
+										<tr>
+											<td style="width: 100px;vertical-align: top;">
+												<div style="position:relative">
+													<span style="position:absolute;height:23px;width:120px;margin-top:0" class="Zlhs $.getStarClass(.8) Zrhs"></span>
+												</div>
+											</td>
+											<td class="criteriaCatLabel">
+												<div>Matches 10/14 of <a style="color:white" href="#profileTarget">my target customer profile</a></div>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div>
+								<div class="Zlhs $.getConditionalVal(model.get('enrichmentStatus'),'CONFIRMED_MATCH','hidden','')Zrhs">
+									<div class="enrichStatus">
+										<div>Click <span id="fixRecord">here</span> to help us compare this contact to your <a style="color:white" href="#profileTarget">target customer profile</a>.</div>
+									</div>
+									
+								</div>
+							</td>
+						</tr>
+						 -->
+						
+	      			</table>
+	      		</td>
+	      		
+	      	</tr>
+      </table>
+ </div>
+<div class="cPanel std">
+	<ul data-role="listview" data-inset="true" class="formfields">
+	<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+	<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"] %>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+	<% }}; %>
+	</ul>
+</div>
+
+
+
+<div>
+<ul style="display:none">
+<% for (var i=4;i < attributes.length;i++) {var a = attributes[i]; if (a.dataType =='hidden'){%>
+<li><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+<% }}; %>
+</ul>
+</div>

@@ -1,0 +1,28 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<table width="100%" >
+<tr><td>
+<h1><span>Welcome, <%= model.get('firstName') %></span>  What would you like to do?</h1>
+</td>
+<td align="right">
+<table class="referralListItemTopLine">
+            <tr><td><h3>My Invitation Link</h3></td></tr>
+            <tr><td>
+
+            <a style="vertical-align: bottom; width: 94px; height: 14px;" title="click here to email this code" href="mailto:?subject=Here is your invitation to join <%= rwFB.rwTenantDisplayName %>&body=<%= escape("Hi, \n\nYour personal message goes here..\n\n\nPlease goto the link below.\n\n")%><%= rwFB.InvitationLink%>">
+            <span style="font-size:12pt;vertical-align: top;"><%= rwFB.InvitationCode%></span></a>
+            <a href="" onclick="window.prompt('Press CTRL+C on PC or command+C on Mac, then ENTER','<%=rwFB.InvitationLink%>'); return false;"><img src="<%= rwFB.CDN%>/STN/Images/btn_copy-link.png" width="80px"></a>
+
+            </td></tr>
+            <tr><td>
+
+            <div class="fb-share-button" data-href="<%= rwFB.InvitationLink%>" data-type="button"></div>
+            <script type="IN/Share" data-url="<%= rwFB.InvitationLink%>"></script>
+            <a href="//twitter.com/share" class="twitter-share-button" data-count="none" data-text="<%= rwFB.rwTenantDisplayName%>" data-url="<%= rwFB.InvitationLink%>">
+            Tweet</a>
+            <!-- button onclick="hello( 'meetup' ).login()">meetup.com</button -->
+            </td></tr>
+</table>
+</td>
+</tr>
+</table>

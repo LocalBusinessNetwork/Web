@@ -1,0 +1,24 @@
+ 
+	<div class="box-score profilehits <%= ($.hasVal(model.get('publicProfile')))?'':'hidden' %>">
+		<div class="box-score-title">Public Profile Hits</div>
+		<div style="font-size:7pt">15 min delayed</div>
+
+      	<div id="pageviewsCounter" class="box-score-num">
+      		<img style="margin-top:42px" width="20px" src="/images/ajax-loader.gif">
+      		<script>
+ 			if (<%= $.hasVal(model.get('publicProfile')) %> ) {
+	          	var promise = $.ajax({type: 'GET', url: '/metrics?type=pageviews'});
+				promise.done(function(data, textStatus, jqXHR) { 
+					$("#pageviewsCounter").html(data.profileviews);
+				}); 
+			
+				promise.fail(function (response, status, error) {
+					$("#pageviewsCounter").html("!");
+					$("#pageviewsCounter").attr("title", status + ":" + error );
+				}); 
+			}
+      		</script>
+		</div>
+		<div class="box-score-title"><a href="<%= model.get('publicProfile') %>" target="_blank">View Profile</a></div>
+
+    </div>

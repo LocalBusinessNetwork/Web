@@ -1,0 +1,133 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+	<table width="100%" style="padding:15px;table-layout:fixed">
+		<tr>
+			<td width="50%" style="padding-right:10px;vertical-align:top">
+				
+					<div class="profileHeaderSection">
+
+						<table width="100%">
+							<tr>
+								<td class="partnerName">Zlhs model.get('fullName') Zrhs</td>
+								<td rowspan="2">Zlhs $.getImage(model,'logo','<%= rwFB.CDN%>/images/logoPlaceholder.png','memberLogoImage')Zrhs</td>
+								
+							</tr>
+							<tr>
+								<td style="font-size:12pt;font-weight:bold">Zlhs model.get('business') Zrhs</td>
+							</tr>
+						</table>
+				
+					</div>
+					<div style="padding-top:20px;min-height:280px">
+						Zlhs $.getImage(model,'profilePhotoUrl','<%= rwFB.CDN%>/images/tallPhotoPlaceholder.png','partnerProfileImage')Zrhs<font style="font-weight:bold; font-size:14pt;color:#343b7a;">Introduction</font>
+						<p>Zlhs $.getFormattedValInner(model.get('bio'),'\n','<p>','<span style="color:lightgray;">A short introduction to you and your business...</span>') Zrhs</p> 
+					</div>	
+							
+				
+				<!-- qualifications -->		
+					<div style="position: relative;width: 100%; padding-top: 10px;clear: left;">
+				
+						<div style="">
+							
+							<div class="Zlhs $.hasVal(model.get('funfact'))?'bulletHeading':'hidden'Zrhs">Fun Fact (Icebreaker)</div>
+							<div>Zlhs model.get('funfact')Zrhs</div>
+							
+							<%=fieldRenderer(attributes[0],true)%>
+							Zlhs $.getPlaceHolder(model.get('specialties'),'<p class="creditHeadingPlaceHolder">Specialties</p><ul><li class="creditPlaceHolder">Service 1</li><li class="creditPlaceHolder">Service 1</li><li class="creditPlaceHolder">Service 3</li></ul>') Zrhs
+						
+							<%=fieldRenderer(attributes[1],true)%>
+							Zlhs $.getPlaceHolder(model.get('targetCustomers'),'<p class="creditHeadingPlaceHolder">Customers Served</p><ul><li class="creditPlaceHolder">Someone who says ...</li><li class="creditPlaceHolder">Homeowners...</li><li class="creditPlaceHolder">Medium sized businesses...</li></ul>') Zrhs
+				
+							<%=fieldRenderer(attributes[2],true)%>
+							Zlhs $.getPlaceHolder(model.get('featuredIn'),'<p class="creditHeadingPlaceHolder">Featured In</p><ul><li class="creditPlaceHolder">Publication 1, etc.</li><li class="creditPlaceHolder">Publication 2, etc.</li></ul>') Zrhs
+						
+							<%=fieldRenderer(attributes[3],true)%>
+							Zlhs $.getPlaceHolder(model.get('accreditations'),'<p class="creditHeadingPlaceHolder">Accreditations & Affiliations</p><ul><li class="creditPlaceHolder">License </li><li class="creditPlaceHolder">Degree </li><li class="creditPlaceHolder">Member of the Better Business Bureau, etc.</li></ul>') Zrhs
+				
+							<p id="powerPartners" class="Zlhs $.getFormattedVal(model.get('powerpartner1'),'bulletHeading','hidden') Zrhs" style="display: block;">Power Partner Categories</p>
+							Zlhs $.getPlaceHolder(model.get('powerpartner1'),'<p class="creditHeadingPlaceHolder">Power Partners</p><ul><li class="creditPlaceHolder">Advertising and Marketing Services</li><li class="creditPlaceHolder">Business Consulting and Coaching </li><li class="creditPlaceHolder">Business or franchise broker</li></ul>') Zrhs
+							<ul class="profileBulletList creditList">
+								<li class="Zlhs $.getFormattedVal(model.get('powerpartner1'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner1') Zrhs</li>
+								<li class="Zlhs $.getFormattedVal(model.get('powerpartner2'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner2') Zrhs</li>
+								<li class="Zlhs $.getFormattedVal(model.get('powerpartner3'),'profileBulletItem','hidden') Zrhs">Zlhs model.get('powerpartner3') Zrhs</li>
+							</ul>
+				
+							
+						</div>	
+				
+				
+					</div>
+				
+				
+				
+			</td>
+			
+			<td width="50%" style="padding-right:10px;vertical-align:top;border-left: solid 1px gray;padding-left: 10px;">
+					
+					
+					<div class="profileHeaderSection">
+
+						<span style="display:inline-table">
+							<div style="width:210px">
+									<span>Office</span>
+									<span style="white-space:nowrap;float:right">Zlhs model.get('workPhone') Zrhs</span>
+							</div>
+							<div style="width:210px">
+									<span>Mobile</span>
+									<span style="white-space:nowrap;float:right">Zlhs model.get('mobilePhone') Zrhs</span>
+							</div>
+							<div>
+									<a href="mailto:Zlhs model.get('emailAddress') Zrhs">Zlhs model.get('emailAddress') Zrhs</a>
+							</div>
+						</span>
+						<span class="socialLogos" style="float:right">
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('faceBookPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/faceBookLogo.png"/></a>','<img src="<%= rwFB.CDN%>/images/faceBookLogoBW.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('linkedInPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/linkedInLogo.png"/></a>','<img src="<%= rwFB.CDN%>/images/linkedInLogoBW.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('twitterPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/youtubeLogo.png"/></a>','<img src="<%= rwFB.CDN%>/images/youtubeLogoBW.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('yelpPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/yelpLogo.png"/></a>','<img src="<%= rwFB.CDN%>/images/yelpLogoBW.png"/>')  Zrhs
+								Zlhs $.getFormattedVal($.urlPrefix(model.get('webPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="<%= rwFB.CDN%>/images/webPageIcon.png"/></a>','<img src="<%= rwFB.CDN%>/images/webPageIconBW.png"/>')  Zrhs
+						</span>		
+				
+					</div>
+					
+					
+				<!-- render.options.profileChartView.render(render.options.profileChartView.model).el.outerHTML -->
+				
+				
+				<div>
+					<!-- this first list is just a placeholder if no testimonials have been provided -->
+					<ul class="Zlhs $.getFormattedVal(model.get('quote1_title'),'hidden','testimonial') Zrhs">	
+						
+						<li style="position:relative;color: gray;border-color: lightgray;box-shadow: 0 0 0;" class="testimonial">
+							<a  style="cursor:pointer" id="edit">
+								<div class="testimonialTitle" style="color:gray">"Quote Title!"</div>
+								<div class="testimonialText" style="color:gray">"Quotation from one or your customers, partners or a publication"</div>
+								<div class="testimonialSource" style="color:gray">-- Source</div>
+							</a>
+						</li>
+					</ul>
+					
+					<ul class="testimonial">
+										
+						<% for (var i=1;i < 5;i++) {
+						var thisTitle = "quote"+i+"_title";
+						var thisText = "quote"+i+"_body";
+						var thisSource = "quote"+i+"_source";%>
+							<li style="position:relative" class="Zlhs $.getFormattedVal(model.get('<%= thisTitle%>'),'testimonial','hidden')Zrhs">
+								<div class="testimonialTitle">Zlhs model.get('<%= thisTitle%>')Zrhs</div>
+								<div class="testimonialText">Zlhs model.get('<%= thisText%>')Zrhs</div>
+								<div class="testimonialSource">-- Zlhs model.get('<%= thisSource%>')Zrhs</div>
+							</li>
+						<% }; %>
+						
+					</ul>
+				</div>
+				
+				
+				
+				
+				
+			</td>
+		</tr>
+	</table>

@@ -1,0 +1,33 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div>
+	<ul data-role="listview" class="columnHeading" style="border-bottom-width: 0">
+		<li style="border-bottom-width: 0">
+			<fieldset class="ui-grid-d">
+			<%var fields = applet.get('field');%>
+			<%var cls = ['ui-block-a','ui-block-b','ui-block-c','ui-block-d','ui-block-e'];%>
+			<%var rowTemplate = $('<div></div>');%>
+			<%var mLength = (fields.length > 4)?5:fields.length; %>
+			<%for (var i=0;i < mLength;i++) {%>
+				<div class="<%= cls[i]%>"><%= fields[i].label%></div>
+                <%var rowHtml = "<div class='" + cls[i] + "'>" + fieldRenderer(fields[i],true) + "</div>";%>
+                <%rowTemplate.append(rowHtml);%>	
+			<%};%>
+			</fieldset>
+		</li>
+	</ul>
+	</div>
+	<div  style="position:absolute;top:40px;left:2px;right:2px;bottom:0;overflow-y:scroll">
+	<ul data-role="listview" class="listRecords multi-column-list" data-theme="c">
+	<%_.each(cc.models, function(model) {%>
+	<li>
+	<fieldset class="ui-grid-d">
+	<%=	recordBinder(rowTemplate[0], model)%>
+	</fieldset>
+	</li>
+	<%});%>
+	</ul>
+	</div>
+
+
+
+

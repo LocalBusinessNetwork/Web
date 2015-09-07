@@ -1,0 +1,88 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+ <div class="paragraphBlock">
+       	<table class="paragraphBodyText">
+          	<tr>
+          		<td class="paragraphNameText">Zlhs $.getAltValue(model.get('contact_firstName'),'') + ' ' + $.getAltValue(model.get('contact_lastName'),'')Zrhs</td>
+          	</tr>
+
+          	<tr class="Zlhs $.getFormattedVal(model.get('contact_jobTitle'),'','hidden')Zrhs">
+          		<td><%=fieldRenderer(attributes[0],true)%><font style="font-size:10pt"></font></td>
+          	</tr>
+          	<tr class="Zlhs $.getFormattedVal(model.get('contact_business'),'','hidden')Zrhs">
+          		<td><%=fieldRenderer(attributes[1],true)%><font style="font-size:10pt"></font></td>
+          	</tr>          	
+          	<tr class="Zlhs $.getFormattedVal(model.get('contact_workPhone'),'','hidden')Zrhs">
+          		<td><%=fieldRenderer(attributes[2],true)%><font style="font-size:10pt">(work)</font></td>
+          	</tr>
+          	<tr class="Zlhs $.getFormattedVal(model.get('contact_mobilePhone'),'','hidden')Zrhs">
+          		<td><%=fieldRenderer(attributes[3],true)%><font style="font-size:10pt">(mobile)</font></td>
+          	</tr>
+          	<tr class="Zlhs $.getFormattedVal(model.get('contact_email'),'','hidden')Zrhs">
+          		<td><%=fieldRenderer(attributes[4],true)%><font style="font-size:10pt"></font></td>
+          	</tr>
+          	
+          	
+      </table>
+ </div>
+
+	<div>		
+	<div class="notePaper" style='padding:20px;margin:5px'>
+			<div style="padding-bottom:30ox;font-family:helvetica;">
+				<span class="Zlhs model.get('status') Zrhs" class="Zlhs 'status-' + model.get('status')Zrhs">Zlhs $.getAltValue(model.get('status'),'') Zrhs
+				</span>
+			</div>
+			<table width='100%' class="offer" style="border-spacing:0">
+				<tr>
+					<td style='font-size:24pt; font-weight:bold;color:darkblue;font-family:Arial;'>Referral Form</td>
+					
+				</tr>
+				<tr>
+					<td style='border:2px solid darkBlue' colspan='2'>
+						<div class="referralFormSectionTitle">PERSON TO CONTACT</div>
+						<div class="refContactDrillName"><a href="#referralProspect/Zlhs model.get('id') Zrhs">Zlhs model.get('contact_fullName') Zrhs</a></div>
+						<div class="refContactDetails">
+							<div>Zlhs model.get('contact_fullName') Zrhs</div>
+							<div style="display:Zlhs ($.hasVal(model.get('contact_jobTitle')))?'block':'none' Zrhs">Zlhs model.get('contact_jobTitle') Zrhs</div>
+							<div style="display:Zlhs ($.hasVal(model.get('contact_business')))?'block':'none' Zrhs">Zlhs model.get('contact_business') Zrhs</div>
+							<div style="display:Zlhs ($.hasVal(model.get('contact_email')))?'block':'none' Zrhs"><a href="mailto:Zlhs model.get('contact_email') Zrhs">Zlhs model.get('contact_email') Zrhs</a></div>
+							<div style="display:Zlhs ($.hasVal(model.get('contact_workPhone')))?'block':'none' Zrhs"><a href="tel:Zlhs model.get('contact_workPhone')Zrhs">Zlhs model.get('contact_workPhone')Zrhs (w)</a></div>
+							<div style="display:Zlhs ($.hasVal(model.get('contact_mobilePhone')))?'block':'none' Zrhs"><a href="tel:Zlhs model.get('contact_mobilPhone')Zrhs">Zlhs model.get('contact_mobilePhone')Zrhs (m)</a></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style='border-left:2px solid darkBlue;border-right:2px solid darkBlue;border-bottom:2px solid darkBlue' colspan='2'>
+						<div class="referralFormSectionTitle">REFERRAL REASON -- WHY NOW?</div>
+						<div style="padding:5px; font-size:12pt;min-height:40px;" class="Zlhs $.getFormattedVal(model.get('referral_reason'),'','hidden') Zrhs">
+							<span><img style="height: 18px;vertical-align: top;padding-top: 3px;"src="<%= rwFB.CDN%>/images/checkedBox.png"></span>
+							<span>Zlhs rwcore.getLovDisplayVal('C2P_REF_REASON',model.get('referral_reason')) Zrhs</span>
+						</div>
+						<div style="padding:5px; font-size:12pt;min-height:40px;font-style:italic" class="Zlhs $.getFormattedVal(model.get('comments'),'','hidden') Zrhs">Zlhs model.get('comments') Zrhs</div>
+					</td>
+				</tr>
+				<% var customQStartIndex = 11%>
+				<tr>
+					<td class="Zlhs $.getQuestionClass(model,1,'') Zrhs" style='border-left:2px solid darkBlue;border-right:2px solid darkBlue;border-bottom:2px solid darkBlue;font-size:12pt' colspan='2'>
+						
+						<div class="Zlhs $.getQuestionClass(model,1,'referralFormSectionTitle') Zrhs" ><%=fieldRenderer(attributes[customQStartIndex],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,1,'') Zrhs" style="padding-left:5px;padding-top:10px;padding-bottom:10px"><%= fieldRenderer(attributes[customQStartIndex+1],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,2,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+2],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,2,'') Zrhs" style="padding-left:5px;padding-top:10px;padding-bottom:10px"><%= fieldRenderer(attributes[customQStartIndex+3],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,3,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+4],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,3,'') Zrhs" style="padding-left:5px;padding-top:10px;padding-bottom:10px"><%= fieldRenderer(attributes[customQStartIndex+5],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,4,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+6],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,4,'') Zrhs" style="padding-left:5px;padding-top:10px;padding-bottom:10px"><%= fieldRenderer(attributes[customQStartIndex+7],true)%></div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+	</div>
+
+
+<!-- includeFieldDescription is in rwapi -->

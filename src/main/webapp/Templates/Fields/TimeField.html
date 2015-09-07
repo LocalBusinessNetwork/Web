@@ -1,0 +1,7 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; var fldname = f["fldname"]; var required = f["required"]; var readOnlyFld = f["readOnly"];%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<span> Zlhs ($.hasVal(model.get('<%= fldname%>')))?dateFormat(new Date(model.get('<%= fldname%>')),'h:MM TT'):''Zrhs</span>
+<% } else { %>
+<input type="text" class="timepicker" id="<%= fldname%>" altTimeVal="Zlhs $.getTimeString(model,'<%= fldname %>') Zrhs" placeholder="<%= (required == true) ? 'required' :'optional'%>"></input>
+<% } %>

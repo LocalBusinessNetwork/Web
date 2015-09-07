@@ -1,0 +1,27 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+	<div class="wizardReferralConfirmation">
+		<div class="confirmMsg referralStatusConfirmHeading">Confirmation</div>
+		<div class="Zlhs (model.get('protoStatus') != 'ARCHIVED')?'':'hidden' Zrhs">
+			<div class="referralStatusConfirmSubTitle">The lead status will be updated to</div>
+			<div class="referralStatusConfirmStatusDisplay">Zlhs $.getProspectReferralStatusDisplay(model,"protoStatus") Zrhs</div>
+			<div class="referralStatusConfirmNextStep">Zlhs model.get('summaryText') Zrhs</div>	
+		</div>
+		<div class="Zlhs (model.get('protoStatus') == 'ARCHIVED')?'':'hidden' Zrhs">
+			<div class="referralStatusConfirmSubTitle">The lead will be</div>
+			<div class="referralStatusConfirmStatusDisplay">Ignored</div>
+			<div class="referralStatusConfirmNextStep">
+				<ul>
+					<li>Zlhs model.get('from_fullName') Zrhs won't be notified of the update</li>
+					<li>You will still be able to find the lead under My Referrals > Archived</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+	
+
+	
+<!-- includeFieldDescription is in rwapi -->

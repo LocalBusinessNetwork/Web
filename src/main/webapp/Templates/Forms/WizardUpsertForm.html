@@ -1,0 +1,11 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	
+		<ul data-role="listview" data-inset="true" class="editformfields">
+			<% for (var i=0;i < attributes.length;i++) {var a = attributes[i]; if (a.dataType != 'hidden'){%>
+			<li><table width="100%"><tr><td width="25%" align="right"><div><%= a["label"]%>:</div><%=$.includeFieldDescription(a["description"])%></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,false)%></td></tr></table></li>
+			<% } else {%>
+			<li style="display:none;"><%= fieldRenderer(a,true)%></li>
+			<% }}; %>
+		</ul>
+	
+<!-- includeFieldDescription is in rwapi -->

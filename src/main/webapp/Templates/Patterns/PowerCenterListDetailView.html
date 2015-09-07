@@ -1,0 +1,69 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT"> <!-- StdListDetailView.html -->
+<div class="menuPull"></div>
+<div class="pullTab menuPull"><div class="grip"></div><div class= "grip gsmall"></div></div>
+<div style="width:100%;height:100%" style="border-spacing:0;" >
+	<div class="leftPanel">
+				<div style="position:relative;width:100%;height:100%">
+					<div class="rwLeftPanelHeader">
+						 <a class="header-home-link" href="#home"><img src="<%= rwFB.CDN%>/images/icons/homeIconSmall.png"></a>
+						 <div id="navigationButton" class="button menuLaunch">Menu</div>
+						 <div class="rwName beta">
+							  <div class="rwName-label">Successful Thinkers</div>
+							  <div class="rwName-beta">Beta 1.1</div>
+						 </div>
+											
+					</div>
+					<div style="position:absolute;top:50px;bottom:0;width:100%" class="listViewListContainer">
+						<%= listview %>
+						<div class='fetchingPane'></div>
+					</div>
+				</div>
+	</div>
+	<div class="rightPanel">
+				<div style="position:relative;width:100%;height:100%">
+						<div class ="mainPanelHeader" style="text-align:center;padding-top: 12px;height: 38px;">
+						
+							 <span class="rw_appletMenu" style="float:left">
+							 	<%= render.options.appletMenu.render().el.outerHTML %>
+							 </span>
+							 <span style="position:absolute;left:50%">
+							 	<div id="viewTitleFrame" style="position:relative;left:-50%;font-size:18pt;">
+							 		<span id="viewTitle"><%= title%></span><span id="view-title-suffix"></span>
+							 	</div>
+							 	
+							 </span>
+							 <span class="rightMenu">
+								<%= ($.hasVal(render.options.appletMenuRight))?render.options.appletMenuRight.render().el.outerHTML:"" %>
+								<span class="<%=$.getFormattedVal(render.options.tooltipSource,'tooltip','hidden')%>" tooltipSource="<%=$.getAltValue(render.options.tooltipSource,'') %>">
+									<img src="<%= rwFB.CDN%>/images/icons/helpInfo.png" class='contextHelp'>
+								</span>
+								
+							 </span>
+						</div>
+				
+				
+					<div class="mainPanelBody">
+						<%= secondTierNav %>
+						<div class="powerPartnerFrame"><div class="powerPartnerLabel">My Power Partner Professions</div><div class="powerPartnerField"><%= rwFB.powerpartner1 %></div></div>
+						<div id="chartContainer">
+						<div class="leaderboard-need-details hidden">
+						 	<div class="addyourbiz-title">To show you stats on your power partners, we need some additional information...</div>
+						 	<div class="addyourbiz-subtitle leaderboard">This chart will show information about other professionals who serve the same types of customers you do. Click the 'Edit Power Partners' button to identify a few professions.</div>
+						 	<!-- <div id="editSelf" class="addyourbiz-button">Edit Power Partners</div> -->
+						 </div>
+						</div>
+				
+					</div>
+					
+					<!--  render.options.detailview.getActionsBarHTML() -->
+					<!-- navbar went here-->
+					<div class="rw_ViewBar"><%= render.renderViewBar(0) %></div>
+					<div id="SavedSearchContainer" class="savedSearch upsertContainer" style="display:none"></div>	    
+				</div>
+			</div>
+			
+</div>
+
+
+
+

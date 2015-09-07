@@ -1,0 +1,7 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<ul data-role="listview" data-inset="true" class="formfields">
+<% for (var i=0;i <= 1;i++) {var a = attributes[i]; %>
+<li><table width="100%"><tr><td width="25%" align="right"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,false)%></td></tr></table></li>
+<% }; %>
+</ul>

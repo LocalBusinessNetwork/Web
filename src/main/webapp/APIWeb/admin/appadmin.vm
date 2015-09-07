@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <title>ReferralWire Inc</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Add some nice styling and functionality.  We'll just use Twitter Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Nobile:400,700' rel='stylesheet' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='/faviconRW.ico' />
+</head>
+
+<body style="overflow-y:scroll">
+  
+  
+  <div class="container-fluid"> 
+  <div class="row" style="background-color:black">&nbsp;</div>
+  <div class="row" style="background-color:black">
+    <table>
+    <tr width="100%">
+        <td align="left"><img style="margin-left:10px" width="400px" src="//djblw00tnefcx.cloudfront.net/images/mastheadlogo.png"></td>
+        <td width="100%"> 
+          <p style="text-align: left;color:white;vertical-align: bottom;margin-left: 40px;font-size: 25pt;font-family: fantasy;">Developer's Portal</p>
+        </td>
+    </tr>
+    </table>  
+  </div>
+
+ 
+  <!-- Menu -->
+  <div class="row">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/APIWeb/admin/apihome.vm">Home</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">White Labeling<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/whitelabel.vm">Overview</a></li>
+                  <li><a href="#">Setting up URLs & SSL</a></li>
+                  <li><a href="#">Setting up Email addresses</a></li>
+                  <li><a href="#">Setting Tenant Records setup</a></li>
+                  <li><a href="#">Customizing Stylesheets</a></li>
+                  <li><a href="#">Customizing HTML Templates</a></li>
+                  <li><a href="#">Customizing Applets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Integration<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/api-reference.vm">REST API reference</a></li>
+                  <li><a href="/APIWeb/admin/javaSDK.vm">Java SDK</a></li>
+                  <li><a href="/APIWeb/admin/javascriptSDK.vm">JavaScript SDK</a></li>
+                  <li class="active"><a href="/APIWeb/admin/appadmin.vm">App Setup</a></li>
+                  <li>
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#newApp" style="margin-left:30px;margin-top:5px">
+                        Create A New App
+                      </button>
+                  </li>
+                </ul>
+            </li>
+            <li><a href="/APIWeb/admin/techstack.vm">Our Tech Stack</a></li>
+           </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>    
+  </div>  
+
+  <div class="row">
+
+  #set($c=$jsonUtil.put("id", $tenant.get("_id").toString()))
+  <table class="table table-striped">
+  
+  #foreach( $app in $tenantObj.getAPIApps($c) )  
+  <tr> <td>
+  <div class="container">
+      
+  <div class="row" style="background-color:lightblue">
+    <table width=100%>
+    <tr>
+    <td align="left"><img width="40px" src="$app.get("appIcon")"></td>
+    <td align="left" style="font-size:18pt;font-style:italic"> $app.get("appName") </td>
+    <td align="right">
+      <button class="btn btn-default btn-sm"><div onclick="javascript:rwapp.deleteApp('$app.get("_id")')">
+      <span class="glyphicon glyphicon-trash"></span></div>
+      </button>
+    </td>
+    </td>
+    </tr>
+    </table>
+
+    <table class="table table-striped table-condensed">
+
+    <tr>
+    <td align="left"> <h5>App URL : </h5> $app.get("appUrl")</td>
+    <td align="left"> <h5>App ID : </h5> $app.get("appClientId") </td>
+    </tr>
+
+    <tr>
+    <td colspan="2">
+      <h5>Target URL : </h5>$tenant.get("rootUrl")
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2">
+      <h5><h5>CORS URLs: </h5> 
+          <input id="$app.get("appClientId")"  type="text"  size="128" value="$app.get("CorsUris")"/> 
+          <button class="btn btn-default btn-sm"><div onclick="javascript:rwapp.updateApp('$app.get("_id")', $('#$app.get("appClientId")').val())">
+          <span class="glyphicon glyphicon-save"></span></div>
+          </button> 
+         <span class="help-block"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;<small>Comma separeted URLs. Eg: http://localhost:8080, http://www.mydomain.com, https://secure.mycompanydomain.com</small></span>
+    </td>
+ 
+    <tr>
+    <td colspan="2">
+      <h5><h5>App Details: </h5>  $app.get("appDescription")
+    </td>
+
+    <tr>
+    <td colspan="2">
+      <h5><h5>App Secret: </h5>  $app.get("appClientSecret")
+    </td>
+    
+    </tr>
+    </table>
+
+  </div>
+
+
+  </div>
+  </td></tr>
+  #end
+
+  </table>
+  </div>  
+  
+</div>
+
+<div class="modal fade" id="newApp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Crearte A New App</h4>
+      </div>
+
+      <div class="modal-body">
+
+       <form id='registerAppForm' name="registerAppForm" action="javascript:rwapp.registerApp('#registerAppForm')" accept-charset="UTF-8" role="form">
+          <fieldset>
+              
+              <div class="form-group">
+                  <input class="form-control" placeholder="App Name" id="appName" name="appName" type="text">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" placeholder="App URL" id="appUrl" name="appUrl" type="url" value="">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" placeholder="App Icon URL" id="appIcon" name="appIcon" type="url" value="">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" placeholder="App Description" id="appDescription" name="appDescription" type="text" value="">
+              </div>
+
+              <div class="form-group">
+                  <input class="form-control" placeholder="CORS URLs" id="CorsUris" name="CorsUris" type="text" value="">
+                  <span class="help-block"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<small>Comma separeted URLs. Eg: http://localhost:8080, http://www.mydomain.com, https://secure.mycompanydomain.com</small></span>
+              </div>
+
+              <input type=hidden name="tenant_id" id="tenant_id" value="$tenant.get("_id").toString()">
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Save">
+
+          </fieldset>
+      </form>
+
+      </div>
+
+      <div class="modal-footer">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+    <script src="/APIWeb/js/underscore-min.js"></script>
+    <script src="/APIWeb/js/backbone.js"></script>
+
+    <script src="/APIWeb/js/adminclient.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+<script>
+window.onload = function ()
+{
+  window.rwapp = new apiadminclient({});
+}
+</script>
+
+<!-- footer -->
+
+<div class="container-fluid" style="background-color:black;text-color:white"> 
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+<h6> <small> <a href="http://www.referralwire.com" target="_blank">ReferralWire Inc © 2014 </a>| <a href="">User Agreement</a> | <a href="">Privacy Policy</a> | <a href="">Copyright Policy</a> | <a href="">API Terms of Use</a> | <a href="">Platform Guidelines</a> </small></h6>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+ <h4 style="color:white">Powered by</h4>
+
+ <img alt="Amazon" height="30px" src="http://www.servee.com/templates/1009-home/images/feature004.jpg"/>
+
+ <img alt="Tomcat" height="30px" src="http://beginlinux.com/images/server/ubuntu/apache-tomcat-7.gif"/>
+
+ <img alt="mongo" height="30px" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvBehA-U5WK-URN2XexLw2R5gb8HxB6xJCJjBk_yxm3U6wD6dn"/>
+
+ <img alt="java" height="30px" src="http://verse.aasemoon.com/images/e/e8/Sun-java-logo.jpg"/>
+ 
+ <img alt="jersey" height="30px" src="https://jersey.java.net/images/jersey_logo.png"/>
+
+ <img alt="shiro" height="30px" src="https://stormpath.com/images/blog/Apache%20Shiro%20Large.jpg"/>
+
+ </div>
+</div>
+<div class="row">&nbsp;</div>
+</div>
+
+
+</div>
+
+
+</body>
+</html>

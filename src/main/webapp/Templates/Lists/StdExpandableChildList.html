@@ -1,0 +1,50 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<table style="width:100%" table-layout:fixed" class="expandableListRow home">
+	<tr>	
+		<td style="padding-top:5px;padding-bottom:5px">
+	 			<!-- for prospect recommendation -->
+	 			<div>
+		 			<!-- regular -->
+		 			<div class="referralListItemTopLine regular"><%= fieldRenderer(attributes[0],true)%></div>
+		 			<div class="referralListItemBottomLine regular"><%= fieldRenderer(attributes[1],true)%></div>
+		 			<!-- smartphone -->
+					<span class="referralListItemTopLine phone"><%= fieldRenderer(attributes[0],true)%></span> 				
+				</div>
+		</td>
+		
+		<td class="expandCollapseCell" stateCell="Zlhs model.get('id') Zrhs" recommendToggle referralStatus="ACCEPTED" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs">
+			<img src="<%= rwFB.CDN%>/images/icons/addIconBlueTall.png">
+			<span toggleAction="ACCEPTED"  style="display:block;font-size:10px;position:absolute;bottom:0;padding-left:12px;color:#6C9EDA;">Expand</span>
+		</td>
+	
+		
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" detailNode="ACCEPTED">
+		<div class="notePaper" style='padding:20px'>
+			<table style="width:100%">
+				<tr>
+					<td>
+						<div>
+								<ul data-role="listview" data-inset="true" class="formfields">
+								<% for (var i=2;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+								<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+								<% }}; %>
+								</ul>
+						</div>
+					</td>
+					<td style="width: 150px;padding-left: 20px;">
+						<div class="button contextEdit" actionRecord="Zlhs model.get('id') Zrhs" style="padding:10px">Edit</div>
+						<div class="button contextDelete" confirmtemplate="ConfirmDelete" actionRecord="Zlhs model.get('id') Zrhs" setfieldlist="archiveFlag" setvallist="false" style="padding:10px;margin-top:10px">Delete</div>
+					</td>
+				</tr>
+			</table>	
+		</div>
+		
+	</div>
+
+
+
+
+

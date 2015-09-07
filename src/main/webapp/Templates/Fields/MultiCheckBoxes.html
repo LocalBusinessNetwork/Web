@@ -1,0 +1,18 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% if ( readonly == true ) { 
+debugger;%>
+<span>Zlhs $.lookupMultiLovs('<%= attributes.fldname%>','<%= attributes.lovType%>',model)Zrhs</span>
+<% } else { %>
+
+	 <form>
+	 	<% _.each(model.models, function(l) {  %>
+		    <label>
+		        <input type='checkbox' multicheckbox="<%= fldname%>" fldname="<%= fldname%>" name="<%= l.attributes.GlobalVal%>" id='<%= fldname%>' value="<%= l.attributes.GlobalVal%>" class="custom"><%=l.attributes.DisplayVal%>
+		    </label>
+	    <% }); %>
+	</form>
+
+<% } %>
+
+
+ 

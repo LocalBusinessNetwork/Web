@@ -1,0 +1,68 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+	<table width="100%">
+		<tr>
+			<td>
+					<div>
+						<table width="100%">
+							<tr>
+								<td align="left">Zlhs $.getImage(model,'profilePhotoUrl','<%= rwFB.CDN%>/images/tallPhotoPlaceholder.png','partnerProfileImage')Zrhs 
+								</td>
+								<td align="left">
+								<table width="100%"">
+									<tr><td class="partnerName">Zlhs model.get('fullName') Zrhs</td></tr>
+									<tr><td style="font-size:12pt;font-weight:bold">Zlhs model.get('business') Zrhs</td></tr>
+								</table>
+								</td>
+							</tr>
+							
+						</table>
+				
+					</div>
+					
+					<div>
+								<p>Zlhs $.getFormattedValInner(model.get('bio'),'\n','<p>','<span style="color:lightgray;">A short introduction to you and your business...</span>') Zrhs</p> 
+					</div>
+
+					<!-- qualifications -->		
+					<div>
+				
+						<div style="">
+							
+							<%=fieldRenderer(attributes[0],true)%>
+							
+						
+							<%=fieldRenderer(attributes[1],true)%>
+							
+				
+							<%=fieldRenderer(attributes[2],true)%>
+							
+						
+							<%=fieldRenderer(attributes[3],true)%>
+							
+						</div>	
+					</div>
+					
+					<div>
+					
+					<!-- this first list is just a placeholder if no testimonials have been provided -->
+					
+					<ul class="testimonial">
+										
+						<% for (var i=1;i < 5;i++) {
+						var thisTitle = "quote"+i+"_title";
+						var thisText = "quote"+i+"_body";
+						var thisSource = "quote"+i+"_source";%>
+							<li style="position:relative" class="Zlhs $.getFormattedVal(model.get('<%= thisTitle%>'),'testimonial','hidden')Zrhs">
+								<div class="testimonialTitle">Zlhs model.get('<%= thisTitle%>')Zrhs</div>
+								<div class="testimonialText">Zlhs model.get('<%= thisText%>')Zrhs</div>
+								<div class="testimonialSource">-- Zlhs model.get('<%= thisSource%>')Zrhs</div>
+							</li>
+						<% }; %>
+						
+					</ul>
+					</div>
+				
+			</td>							
+		</tr>
+	</table>

@@ -1,0 +1,45 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralInboxInvite.html -->
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+	
+		<td class="referralPictureCell iconCell">
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-cust-for-part" src="<%= rwFB.CDN%>/STN/Images/activity-icon_referral-received.png">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+				<img class="referralStatusIcon statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONFIRMED.png">
+				<img class="referralStatusIcon statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_ACCEPTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+		<td style="padding-top:5px;padding-bottom:5px">				
+				<span class="referralListItemTopLine"><a href="#lookupPartnerProfile/Zlhs model.get('fromId') + '/' + model.get('from_partyType') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> would like to connect <span class="extraRefDetail"> with you.</span></span>
+				<div class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','referralListItemBottomLine extraRefDetail','hidden') Zrhs">Zlhs model.get('comments') Zrhs</div>
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+				
+		</td>
+	
+		<td class="referralPictureCell extraRefDetail">
+			<div style="font-size:8pt">From Zlhs model.get('from_firstName') Zrhs</div>
+			Zlhs $.getImage(model,'from_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+		<td class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','expandCollapseCell unread','expandCollapseCell collapsed') Zrhs" stateCell="Zlhs model.get('id') Zrhs" inboxToggle referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInviteDetail">
+			<div class="accept expand"> <img style="float:left" class ="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class ="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+			<div class="accept acknowledge">View</div>
+		</td>
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+

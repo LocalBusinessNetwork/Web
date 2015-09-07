@@ -1,0 +1,56 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<table width="100%" height="100%" style='border-spacing: 0;' class="masterDetail">
+<tr>
+<td class="leftPanel">
+	<div style="position:relative;width:100%;height:100%">
+		<div class="rwLeftPanelHeader">
+			
+			<span id="navigationButton" class="button menuLaunch">Menu</span>
+			<span class="rwName"><%= rwFB.HeaderName%></span>
+			
+		</div>
+		<div style="left:0;right:0;bottom:0;overflow-y:scroll;position:absolute;top:50px;padding:10px;overflow-y: scroll" class="leftPanelBody">
+			<%= masterview %>
+		</div>
+	</div>
+</td>
+<td class="rightPanel">
+	<div class="chartsPage-right-body">
+		<div class ="mainPanelHeader chartsPage">
+		
+			 <span class="rw_appletMenu" style="float:left">
+			 	<%= render.options.appletMenu.render().el.outerHTML %>
+			 </span>
+			 <span style="position:absolute;left:50%">
+			 	<div style="position:relative;left:-50%;font-size:18pt;">
+			 		<%= title%>
+			 	</div>
+			 	
+			 </span>
+			 <span class="rightMenu">
+				<%= ($.hasVal(render.options.appletMenuRight))?render.options.appletMenuRight.render().el.outerHTML:"" %>
+				<span class="<%=$.getFormattedVal(render.options.tooltipSource,'tooltip','hidden')%>" tooltipSource="<%=$.getAltValue(render.options.tooltipSource,'') %>">
+					<img src="<%= rwFB.CDN%>/images/icons/helpInfo.png" class='contextHelp'>
+				</span>
+				
+			 </span>
+		</div>
+		<div class="mainPanelBody">
+				
+				<%= secondTierNav %>
+				<div style="top:160px;left:30px;right:30px;overflow-x:hidden;position:absolute">
+					<div id="chartTitle" class="attendanceChartTitle" ></div>
+					<div id="chart1">
+							
+					</div>
+				</div>
+						
+	
+		</div>
+		<div><%= viewBar %></div>
+		
+	</div>	
+</td>
+</tr>
+</table>

@@ -1,0 +1,21 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<ul>
+<% _.each(attributes, function(a) {
+ var iconStr = a.iconSrc; 
+ var label=a.label; 
+ var liHREF_Display = ($.hasVal(a.href))?"inline":"none";
+ var liNoHREF_Display = ($.hasVal(a.href))?"none":"inline";
+ %>
+	<li style="display:<%= liHREF_Display%>">
+		<a id="<%=a.name%>" href="Zlhs $.formatHref('<%= a.href%>','<%= a.idField%>', model) Zrhs"  style="padding-top:5px;padding-bottom:5px;padding-left:0;padding-right:0;cursor:pointer" class="<%= a.className%>"><%= $.getFormattedVal(iconStr,"<img src='ZfieldVal'/>",label)%></a>
+		<%=a.label%>
+		<!--confirmation="<%= a.confirmation%>" confirmtemplate="<%= a.confirmtemplate%>" setfieldlist="<%=a.setfieldlist%>" setvallist="<%=a.setvallist%>" refreshlist="<%=a.refreshlist%>"-->
+	</li>
+	<li style="display:<%= liNoHREF_Display%>">
+		<a id="<%=a.name%>" style="padding-top:5px;padding-bottom:5px;padding-left:0;padding-right:0;cursor:pointer" class="<%= a.className%>" confirmation="<%= a.confirmation%>" confirmtemplate="<%= a.confirmtemplate%>" setfieldlist="<%=a.setfieldlist%>" setvallist="<%=a.setvallist%>" refreshlist="<%=a.refreshlist%>"><%= $.getFormattedVal(iconStr,"<img src='ZfieldVal'/>",label)%></a>
+		<%=a.label%>
+		
+	</li>
+	<% }); %>
+</ul>
+<!-- params for confirmation are used to support the presentment of confirmation dialog window and the setting of field vals when the user confirms. If confirmation='false' they're ignored -->

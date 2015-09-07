@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>ReferralWire Inc</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Add some nice styling and functionality.  We'll just use Twitter Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+ 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Nobile:400,700' rel='stylesheet' type='text/css'>
+	<link href='/style/corp.css' rel='stylesheet' type='text/css'>
+	<link rel='shortcut icon' type='image/x-icon' href='/faviconRW.ico' />
+</head>
+
+<body style="overflow-y:scroll">
+	
+	
+  <div class="container-fluid"> 
+  <div class="row" style="background-color:black">&nbsp;</div>
+	<div class="row" style="background-color:black">
+    <table>
+    <tr width="100%">
+        <td align="left"><img style="margin-left:10px" width="400px" src="//djblw00tnefcx.cloudfront.net/images/mastheadlogo.png"></td>
+        <td width="100%"> 
+          <p style="text-align: left;color:white;vertical-align: bottom;margin-left: 40px;font-size: 25pt;font-family: fantasy;">Developer's Portal </p>
+        </td>
+
+    </tr>
+    </table>  
+  </div>
+
+ 
+<!-- Menu -->
+  <div class="row">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/APIWeb/admin/apihome.vm">Home</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">White Labeling<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/whitelabel.vm">Overview</a></li>
+                  <li><a href="#">Setting up URLs & SSL</a></li>
+                  <li><a href="#">Setting up Email addresses</a></li>
+                  <li><a href="#">Setting Tenant Records setup</a></li>
+                  <li><a href="#">Customizing Stylesheets</a></li>
+                  <li><a href="#">Customizing HTML Templates</a></li>
+                  <li><a href="#">Customizing Applets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Integration<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/api-reference.vm">REST API reference</a></li>
+                  <li><a href="/APIWeb/admin/javaSDK.vm">Java SDK</a></li>
+                  <li><a href="/APIWeb/admin/javascriptSDK.vm">JavaScript SDK</a></li>
+                  <li><a href="/APIWeb/admin/appadmin.vm">App Setup</a></li>
+                </ul>
+            </li>
+            <li>
+            <a href="/APIWeb/admin/techstack.vm">Our Tech Stack</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>    
+  </div>  
+
+  <div class="row" style="margin-left:20px;margin-right:20px">
+  <div class="col-md-3" style="margin-top:10px;">
+      <div style="margin-top:50px">
+      <p class="lead"> Served Soup to Nuts, Beautiful & Delicious.</p><h6>under 60 mins.</h6>
+      </div>
+      
+      <div style="margin-top:50px">
+      <table class="table">
+        <tr class="success">
+          <td> <strong>Whitelabeled customers</strong> </td>
+        </tr>
+        <tr>
+          <td>Successful Thinkers network</td>
+        </tr>
+      </table>
+      </div>
+  </div>
+
+  <div class="col-md-9" style="border-left:1px solid #333;">
+  <h2> Whitelabeling Program </h2>
+  
+  <p> Brand recognition by the partners is the most important factor for any Enterprise. ReferralWire Platform is built to preserve such Brand preservation, yet deliver a powerful demand generation solutoin to partner network. </p>
+
+  <p> ReferralWire platform provides an out-of-the-box, beautifully architected application for Brand owners quick adaption. With very few stylesheet changes, out-of-the-box application can be deployed and reference thru brand owner's URLs, integrate right into the existing Web assets. Custom tailered IPhone and Android applicaitons for this can also deployed within a weeks, passing thru Apple's Appstore processes.</p>
+
+  <p>For More details on how to, please contact Our sales team. </p>
+  
+  <hr>
+
+   <img width="600px" src="/APIWeb/images/stnhome.png" alt="hub" class="img-rounded"/>   
+ 
+  <hr>  
+  </div>
+  </div>    
+
+</div>
+
+
+<!-- footer -->
+
+<div class="container-fluid" style="background-color:black;text-color:white"> 
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+<h6> <small> <a href="http://www.referralwire.com" target="_blank">ReferralWire Inc © 2014 </a>| <a href="">User Agreement</a> | <a href="">Privacy Policy</a> | <a href="">Copyright Policy</a> | <a href="">API Terms of Use</a> | <a href="">Platform Guidelines</a> </small></h6>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+ <h4 style="color:white">Powered by</h4>
+
+ <img alt="Amazon" height="30px" src="http://www.servee.com/templates/1009-home/images/feature004.jpg"/>
+
+ <img alt="Tomcat" height="30px" src="http://beginlinux.com/images/server/ubuntu/apache-tomcat-7.gif"/>
+
+ <img alt="mongo" height="30px" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvBehA-U5WK-URN2XexLw2R5gb8HxB6xJCJjBk_yxm3U6wD6dn"/>
+
+ <img alt="java" height="30px" src="http://verse.aasemoon.com/images/e/e8/Sun-java-logo.jpg"/>
+ 
+ <img alt="jersey" height="30px" src="https://jersey.java.net/images/jersey_logo.png"/>
+
+ <img alt="shiro" height="30px" src="https://stormpath.com/images/blog/Apache%20Shiro%20Large.jpg"/>
+
+ </div>
+</div>
+<div class="row">&nbsp;</div>
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</body>
+</html>

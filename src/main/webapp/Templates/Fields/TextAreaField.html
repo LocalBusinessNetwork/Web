@@ -1,0 +1,14 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; 
+var fldname = f["fldname"]; 
+var required = f["required"]; 
+var readOnlyFld = f["readOnly"];
+var defaultHeight = ($.hasVal(f["defaultHeight"]))?f["defaultHeight"]:"120px";
+defaultHeight = "min-height:"+defaultHeight;
+%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<span document id='<%= fldname%>'></span>
+<% } else { %>
+<textarea id='<%= fldname%>' value="" style="<%= defaultHeight%>"  placeholder="<%= (required == true) ? 'required' :'optional'%>"></textarea>
+<% } %>
+

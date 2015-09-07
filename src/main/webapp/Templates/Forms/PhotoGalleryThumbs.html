@@ -1,0 +1,118 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div id="slideshowcontainer" style="display:none;z-index: 100;position: absolute;top: 0;bottom: 0;left: 0;right: 0;cursor:trigger;overflow-y:hidden"></div>
+ 	<div class="wrapper">
+	<div class="scroller"">
+	
+	<span>Zlhs $.getPlaceHolder(model.get('image_url_1'),'<ul class="gallery"><li><img id="edit" style="cursor:pointer" src="<%= rwFB.CDN%>/images/photoGalleryPlaceholder.jpg"></li></ul>')Zrhs</span>
+	<!-- 			
+				<ul class="gallery">
+									
+					<% for (var i=0;i < attributes.length;i=i+2) {
+					var a = attributes[i];
+					var thisId = "photo" + i/2;
+					var thisImgUrl = a['fldname'];
+					var b = attributes[i+1]; 
+					var thisCaption = b['fldname']; 
+					%>
+						<li style="position:relative" class="Zlhs $.getPlaceHolder(model.get('<%= thisImgUrl%>'),'hidden')Zrhs">
+							<a launchshow>
+								<img id="<%= thisId%>" src="Zlhs model.get('<%= thisImgUrl%>')Zrhs"/>
+							</a>
+							<span class="thumbcaption">Zlhs model.get('<%= thisCaption%>')Zrhs
+							</span>
+						</li>
+					<% }; %>
+														
+					
+					
+				</ul>
+	-->			
+	<table width="100%" class = "thumbtable">
+		<tr>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_1','<%= rwFB.CDN%>/images/emptyPic.png','','photo0')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_1'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_1'),'')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_2','<%= rwFB.CDN%>/images/emptyPic.png','','photo1')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_2'),'thumbcaption','hidden')Zrhs">Zlhs model.get('image_caption_2')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_3','<%= rwFB.CDN%>/images/emptyPic.png','','photo2')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_3'),'thumbcaption','hidden')Zrhs">Zlhs model.get('image_caption_3')Zrhs</span>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_4','<%= rwFB.CDN%>/images/emptyPic.png','','photo3')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_4'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_4'),'')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_5','<%= rwFB.CDN%>/images/emptyPic.png','','photo4')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_5'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_5'),'')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_6','<%= rwFB.CDN%>/images/emptyPic.png','','photo5')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_6'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_6'),'')Zrhs</span>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_7','<%= rwFB.CDN%>/images/emptyPic.png','','photo6')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_7'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_7'),'')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_8','<%= rwFB.CDN%>/images/emptyPic.png','','photo7')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_8'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_8'),'')Zrhs</span>
+				</div>
+			</td>
+			<td width="33%">
+				<div style="width:100%;height:100%; position:relative">
+					<a launchshow>
+						Zlhs $.getImageWithId(model,'image_url_9','<%= rwFB.CDN%>/images/emptyPic.png','','photo8')Zrhs
+					</a>
+					<span class="Zlhs $.getFormattedVal(model.get('image_caption_9'),'thumbcaption','hidden')Zrhs">Zlhs $.getAltValue(model.get('image_caption_9'),'')Zrhs</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+				
+	</div>
+
+	
+
+
+	

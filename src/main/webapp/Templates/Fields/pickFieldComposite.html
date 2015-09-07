@@ -1,0 +1,17 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% 
+var f = attributes;  
+var required = f["required"]; 
+var readOnlyFld = f["readOnly"];
+var fields = f["fields"];
+var fAry = fields.split(",");
+for (i=0;i<fAry.length;i++){
+var fldname = fAry[i];
+%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<%=(i>0)?' ':''%>
+<span id='<%= fldname%>'><%=(i=0)?'None':''%></span>
+<% } else { %>
+<span id='<%= fldname%>'><%=(i=0)?'None':''%></span>
+<% }} %>
+

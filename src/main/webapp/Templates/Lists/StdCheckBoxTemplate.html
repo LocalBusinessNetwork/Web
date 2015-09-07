@@ -1,0 +1,14 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% if ( readonly == true ) { %>
+<span>Zlhs getLovDisplayVal ("<%= model.models[0].get('LovType')%>", model.get('<%= fldname%>'))Zrhs</span>
+<% } else { %>
+	
+	<select name="<%= fldname%>" id="<%= fldname%>" multiple="multiple" data-native-menu="false">
+		<option>Choose One</option>
+		<% _.each(model.models, function(l) {  %>
+		   <option value='<%= l.attributes.GlobalVal%>'><%= l.attributes.DisplayVal%></option>
+		<% }); %>
+	</select>
+
+<% } %>
+ 

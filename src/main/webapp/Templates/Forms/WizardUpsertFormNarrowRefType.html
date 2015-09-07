@@ -1,0 +1,27 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	
+		<ul data-role="listview" data-inset="true" class="editformfields">
+			<% for (var i=0;i < attributes.length;i++) {
+			var a = attributes[i]; 
+			if ($.hasVal(data)){
+				a.dynamicFilterValue = data.get(a['dynamicFilterField']);
+			}
+			var re = new RegExp(/\[(.*?)\]/g);
+			var label = a["label"];
+			var fieldNameAry = label.match(re);
+			if ($.hasVal(fieldNameAry) && fieldNameAry.length > 0){
+				debugger;
+				for (j=0;j<fieldNameAry.length;j++){
+					var field = fieldNameAry[j];
+					var fieldName = field.replace("[","");
+					fieldName = fieldName.replace("]","");
+					var getFieldExp = "Zlhs model.get('"+fieldName+"')Zrhs";
+					label = label.replace(field,getFieldExp);
+				}
+			}
+			{%>
+			<li class="wizardFormLine"><div class="narrowFormLabel"><%= label%></div><div><%= fieldRenderer(a,false)%></div></li>
+			<% }}%>
+		</ul>
+	
+<!-- includeFieldDescription is in rwapi -->

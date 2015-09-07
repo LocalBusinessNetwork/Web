@@ -1,0 +1,81 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!--
+<div style="position:relative;width:100%;height:100%">
+
+	<div class="mainPanelBody">
+		<div class="rw_details">< listHTML></div>
+
+	</div>
+
+	<div class="rw_ViewBar">< viewBarHTML ></div>
+</div>
+-->
+
+			<div data-role="header" class="phoneHeader">
+				<!--
+				<table width="100%">
+					<tr>
+					<td align="left" width="50px">
+						<a id="backBtn">
+						<img width="30px" height="30px" src="/<%= rwFB.CDN%>/images/icons/arrow_left.png"/></a>
+					</td> 
+					<td align="center"><span id="title" class="ReferralWireName">ReferralWire</span></td>
+					<td align="right" width="50px">
+						<a style="cursor:pointer" id="menuButton">
+						<img id="menuIcon" width="50px" height="20px" src="/<%= rwFB.CDN%>/images/icons/closedPhoneMenu.png"/></a> 
+						<img id="menuAddIcon"  style="display:none" width="50px" height="20px" src="/<%= rwFB.CDN%>/images/icons/addIcon.png"/></a> 
+						<a id="menuButtonNext"  style="display:none" class="button">Next</a> 
+						<a id="menuButtonSave"  style="display:none" class="button">Save</a> 
+					</tr>
+				</table>
+				-->
+				<div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar">
+					<div id="title" class="ReferralWireName" style="display:inline;line-height:41px"><%= rwFB.HeaderName%></div>
+					<a style="cursor:pointer;position:absolute;left:5px;top:1px" id="menuButton">
+						<!-- <img id="menuIcon" width="40px" height="40px" src="/<%= rwFB.CDN%>/images/icons/menuIcon2.png"/> -->
+						<img id="menuIcon" width="40px" height="40px" src="<%= rwFB.CDN%>/STN/Images/menuIconWhite.png">
+					</a>
+					
+					<a id="actionLink" style="cursor:pointer;position:absolute;right:5px;top:1px"  >
+						<!-- <img id="actionIcon" width="40px" height="40px" src="/<%= rwFB.CDN%>/images/icons/phoneAction.png"/> -->
+						<img id="actionIcon" height="40px" src="<%= rwFB.CDN%>/STN/Images/phoneAction.png"/>
+					</a> 						
+				</div>
+			</div>
+			<div class="phoneMenu" >
+			<div class="pMenuCtr">	
+				<div class="pMenuCtrInner">
+					<%= appletMenuHTML%>
+				</div>
+			</div>
+			
+			</div>
+
+
+			<div class="subMenuBody">
+		        <div data-role="content"> 
+	        
+			        <div id="ViewContentSection" style="overflow:hidden">
+
+					        <div style="position:relative;width:100%;height:100%">
+	
+								<div class="mainPanelBody">
+									<div class="rw_details">
+										<%= listHTML%>
+										<%= formView2%>
+										<%= formView3%>
+									</div>
+							
+								</div>
+							
+								<div class="rw_ViewBar"><%= viewBarHTML %></div>
+							</div>
+				        	
+
+	
+					</div>
+
+				</div>
+			</div>
+
+

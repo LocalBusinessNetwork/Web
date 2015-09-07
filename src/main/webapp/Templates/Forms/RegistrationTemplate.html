@@ -1,0 +1,25 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<form id='<%= applet["name"]%>'>
+<table width="100%" align="center">
+<tr valign="top">
+<td align="right">
+<a id="lnProfileBtn" href="#register">
+<img width='100px' height='40px' src='<%= rwFB.CDN%>/images/icons/linkedin.jpg'/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%" align="center">
+<% _.each(attributes, function(a) { var fldname =  a["fldname"]; %>
+<tr>
+<td align='left' width='50%'><span style="margin-left: 10px;"><%= a["label"]%>:</span><td>
+<td align='left'><%= fieldRenderer(a, false)%></td>
+</tr>
+<% }); %>
+</table>
+<table width="100%" align="center">
+<tr>
+<td align="center"><a id="save" href="#home" data-role="button" data-mini="true" data-inline="true" data-theme="b">Register</a></td>
+</tr>
+</table>
+</form>

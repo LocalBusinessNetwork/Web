@@ -1,0 +1,52 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div class="searchForm">	
+		<div class="searchFormTitle">
+			<div class="searchFormName">Zlhs ($.hasVal(model.get('searchName')))?model.get('searchName'):'Ad Hoc Search'Zrhs</div>
+			<!-- <div class="button">Make this your	 default filter?</div>  -->
+		</div>
+			
+		<ul data-role="listview" data-inset="true" class="editformfields searchformfields">
+			<% for (var i=2;i < attributes.length;i++) {
+			
+			var a = attributes[i]; 
+			if ($.hasVal(data)){
+				a.dynamicFilterValue = data.get(a['dynamicFilterField']);
+			}
+			var re = new RegExp(/\[(.*?)\]/g);
+			var label = a["label"];
+			var fieldNameAry = label.match(re);
+			var className = (a.hasOwnProperty('className'))?a.className:"";
+			
+			if ($.hasVal(fieldNameAry) && fieldNameAry.length > 0){
+
+				for (j=0;j<fieldNameAry.length;j++){
+					var field = fieldNameAry[j];
+					var fieldName = field.replace("[","");
+					fieldName = fieldName.replace("]","");
+					var getFieldExp = "Zlhs model.get('"+fieldName+"')Zrhs";
+					label = label.replace(field,getFieldExp);
+					
+				}
+			}
+
+			{%>
+			<% if(className == "distance-length"){%>
+				<li class="horizontalRule">&nbsp;</li>
+			<% }%>
+			
+			<li class="wizardFormLine control-type-<%=a['dataType']%> <%= className %> Zlhs $.getFormattedVal(model.get('<%= a.fldname %>'),'savedSearchSet','')Zrhs">
+				<div class="narrowFormLabel">
+					<%= label%>
+					<div class="narrowFieldDescription"><%=$.includeFieldDescription(a["description"])%></div>
+				</div>
+				<div><%= fieldRenderer(a,false)%>
+				</div>
+			</li>
+			<% if(className == "distance-from"){%>
+				<li class="horizontalRule">&nbsp;</li>
+			<% }%>
+			<% }}%>
+		</ul>
+	</div>
+	
+<!-- includeFieldDescription is in rwapi -->

@@ -1,0 +1,25 @@
+<div style="display:inline-block;width:100%;padding-top:15px">
+	  <div class="paragraphBlock" style="float:left;display:inline">
+       	<!--<img src="<%= rwFB.CDN%>/images/icons/Contact_jumbo.png"/>-->
+		<img class="profilePhoto" src="Zlhs $.getAltValue(model.get('photoUrl_pub'),'<%= rwFB.CDN%>/images/icons/UserWBack.png')Zrhs"/>
+       </div>
+       <div class="paragraphBlock" style="display:inline;font-size:14px">
+
+		       	<table class="paragraphBodyText">
+		          	<tr>
+		          		<td class="paragraphNameText partnerName light">Zlhs $.getConditionalVal(model.get('personalTitle_pub'),'DOCTOR','Dr.','') + ' ' + model.get('firstName_pub') + ' ' + model.get('lastName_pub')Zrhs</td>
+		          	</tr>
+		          	<tr>
+		          		<td>Zlhs $.getPosition(model.get('jobTitle_pub'),model.get('business_pub')) Zrhs </td>
+		          	</tr>
+		
+		          	
+		        </table>
+	    </div>
+</div>
+		<ul data-role="listview" data-inset="true" class="formfields">
+		<% for (var i=0;i < (attributes.length);i++) {var a = attributes[i]; %>
+		<li><div class="phoneFormLabel"><%= a["label"]%>:</div><div><%= fieldRenderer(a,true)%></div></li>
+		<% }; %>
+		</ul>
+

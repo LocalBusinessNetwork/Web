@@ -1,0 +1,14 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<% _.each(attributes, function(a) { var iconStr = a.iconSrc; var label=a.label;
+	
+	var hideIf = ($.hasVal(a.hideIf))?a.hideIf:"";
+	var hideIfProps = hideIf.split(",");
+	var hideIfField = (hideIfProps.length > 0)?hideIfProps[0]:'id';
+	var hideIfVal = (hideIfProps.length > 1)?hideIfProps[1]:'na';
+	var hideIf2 = (hideIfProps.length > 2)?hideIfProps[2]:'na';	
+	if (hideIfVal == 'self'){hideIfVal = rwFB.uId;}
+%>
+		<span class="Zlhs $.getConditionalConnected(model.get('<%= hideIfField%>'),'<%= hideIfVal%>','hidden','', '<%= hideIf2%>')Zrhs"><a id="<%= a.name%>" action="<%=a.action%>" confirmation="<%= a.confirmation%>" confirmtemplate="<%= a.confirmtemplate%>" setfieldlist="<%=a.setfieldlist%>" setvallist="<%=a.setvallist%>" refreshlist="<%=a.refreshlist%>" upsertApplet="<%=a.upsertApplet%>"  class="<%= a.className%>"><%= $.getFormattedVal(iconStr,"<img src='ZfieldVal'/>",label)%></a></span>
+	<% }); %>
+<!-- params for confirmation are used to support the presentment of confirmation dialog window and the setting of field vals when the user confirms. If confirmation='false' they're ignored -->

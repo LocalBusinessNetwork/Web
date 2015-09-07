@@ -1,0 +1,48 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralOutboxInvite.html -->
+<table style="width:100%" table-layout:fixed" class="expandableListRow home outBox">
+	<tr>
+
+		<td class="referralPictureCell iconCell">
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+	
+		<td style="padding-top:5px;padding-bottom:5px">
+	 		
+				<span class="referralListItemTopLine">You invited <a href="Zlhs $.getP2POutPartyHREF(model,'toId') Zrhs" class="partnerName">Zlhs model.get('to_fullName') Zrhs</a> to connect.</span>
+				 	
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</font></div>
+			
+		</td>
+
+		<td class="referralPictureCell extraRefDetail">
+			<div>Zlhs model.get('to_firstName') Zrhs</div>
+			Zlhs $.getImage(model,'to_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+		<td class="expandCollapseCell collapsed" stateCell="Zlhs model.get('id') Zrhs" referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs" detailSnippetId="ReferralInviteDetail">
+			<div class="accept expand"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+		</td>
+		
+		
+		
+		
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" detailNode="Zlhs model.get('status') Zrhs">
+		
+		
+	</div>
+
+
+
+
+

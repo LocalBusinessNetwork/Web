@@ -1,0 +1,24 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div class="paragraphBlock">
+       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+		Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','profilePhoto')Zrhs
+       </div>
+       <div class="paragraphBlock">
+       	<table class="paragraphBodyText">
+          	<tr>
+          		<td class="paragraphNameText">Zlhs $.getConditionalVal(model.get('personalTitle'),'DOCTOR','Dr.','') + ' ' + model.get('firstName') + ' ' + model.get('lastName')Zrhs</td>
+          	</tr>
+          	<tr>
+          		<td>Zlhs $.getPosition(model.get('jobTitle'),model.get('business')) Zrhs </td>
+          	</tr>
+      </table>
+ </div>
+<div class="cPanel std">
+	<ul data-role="listview" data-inset="true" class="formfields">
+	<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+	<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+	<% }}; %>
+	</ul>
+</div>
+

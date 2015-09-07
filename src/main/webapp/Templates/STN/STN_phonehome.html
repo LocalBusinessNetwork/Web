@@ -1,0 +1,44 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+			<div data-role="header" class = "phoneHeader">
+			<!-- <div data-role="header" class="phoneHeader">-->
+				<div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar">
+				<!-- <div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar"> -->
+					<div id="title" class="ReferralWireName" style="display:inline;line-height:41px"><%= rwFB.HeaderName%></div>
+					<a style="cursor:pointer;position:absolute;left:5px;top:1px" id="menuButton">
+						<img id="menuIcon" width="40px" height="40px" src="<%= rwFB.CDN%>/images/icons/menuIcon2.png"/>
+					</a> 					
+				</div>
+			</div>
+
+
+			<div class="subMenuBody" style="padding-top:7px">
+
+				<div style="margin-top: -20px;" section applet="" template="HomePageTitleSummary" renderer="SimpleView" model="self"></div>
+				
+				<div id="refer" class="button blue homeReferralButton">Make a referral !</div>
+
+				<div class="newsFeed">
+					<div class="newsFeedTitle"><img src="<%= rwFB.CDN%>/images/icons/newspaperWhite.png" class="titleIcon">News feed</div>
+					<div data-role="navbar">
+					    <ul>
+					    	<li><a toggle="ReferralInbox" id="referralTab" class="ui-btn-active referralTab" style="cursor:pointer"><div class="tabIcon">Referrals</div></a></li>
+					        <!--li><a toggle="ActivityList" id="messageTab" style="cursor:pointer" class="messageTab"><div class="tabIcon">Messages</div></a></li -->
+					        <li><a toggle="AttendeeMyExpectedList" id="eventTab" class="eventTab" style="cursor:pointer"><div class="tabIcon">Events</div></a></li>
+					    </ul>
+					</div>
+					<div id="ReferralInbox" class="newsFeedList">
+
+						<div id="referralInboxView" section applet="ReferralNewsFeed" act="NewsFeed" template="rwApp.getReferralInboxHomeTemplate" options="filter=false,noRecordsMsg='You have received no referrals in the last two weeks',listItemClass='rw_expandable'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="rw_created_on" sortDir="DESC"></div>
+					</div>
+
+					<div id="AttendeeMyExpectedList" style="display:none;" class="newsFeedList">
+						<div section applet="MyUpcomingEvents" template="EventExpectedExpandList" options="filter=false,noRecordsMsg='You have no upcoming events'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="datetime" sortDir="ASC"></div>
+					</div>
+				</div>
+
+				
+			</div>
+
+															

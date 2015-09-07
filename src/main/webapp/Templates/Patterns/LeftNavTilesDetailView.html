@@ -1,0 +1,51 @@
+<META HTTP-EQUIV="EXPIRES"  CONTENT="Sun, 16 Jun 2013 23:59:59 GMT">
+<div class="menuPull"></div>
+<div class="pullTab menuPull"><div class="grip"></div><div class= "grip gsmall"></div></div>
+<div style="width:100%;height:100%" style="border-spacing:0;" >
+	<div class="leftPanel">
+		<div style="position:relative;width:100%;height:100%">
+			<div class="rwLeftPanelHeader">
+				
+				<span id="navigationButton" class="button menuLaunch">Menu</span>
+				<span class="rwName"><%= rwFB.HeaderName%></span>
+				
+			</div>
+			<div class="leftPanelProfileNav">
+				<%= listview %>
+			</div>
+		</div>
+	</div>
+	<div class="rightPanel">
+		<div style="position:relative;width:100%;height:100%">
+			<div class ="mainPanelHeader" style="text-align:center;padding-top: 12px;height: 38px;">
+			
+				 <span class="rw_appletMenu" style="float:left">
+				 	<%= render.options.appletMenu.render().el.outerHTML %>
+				 </span>
+				 <span style="position:absolute;left:50%">
+				 	<div style="position:relative;left:-50%;font-size:18pt;">
+				 		<%= title%>
+				 	</div>
+				 	
+				 </span>
+				 <span class="rightMenu">
+					<%= ($.hasVal(render.options.appletMenuRight))?render.options.appletMenuRight.render().el.outerHTML:"" %>
+					<span class="<%=$.getFormattedVal(render.options.tooltipSource,'tooltip','hidden')%>" tooltipSource="<%=$.getAltValue(render.options.tooltipSource,'') %>">
+						<img src="<%= rwFB.CDN%>/images/icons/helpInfo.png" class='contextHelp'>
+					</span>
+					
+				 </span>
+			</div>
+			<div class="mainPanelBody" style="bottom:65px">
+				<div class="rw_details"><%= detailBody%></div>
+			</div>
+			<div class='mainPanelFooterNav'> 
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

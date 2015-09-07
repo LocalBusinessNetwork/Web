@@ -1,0 +1,317 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	
+	<!-- <div class="button joinChapter">Join Now!</div>-->
+	
+	<style>
+		.dir-top-horizontal {
+			height:280px;
+			width:100%;
+		}
+		.dir-float-left {
+			float:left;
+			margin-right: 10px;
+		}
+		.dir-top-left,.dir-top-center,.dir-top-right {
+			height:100%;
+		}
+		
+		.dir-top-center {
+			float:right;
+		}
+		
+		.dir-name {
+			font-family: bebasneue;
+			font-size: 24pt;
+		}
+		.dir-address-details {
+			font-family: century;
+			font-size: 14pt;
+			color:#466BB1;
+		}
+		.dir-logo .memberLogoImage{
+			/*height:100px;*/
+			max-width: 140px;
+		}
+		
+		.dir-top-middle-left {
+			clear:left;
+			margin-top: 20px;
+		}
+		
+		.contactpoint {
+			width:80%;
+			max-width: 300px;
+			margin-left:40px;
+			margin-right:auto;
+			margin-top: 4px;
+			margin-bottom: 2px;
+			font-size: 11pt;
+			padding-left:25px;
+			background-repeat:no-repeat;
+			background-size: 18 18;
+		}
+		
+		.dir-phone {
+			background-image:url(/images/directory/phone.png);
+			background-size: 18px 18px;
+			background-position: 5px;
+		}
+		.dir-email {
+			background-image:url(/images/directory/Mail.png);
+			background-size: 24px 24px;
+			background-position: 2px;
+		}
+		.dir-web {
+			background-image:url(/images/directory/web.png);
+						background-position: 5px 0px;
+			background-size: 15px 15px;
+		}
+		.dir-hours {
+			background-image:url(/images/directory/clock.png);
+			background-position: 5px 0px;
+			background-size: 15px 15px;
+		}
+		
+		.dir-top-lower-left {
+			margin-top: 20px;
+			clear:left;
+			margin-left: 30px;
+		}
+		.dir-score-ribbon img {
+			height:60px;
+		}
+		.dir-score-ribbon {
+			text-align:center;
+		}
+		
+		.dir-score-label {
+			font-family:century;
+			font-size:14pt;
+			text-align:center;
+		}
+		.dir-score-value {
+			font-family:bebasneue;
+			font-size:20pt;
+			text-align:center;
+		}
+		.dir-score-whatsthis{
+			font-size:10pt;
+			font-weight:normal;
+			text-align:center;
+		}
+		.dir-top-right{
+			float:right;
+		}
+		.dir-top-right #mapTarget{
+			width:300px;
+			height:250px;
+			margin-left:40px;
+		}
+		.rw_details.directory {
+			max-width:initial;
+		}
+		
+		hr.gray{
+			background-color:gray;
+		}
+		
+		.msection{
+			width: 32%;
+			display: inline-block;
+			float: left;
+			margin-bottom: 20px;	
+		}
+		.dir-middle-middle {
+			margin-right:2%;
+		}
+		
+		
+		
+		.msection-heading {
+			font-family: bebasneue;
+			font-size: 14pt;
+			margin-top:5px;
+			margin-bottom:5px;
+		}
+		.msection-text {
+			color: #808080;
+			font-size: 11pt;
+			padding-right:5px;
+		}
+		
+		.msection tr:nth-child(even) {
+			background-color:lightgray;
+		}
+		
+		.msection table{
+			border-collapse: collapse;
+		}
+		
+		.dir-middle-horizontal, .dir-bottom-horizontal {
+			width:100%;
+			margin-bottom:20px;
+		}
+		
+		.dir-bottom-left {
+			width:62%;
+			margin-right:4%;
+			float:left;
+		}
+		
+		.dir-bottom-right {
+			width:34%;
+			float:left;
+		}
+		
+		.dir-bottom-right .msection-heading {
+			margin-left:10px;
+		}
+		
+		.imageThumbs img {
+			height:80px;
+		}
+		.imageThumbs div.pthumb {
+			width:80px;
+			background-color:lightgray;
+			overflow:hidden;
+			float:left;
+			margin-left:10px;
+			margin-top:10px;
+			text-align:center;
+			border:1px solid gray;
+		}
+		
+		.pthumblabel {
+			text-overflow: ellipsis;
+			width: 100%;
+			overflow: hidden;
+			font-size: 9pt;
+			font-weight: normal;
+			white-space: nowrap;
+			color: #000;
+		}
+		
+		@media only screen and (min-width: 768px) and (max-width: 1290px)
+		{
+			.dir-top-right #mapTarget{
+				width:250px;
+				height:210px;
+				margin-left:10px;
+			}
+			.dir-address {
+				width:180px;
+			}
+			.dir-name {
+				font-size:20pt;
+			}
+			.dir-address-details {
+				font-size:12pt;
+			}
+			hr.gray {
+				background-color:gray;
+			}
+			
+		}
+		@media only screen and (min-width: 1385px) and (max-width: 2000px)
+		{
+			.dir-top-center {
+				/*min-width:200px;*/
+			}
+		}
+		
+	</style>
+	
+	<div class="dir-top-horizontal">
+		<div class="dir-top-left dir-float-left">
+			<div class="dir-top-top-left">
+				<div class="dir-logo dir-float-left">
+					Zlhs $.getImage(model,'logo','images/emptyPic.png','memberLogoImage')Zrhs
+				</div>
+				<div class="dir-address dir-float-left">
+					<div class="dir-name">Zlhs model.get('businessName') Zrhs
+					</div>
+					<div class="dir-address-details">Zlhs (!_.isUndefined(model.get('streetAddress1_work')))?model.get('streetAddress1_work'):"" + " " + (!_.isUndefined(model.get('streetAddress2_work')))?model.get('streetAddress2_work'):"" Zrhs
+					</div>
+					<div class="dir-address-details">Zlhs model.get('cityAddress_work') + ', ' + model.get('stateAddress_work') + ' ' + model.get('postalCodeAddress_work') Zrhs
+					</div>
+				</div>
+			</div>
+			<div class="dir-top-middle-left dir-float-left">
+				<div class="dir-phone contactpoint">Zlhs model.get('workPhone') Zrhs</div>
+				<div class="dir-email contactpoint">Zlhs model.get('emailAddress') Zrhs</div>
+				<div class="dir-web contactpoint">Zlhs model.get('webPage') Zrhs</div>
+				<div class="dir-hours contactpoint">Zlhs model.get('hoursOfOperation') Zrhs</div>
+			</div>
+			<div class="dir-top-lower-left dir-float-left">
+				<div class="socialLogos">
+					Zlhs $.getFormattedVal($.urlPrefix(model.get('faceBookPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="images/faceBookLogo.png"/></a>','<img class="hidden" src="images/emptyPic.png"/>')  Zrhs
+					Zlhs $.getFormattedVal($.urlPrefix(model.get('linkedInPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="images/linkedInLogo.png"/></a>','<img class="hidden" classrc="images/emptyPic.png"/>')  Zrhs
+					Zlhs $.getFormattedVal($.urlPrefix(model.get('twitterPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="images/twitterLogo.png"/></a>','<img class="hidden" src="images/emptyPic.png"/>')  Zrhs
+					Zlhs $.getFormattedVal($.urlPrefix(model.get('yelpPage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="images/yelpLogo.png"/></a>','<img class="hidden" src="images/emptyPic.png"/>')  Zrhs
+					Zlhs $.getFormattedVal($.urlPrefix(model.get('youtubePage')),'<a href="ZfieldVal" rel="external" target="_blank"><img src="images/youtubeLogo.png"/></a>','<img class="hidden" src="images/emptyPic.png"/>')  Zrhs
+				</div>		
+			</div>
+		</div>
+		<div class="dir-top-right">
+			<div id="mapTarget"></div>
+		</div>
+		<div class="dir-top-center">
+			<div class="dir-score-ribbon">
+				<img src="/images/directory/ribbon.png">
+			</div>
+			<div class="dir-score-label">Rank Score</div>
+			<div class="dir-score-value">Zlhs Math.round(model.get('businessRankScore')) Zrhs</div>
+			<div class="dir-score-whatsthis"><a href="#">What's this?</a></div>
+		</div>
+
+		
+	</div>
+	<hr class="orange gray" style="height:3px;margin-bottom:8px"/>
+	<div class=dir-middle-horizontal">
+		<div class="dir-middle-left msection">
+			<div class="msection-heading">Business Category</div>
+			<div class="msection-text">Zlhs model.get('categoryDisplay') Zrhs</div>
+		</div>
+		<div class="dir-middle-middle msection">
+			<div class="msection-heading">Services/Products</div>
+			<div class="msection-text">Zlhs model.get('services') Zrhs</div>
+		</div>
+		<div class="dir-middle-right msection">
+			<table>
+				<tr>
+					<td class="msection-heading">Years Founded:</td>
+					<td class="msection-text">Zlhs model.get('yearFounded') Zrhs</td>
+				</tr>
+				<tr>
+					<td class="msection-heading">Payment Methods:</td>
+					<td class="msection-text">Zlhs model.get('paymentMethods') Zrhs</td>
+				</tr>
+				<tr>
+					<td class="msection-heading">Amenities:</td>
+					<td class="msection-text">Zlhs model.get('amenities') Zrhs</td>
+				</tr>
+				<tr>
+					<td class="msection-heading">Associations:</td>
+					<td class="msection-text">Zlhs model.get('associations') Zrhs</td>
+				</tr>
+			</table>
+			
+		</div>
+	</div>
+	<hr class="orange gray" style="height:3px;margin-bottom:8px"/>
+	<div class=dir-bottom-horizontal">
+		<div class="dir-bottom-left">
+			<div class="msection-heading">About Us</div>
+			<div class="msection-text">Zlhs $.getFormattedValInner(model.get('about'),'\n','<p>','') Zrhs</div>
+		</div>
+		<div class="dir-bottom-right">
+			<div class="msection-heading">Members</div>
+				Zlhs _.template('PartyThumbNailTile',{parties:model.get('employees')}) Zrhs
+				
+				
+			</div>
+			
+		</div>
+	</div>
+			
+					

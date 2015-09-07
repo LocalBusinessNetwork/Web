@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Referralwire Web Application</display-name>
+
+	
+   <!--filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.rw.servlets.AuthenticationFilter</filter-class>
+   </filter -->
+   
+	<servlet>
+  		<servlet-name>rwFBListener</servlet-name>
+  		<servlet-class>com.rw.servlets.rwFBListener</servlet-class>
+  	</servlet>
+	
+	<servlet>
+  		<servlet-name>rwCFB</servlet-name>
+  		<servlet-class>com.rw.servlets.rwCFB</servlet-class>
+  	</servlet>
+  	
+  	<servlet>
+  		<servlet-name>rwWebRequest</servlet-name>
+  		<servlet-class>com.rw.servlets.rwWebRequest</servlet-class>
+  	</servlet>
+  	
+  	<servlet>
+  		<servlet-name>rwFileUpload</servlet-name>
+  		<servlet-class>com.rw.servlets.rwFileUpload</servlet-class>
+  	</servlet>
+  	<servlet>
+  		<servlet-name>vcfUpload</servlet-name>
+  		<servlet-class>com.rw.servlets.vcfUpload</servlet-class>
+  	</servlet>
+  	
+  	<servlet>
+  		<servlet-name>rwAlerts</servlet-name>
+  		<servlet-class>com.rw.servlets.rwAlerts</servlet-class>
+  	</servlet>
+  	
+  	<servlet>
+  		<servlet-name>rwCSV</servlet-name>
+  		<servlet-class>com.rw.servlets.rwCSV</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>rwCSV</servlet-name>
+  		<url-pattern>/csv</url-pattern>
+  	</servlet-mapping>
+  		
+  	<servlet>
+  		<servlet-name>rwMetrics</servlet-name>
+  		<servlet-class>com.rw.servlets.rwMetrics</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>rwMetrics</servlet-name>
+  		<url-pattern>/metrics</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet-mapping>
+  		<servlet-name>rwWebRequest</servlet-name>
+  		<url-pattern>/rwWebRequest</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+  	<servlet-name>rwFileUpload</servlet-name>
+  		<url-pattern>/rwFileUpload</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+  		<servlet-name>vcfUpload</servlet-name>
+  		<url-pattern>/vcfUpload</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+  	<servlet-name>rwAlerts</servlet-name>
+  	<url-pattern>/rwAlerts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rwCFB</servlet-name>
+  	<url-pattern>/rwCFB</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rwCFB</servlet-name>
+  	<url-pattern>/invitation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rwFBListener</servlet-name>
+  	<url-pattern>/fbhook</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+
+  <session-config>
+  	 <session-timeout>60</session-timeout>
+  </session-config>
+
+    <!--  Shiro Filter  -->
+  
+    <listener>
+    	<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+    	<filter-name>ShiroFilter</filter-name>
+    	<filter-class>com.rw.security.DelegatingShiroFilter</filter-class>
+	</filter>
+  
+
+   <filter-mapping>
+        <filter-name>ShiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    
+    <!--  Jersey Servlet  -->
+    
+    <servlet>
+ 		<servlet-name>authorize</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ 		<init-param>
+    		<param-name>com.sun.jersey.config.property.packages</param-name>
+    		<param-value>com.rw.authorize</param-value>
+		</init-param>
+ 	</servlet>
+    
+    <servlet-mapping>
+ 		<servlet-name>authorize</servlet-name>
+ 		<url-pattern>/authz/*</url-pattern>
+  	</servlet-mapping>
+
+    <servlet>
+ 		<servlet-name>authenticate</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ 		<init-param>
+    		<param-name>com.sun.jersey.config.property.packages</param-name>
+    		<param-value>com.rw.authenticate</param-value>
+		</init-param>
+ 	</servlet>
+    
+    <servlet-mapping>
+ 		<servlet-name>authenticate</servlet-name>
+ 		<url-pattern>/auth/*</url-pattern>
+  	</servlet-mapping>
+    
+    <servlet>
+ 		<servlet-name>api</servlet-name>
+ 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ 		<init-param>
+    		<param-name>com.sun.jersey.config.property.packages</param-name>
+    		<param-value>com.rw.resources</param-value>
+		</init-param>
+ 	</servlet>
+ 	
+    <servlet-mapping>
+ 		<servlet-name>api</servlet-name>
+ 		<url-pattern>/api/*</url-pattern>
+  	</servlet-mapping>
+    	
+    <!--  Velocity Serverlet for Velocity Templates  -->
+    	
+    <servlet>
+  	   <description> </description>
+    	<display-name>Velocity</display-name>
+    	<servlet-name>Velocity</servlet-name>
+    	<servlet-class>com.rw.servlets.VelocityServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping> 
+      <servlet-name>Velocity</servlet-name> 
+      <url-pattern>*.vm</url-pattern> 
+    </servlet-mapping>
+    
+    <!--  OLTU Resource Server  -->
+    
+    <filter>
+    	<filter-name>OAuth</filter-name>
+    	<filter-class>org.apache.oltu.oauth2.rsfilter.OAuthFilter</filter-class>
+	  </filter>
+    	
+    <filter-mapping>
+        <filter-name>OAuth</filter-name>
+        <url-pattern>/api/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <context-param>
+	    <description>Resource Server Provider Class</description> 
+    	<param-name>oauth.rs.provider-class</param-name>
+    	<param-value>com.rw.security.ResourceProvider</param-value>
+	</context-param>
+	
+   	<context-param>
+	    <description>Resource Server Authentication Realm</description> 
+   	    <param-name>oauth.rs.realm</param-name>
+    	<param-value>com.rw.authenticate.OAuthRedisRealm</param-value>
+	</context-param>
+    
+   		
+  <filter>
+   <filter-name>cross-origin</filter-name>
+   <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+   <init-param>
+       <param-name>allowedOrigins</param-name>
+       <param-value>*</param-value>
+   </init-param>
+   <init-param>
+       <param-name>allowedMethods</param-name>
+       <param-value>GET,POST,OPTIONS,DELETE,PUT,HEAD</param-value>
+   </init-param>
+   <init-param>
+       <param-name>allowedHeaders</param-name>
+       <param-value>*</param-value>
+   </init-param>
+  </filter>
+  
+  	   <!-- 
+ 
+  <filter>
+   <filter-name>cross-origin</filter-name>
+   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  	<init-param>
+    	<param-name>cors.allowed.origins</param-name>
+    	<param-value>*</param-value>
+ 	</init-param>
+ 	<init-param>
+    	<param-name>cors.allowed.methods</param-name>
+    	<param-value>GET,POST,HEAD,OPTIONS,PUT,DELETE</param-value>
+  	</init-param>
+  	<init-param>
+    <param-name>cors.allowed.headers</param-name>
+    <param-value>*</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.exposed.headers</param-name>
+    <param-value>*</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.support.credentials</param-name>
+    <param-value>true</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.preflight.maxage</param-name>
+    <param-value>30</param-value>
+  </init-param>
+  </filter>
+ 	
+    -->
+ 
+  
+
+  	
+ <filter-mapping>
+     <filter-name>cross-origin</filter-name>
+     <url-pattern>/*</url-pattern>
+ </filter-mapping>
+
+ <error-page><exception-type>java.lang.Throwable</exception-type><location>/error.jsp</location></error-page>
+ <error-page><exception-type>javax.servlet.ServletException</exception-type><location>/error.jsp</location></error-page>
+ 
+</web-app>

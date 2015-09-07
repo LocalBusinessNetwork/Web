@@ -1,0 +1,11 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:34:59 GMT">
+<% var f = attributes; var fldname = f["fldname"]; var required = f["required"]; var readOnlyFld = f["readOnly"];%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<img class="checkBoxLightBackGround" width="20px" height="20px" src="Zlhs model.get('<%= fldname%>')=='true'?'images/icons/checkBoxSmallCheckedBlack.png':'images/icons/checkBoxSmallUncheckedBlack.png' Zrhs"/>
+<img class="checkBoxDarkBackGround" width="20px" height="20px" src="Zlhs model.get('<%= fldname%>')=='true'?'images/icons/checkBoxSmallChecked.png':'images/icons/checkBoxSmallUnchecked.png' Zrhs"/>
+<% } else { %>
+<input type='checkbox' id='<%= fldname%>' value="" class="custom"></input>
+<label for='<%= fldname%>'>&nbsp;</label>
+<% } %>
+
+

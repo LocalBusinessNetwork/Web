@@ -1,0 +1,55 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- OutBoxReferralFormInvite.html -->			
+
+	<div class="referralFormHeader invite out">
+		
+		
+			<table>
+				<tr>
+					<td class="referralPictureCell myReferrals iconstatus-Zlhs model.get('status') Zrhs">
+						<div class="referralIconFrame">
+							<img class="referralTypeIcon" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+							<img class="referralAcceptedIcon" src="<%= rwFB.CDN%>/STN/Images/activity-icon_accepted-overlay.png">
+						</div>
+					</td>
+					<td>
+					<div class="referralFormHeader-textbox">
+						<div style="padding-bottom:10px">
+							Your invitation to <a href="Zlhs $.getP2POutPartyHREF(model,'toId') Zrhs" class="partnerName light">Zlhs model.get('to_fullName') Zrhs</a> on Zlhs $.getFormattedDate(model.get('rw_created_on').$date) Zrhs
+						</div>
+						<div style="padding-bottom:10px"> 
+								Zlhs $.formatOutBoxStatusShort(model) Zrhs
+							<!-- <span style="color:firebrick;font-size:20pt">Zlhs model.get('to_firstName') Zrhs</a> have Zlhs model.get('status').toLowerCase() Zrhs the referral. -->	
+						</div>
+					</div>
+					</td>
+					<td class="referralPictureCell myReferrals">
+						Zlhs $.getImage(model,'to_photoUrl','<%= rwFB.CDN%>/images/icons/User.png','')Zrhs
+					</td>
+				</tr>
+			</table>
+		
+						
+				 	
+				
+				
+		
+		
+		
+	</div>
+		<div class="notePaper referralForm">
+			<table class="offer table">
+				<tr>
+					<td class="referralFormTitle">Invitation</td>
+					
+				</tr>
+				<tr>
+					<td class="referralFormBox" colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div class="referralFormReason">Zlhs  $.getLIList(model.get('comments')) Zrhs</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+<!-- includeFieldDescription is in rwapi -->

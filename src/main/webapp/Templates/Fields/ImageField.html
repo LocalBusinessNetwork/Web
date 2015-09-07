@@ -1,0 +1,33 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; var fldname = f["fldname"]; var required = f["required"]; var readOnlyFld = f["readOnly"];%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<img id='<%= fldname%>' src="" height="80px"></img>
+<% } else { %>
+<table>
+	<tr>
+		<td>
+
+			<img class="picFrame" id='<%= fldname%>' src="images/photo.png" width="100" height="100"></img>
+		</td>
+		<td style="text-align: left;position: relative;padding-left: 10px;">
+
+			<div class="fileUploadButton">
+				<input value="upload" name="filename" id="<%= fldname%>_Pick" type="file" class="fileUpload"  onchange="$.rwFileUpload('<%= fldname%>_Pick','<%= fldname%>')"/>
+				<input type='hidden' id='<%= fldname%>' value=""></input>
+				<!-- <a id="filePicker" href="javascript:$('#<%= fldname%>_Pick').click();">Pick</a> !-->
+			</div>
+			<div class="clear">
+				<!-- <a id="fileClear" href="javascript:$.rwClearImage('<%= fldname%>_Pick','<%= fldname%>','images/photo.png')">Clear</a> -->
+				<input type='button' onclick="$.rwClearImage('<%= fldname%>_Pick','<%= fldname%>','images/photo.png')" value="Clear"></input>
+			</div>
+		</td>
+	</tr>
+</table> 
+<table>
+	<tr><td>
+		<div style="font-size:12"> Supported file types: JPEG/JPG, GIF, PNG, BMP. Maximum Size: 3 MB. Use this free tool to resize your photo. <a href="http://www.webresizer.com/resizer/" target="_blank">Photo Resizer</a></div>			
+	</td>
+	</tr>
+</table>
+<% } %>
+

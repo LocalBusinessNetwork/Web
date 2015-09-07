@@ -1,0 +1,59 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!--
+<div style="position:relative;width:100%;height:100%">
+
+	<div class="mainPanelBody">
+		<div class="rw_details">< listHTML></div>
+
+	</div>
+
+	<div class="rw_ViewBar">< viewBarHTML ></div>
+</div>
+-->
+
+			<div data-role="header" class="phoneHeader">
+				<div style="text-align:center;position:relative;width:100%;height:42px" id="phoneTitleBar">
+					<div id="title" class="ReferralWireName" style="display:inline;line-height:41px"><%= rwFB.HeaderName%></div>
+					<a style="cursor:pointer;position:absolute;left:5px;top:1px" id="menuButton">
+						<!-- <img id="menuIcon" width="40px" height="40px" src="/images/icons/menuIcon2.png"/> -->
+						<img id="menuIcon" width="40px" height="40px" src="<%= rwFB.CDN%>/STN/Images/menuIconWhite.png">
+					</a>
+					<a id="actionLink" style="cursor:pointer;position:absolute;right:5px;top:1px"  >
+						<!-- <img id="actionIcon" width="40px" height="40px" src="/images/icons/phoneAction.png"/> -->
+						<img id="actionIcon" width="40px" height="40px" src="<%= rwFB.CDN%>/STN/Images/phoneAction.png"/>
+					</a> 	 	 					
+				</div>
+			</div>
+			<div class="phoneMenu" >
+			<div class="pMenuCtr">	
+				<div class="pMenuCtrInner">
+					<%= appletMenuHTML%>
+				</div>
+			</div>
+			
+			</div>
+
+
+			<div class="subMenuBody">
+		        <div data-role="content"> 
+	        
+			        <div id="ViewContentSection" style="overflow:hidden">
+
+					        <div style="position:relative;width:100%;height:100%">
+	
+								<div class="mainPanelBody" style="bottom:0">
+									<div class="rw_details listViewListContainer">
+										<%= listHTML%>
+									</div>
+							
+								</div>
+							</div>
+				        	
+
+	
+					</div>
+
+				</div>
+			</div>
+
+

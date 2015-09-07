@@ -1,0 +1,33 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div class="partyHeader">
+		<div class="paragraphBlock speakerImageFrame">
+       	<!--<img src="<%= rwFB.CDN%>/images/icons/Contact_jumbo.png"/>-->
+		Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','profilePhoto')Zrhs
+       </div>
+
+   		<div class="partyTitle">
+     		<div class="paragraphNameText">Zlhs $.getConditionalVal(model.get('personalTitle'),'DOCTOR','Dr.','') + ' ' + model.get('firstName') + ' ' + model.get('lastName')Zrhs</div>          	
+     		<div>Zlhs model.get('speakerShortDescription')Zrhs </div>
+    	</div>
+   		<div class="speakerStats">
+   			<div class="speakerRatingLabel">Total Engagements</div>
+   			<div class="speakerEngagementTotal">Zlhs ($.hasVal(model.get('totalSpeakerEngagements')))?model.get('totalSpeakerEngagements'):0Zrhs</div>
+   			<div class="speakerRatingLabel">Average Rating</div>
+   			<div class="starFrame Zlhs(!$.hasVal(model.get('speakerRating')))?'hidden':''Zrhs">
+				<img src="<%= rwFB.CDN%>/images/ratingStarsGray.png">
+				<div class="ratingStarValue" style="width:Zlhs (model.get('speakerRating') / 5) * 100 Zrhs"></div>
+				<div class="ratingStarBalance" style="width:Zlhs (1-(model.get('speakerRating') / 5)) * 100 Zrhs"></div>
+			</div>
+			<div class="Zlhs(!$.hasVal(model.get('speakerRating')))?'speakerRatingLabel':'hidden'Zrhs">No ratings</div>
+			
+   		</div>
+    </div>
+
+ </div>
+<div class="cPanel std">
+	<ul data-role="listview" data-inset="true" class="formfields">
+	<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+	<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+	<% }}; %>
+	</ul>
+</div>

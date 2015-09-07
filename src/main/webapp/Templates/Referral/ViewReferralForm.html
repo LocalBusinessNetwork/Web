@@ -1,0 +1,91 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">			
+<!-- ViewReferralForm.html -->
+
+	<div class="referralFormHeader">
+		
+		<table>
+				<tr>
+					<td class="referralPictureCell myReferrals">
+						<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+							<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-unread" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_UNREAD.png">
+							<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_ACCEPTED.png">
+							<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-confirmed" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONFIRMED.png">
+							<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-converted" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_CONVERTED.png">
+							<img class="referralTypeIcon typeIcon-cust-for-part statusIcon-nosale" src="<%= rwFB.CDN%>/STN/Images/iconFunnel_NOSALE.png">
+						</div>
+					</td>
+					<td>
+					<div class="referralFormHeader-textbox">
+						<div><font class="contactName light">Zlhs model.get('contact_fullName') Zrhs</font> was referred to you by <a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName light">Zlhs model.get('from_fullName') Zrhs</a> on  Zlhs $.getFormattedDate(model.get('rw_created_on').$date) Zrhs</div>
+						<div class="referralFormHeader-statusDetail">
+						Zlhs $.formatOutBoxStatusShort(model) Zrhs
+						</div>
+						<div class="Zlhs $.getConditionalVal(model.get('status'),'ACCEPTED','referralFormHeader-statusDetail','hidden')Zrhs">
+							<span class="confirmReferral referralAction" updateStatus="Zlhs model.get('status')Zrhs">Update</span> the referral to notify Zlhs model.get('from_firstName') Zrhs that the status has changed.
+						</div>
+						<div class="Zlhs $.getConditionalVal(model.get('status'),'CONFIRMED','referralFormHeader-statusDetail','hidden')Zrhs">
+							<span class="convertReferral referralAction" updateStatus="Zlhs model.get('status')Zrhs">Update</span>  the referral to notify Zlhs model.get('from_firstName') Zrhs that the status has changed.
+						</div>
+					</div>
+					</td>
+					<td class="referralPictureCell myReferrals">
+						Zlhs $.getImage(model,'from_photoUrl','images/icons/User.png','')Zrhs
+					</td>
+				</tr>
+			</table>
+		
+		
+		
+	</div>
+		<div class="notePaper referralForm">
+
+			<table class="offer table">
+				<tr>
+					<td class="referralFormTitle">Referral Form</td>
+					
+				</tr>
+				<tr>
+					<td class="referralFormBox firstrow" colspan='2'>
+						<div class="referralFormSectionTitle">PERSON TO CONTACT</div>
+						<div class="refContactDrillName">Zlhs model.get('contact_fullName') Zrhs</div>
+						<div class="refContactDetails">
+							<div>Zlhs model.get('contact_fullName') Zrhs</div>
+							<div class="Zlhs ($.hasVal(model.get('contact_jobTitle')))?'referralContactLine':'hidden' Zrhs">Zlhs model.get('contact_jobTitle') Zrhs</div>
+							<div class="Zlhs ($.hasVal(model.get('contact_business')))?'referralContactLine':'hidden' Zrhs">Zlhs model.get('contact_business') Zrhs</div>
+							<div class="Zlhs ($.hasVal(model.get('contact_email')))?'referralContactLine':'hidden' Zrhs"><a href="mailto:Zlhs model.get('contact_email') Zrhs">Zlhs model.get('contact_email') Zrhs</a></div>
+							<div class="Zlhs ($.hasVal(model.get('contact_workPhone')))?'referralContactLine':'hidden' Zrhs"><a href="tel:Zlhs model.get('contact_workPhone')Zrhs">Zlhs model.get('contact_workPhone')Zrhs (w)</a></div>
+							<div class="Zlhs ($.hasVal(model.get('contact_mobilePhone')))?'referralContactLine':'hidden'Zrhs"><a href="tel:Zlhs model.get('contact_mobilPhone')Zrhs">Zlhs model.get('contact_mobilePhone')Zrhs (m)</a></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="referralFormBox-secondrow" colspan='2'>
+						<div class="referralFormSectionTitle">REFERRAL REASON -- WHY NOW?</div>
+						<div class="Zlhs $.getFormattedVal(model.get('referral_reason'),'referralFormReason','hidden') Zrhs">
+							<span><img src="/images/checkedBox.png"></span>
+							<span>Zlhs rwcore.getLovDisplayVal('C2P_REF_REASON',model.get('referral_reason')) Zrhs</span>
+						</div>
+						<div class="Zlhs $.getFormattedVal(model.get('comments'),'referralFormComments','hidden') Zrhs">Zlhs model.get('comments') Zrhs</div>
+					</td>
+				</tr>
+				<% var customQStartIndex = 14%>
+				<tr>
+					<td class="Zlhs $.getQuestionClass(model,1,'referralFormBox-secondrow') Zrhs" colspan='2'>
+						
+						<div class="Zlhs $.getQuestionClass(model,1,'referralFormSectionTitle') Zrhs" ><%=fieldRenderer(attributes[customQStartIndex],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,1,'referralCustomQAnswer') Zrhs"><%= fieldRenderer(attributes[customQStartIndex+1],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,2,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+2],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,2,'referralCustomQAnswer') Zrhs"><%= fieldRenderer(attributes[customQStartIndex+3],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,3,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+4],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,3,'referralCustomQAnswer') Zrhs"><%= fieldRenderer(attributes[customQStartIndex+5],true)%></div>
+						
+						<div class="Zlhs $.getQuestionClass(model,4,'referralFormSectionTitle') Zrhs"><%=fieldRenderer(attributes[customQStartIndex+6],true)%></div>
+						<div class="Zlhs $.getQuestionClass(model,4,'referralCustomQAnswer') Zrhs"><%= fieldRenderer(attributes[customQStartIndex+7],true)%></div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+<!-- includeFieldDescription is in rwapi -->

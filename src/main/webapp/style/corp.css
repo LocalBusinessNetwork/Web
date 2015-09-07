@@ -1,0 +1,428 @@
+.masthead{
+	background-color: #656D87;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.masthead-title{
+	position: absolute;
+	left: 320px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	line-height: 100px;
+	color: #E2971F;
+	font-size: 24pt;
+	font-family: 'Nobile', sans-serif;
+	text-align: center;
+}
+.masthead-logo {
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+}
+.masthead-logo-frame {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	bottom: 0;
+	vertical-align: middle;
+}
+.masthead-logo-frame img{
+	height: 50%;
+	top: 50%;
+	margin-top: -25px;
+	position: absolute;
+}
+
+.tab-bar {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	height: 40px;
+}
+.tab-bar td {
+	background-color: #1D365B;
+	text-align: center;
+	color: #C1C1C1;
+}
+.tab-bar td:hover{
+	background-color: #264A7E;
+	color:white;
+}
+
+.tab-bar td a{
+	color: inherit;
+	text-decoration: none;
+}
+.tab-bar td a.selected{
+	color:#E2971F
+}
+
+body {
+	/*font-family: Raleway, sans-serif,Arial;*/
+	font-family: Arial;
+	overflow: hidden;
+}
+.home-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	background-color: #F2F2F2;
+	color: #1D365B;
+	font-size: 18pt;
+	font-family: 'Nobile', sans-serif;
+}
+
+div.home-footer-frame {
+height: 100%;
+width: 100%;
+position: relative;
+display: table;
+}
+div.home-footer-text {
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+}
+
+div.main-body {
+background-color: #D3D3D3;
+top: 140px;
+bottom: 100px;
+left: 0;
+right: 0;
+position: absolute;
+overflow-y:scroll;
+}
+
+div#slide1 {
+background-image: url(//djblw00tnefcx.cloudfront.net/images/homepage/elephantZebra.jpg);
+
+}
+div#slide2 {
+background-image: url(//djblw00tnefcx.cloudfront.net/images/homepage/capeBuffalo.jpg);
+
+}
+div#slide3 {
+background-image: url(//djblw00tnefcx.cloudfront.net/images/homepage/beeFlower.jpg);
+
+}
+div#slide4 {
+background-image: url(//djblw00tnefcx.cloudfront.net/images/homepage/schoolOfFish.jpg);
+
+}
+#slide2 .quote-frame,#slide3 .quote-frame,#slide4 .quote-frame{
+	color:white;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -400px;
+	width: 800px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding-top: 10px;
+	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s; /* Safari */
+}
+
+.slide.left {
+	left:-50%;
+}
+.slide.right {
+	left: 150%;
+	
+}
+.slide.recycle{
+	display: none;
+}
+
+.quote-frame {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+	border-radius: 6px;
+	font-size: 18pt;
+	color: #1D365B;
+}
+
+div.quote-src {
+text-align: right;
+font-size: 12pt;
+margin-top: 10px;
+font-weight: bold;
+}
+.main-body-title-frame{
+	position: absolute;
+	top:10px;
+	left:0;
+	right:0;
+	height: 60px
+
+}
+.main-body-title {
+	font-size: 20pt;
+	font-family: 'Nobile', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #656D87;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.main-body-graphic{
+	position: absolute;
+	top: 70px;
+	bottom:0;
+	left:20%;
+	right:20%;
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/homepage/fromTo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.home-footer-frame .quote-frame {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+	border-radius: 6px;
+	font-size: 16pt;
+	color: #1D365B;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.hiw-title{
+	position: absolute;
+	top: 5px;
+	left: 10%;
+	right: 10%;
+	font-size: 20pt;
+	text-align: center;
+	height: 60px;
+}
+.howitworks-steps {
+position: absolute;
+top: 65px;
+bottom: 0;
+left: 15%;
+right: 15%;
+}
+.hiw-step{
+	height: 33%;
+}
+div.hiw-img {
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+}
+div.hiw-img-frame {
+float: left;
+width: 250px;
+text-align: center;
+padding-right: 20px;
+height: 100%;
+
+
+}
+#recommend {
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/howitworks/graphic1.png);
+}
+#negotiate {
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/howitworks/graphic2.png);
+	height: 75%;
+}
+#track{
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/howitworks/graphic3.png);
+
+}
+.hiw-img-frame img {
+	height: 100%;
+}
+div.hiw-step-text {
+padding: 10px;
+}
+div.hiw-step-title {
+font-size: 22pt;
+font-family: Nobile, sans-serif;
+text-transform: uppercase;
+color: #1D365B;
+font-weight: bold;
+}
+div.hiw-step-desc {
+font-size: 18pt;
+color: #656D87;
+}
+
+#merchantPP{
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/powerpartners/merchantPPLoop.png);
+}
+#softwarePP{
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/powerpartners/softwarePPLoop.png);
+}
+#bankPP{
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/powerpartners/bankPPLoop.png);
+}
+div.ppLoops {
+position: absolute;
+top: 10%;
+bottom: 10%;
+left: 0;
+max-width: 600px;
+width: 40%;
+}
+.ppLoop {
+height: 33%;
+background-repeat: no-repeat;
+background-size: contain;
+}
+.ppExplain {
+	position: absolute;
+	left: 45%;
+	top: 10%;
+	bottom: 0;
+	right: 10px;
+}
+.ppExplain-title {
+	font-size: 32pt;
+	font-family: Nobile, sans-serif;
+	text-transform: uppercase;
+	color: #1D365B;
+	font-weight: bold;
+}
+div.ppExplain-desc {
+	margin-top: 15px;
+	font-size: 18pt;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #808080;
+}
+div.ppExplain-desc:last-child 
+{
+	border-bottom: none;
+}
+div.brandLever{
+	background-image: url(//djblw00tnefcx.cloudfront.net/images/brandBenefits/brandLeverage.png);
+position: absolute;
+top: 0;
+bottom: 0;
+left: 10px;
+width: 40%;
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+}
+.rightText {
+	position: absolute;
+	left: 45%;
+	top: 10px;
+	bottom: 10px;
+}
+.rightquote {
+	font-size: 18pt;
+	margin-top: 20px;
+}
+.quote-big {
+	font-size: 30pt;
+	font-weight: bold;
+	font-style: italic;
+
+}
+
+.rightText .hiw-step {
+	height: inherit;
+	margin-top: 25px;
+}
+
+.rightText li {
+	font-size: 16pt;
+	color: #656D87;
+}
+.left-side {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: 45%;
+}
+.left-side .main-body-title, .right-side .main-body-title{
+	font-size: 14pt;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+div.right-side {
+	position: absolute;
+	right: 0;
+	top: 0px;
+	bottom: 0;
+	width: 45%;
+	background-repeat: no-repeat;
+}
+.left-side.about .main-body-title{
+	font-size: 32pt;
+	font-family: Nobile, sans-serif;
+	text-transform: uppercase;
+	color: #1D365B;
+	font-weight: bold;
+}
+.left-side.about .body-text {
+	font-size: 14pt;
+	margin-top: 20px;
+}
+div.right-side.partner {
+	background-image:url(//djblw00tnefcx.cloudfront.net/images/network.png);
+}
+div.right-side.about {
+	background-image:url(//djblw00tnefcx.cloudfront.net/images/team.jpg);
+}
+
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.desktop {
+		display: none;
+	}
+	.main-body.about {
+		bottom:0;
+	}
+	.left-side.about .main-body-title,.main-body-title {
+		font-size: 18pt;
+	}
+
+	.left-side.about{
+		width: inherit;
+		right:0;
+	}
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	.ppExplain-title {
+		font-size: 24pt;
+	}
+	.quote-text {
+		font-size: 12pt;
+	}
+}
+

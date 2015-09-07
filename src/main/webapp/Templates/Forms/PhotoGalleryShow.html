@@ -1,0 +1,42 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+	
+ 	<div class="wrapper">
+	<a prevphoto class="leftArrow" style="display:none"></a>
+	<a nextphoto class="rightArrow"></a>
+	<a closeslideshow class="closeSlideShow">
+		<img src="<%= rwFB.CDN%>/images/icons/photoGallery2.png">
+		<div>Gallery</div>
+	</a>
+	
+
+				
+				<ul class="pGallery">
+									
+					<% for (var i=0;i < attributes.length;i=i+2) {
+					var liStyle = "right:-2000px;display:none;";
+					var liClass = "";
+					var thisId = "photo" + i/2;
+					if (i==0){liStyle=""}
+					if (i==0){liClass="activePhoto"}
+					var a = attributes[i];
+					var thisImgUrl = a['fldname'];
+					var b = attributes[i+1]; 
+					var thisCaption = b['fldname'];%>
+						<li id="<%= thisId%>" style="<%= liStyle %>" class="<%= liClass %>">
+							<img src="Zlhs model.get('<%= thisImgUrl%>')Zrhs"/>
+							<span class="thumbcaption" style="bottom:0;left:0;right:0;font-size:14pt">Zlhs model.get('<%= thisCaption%>')Zrhs</span>
+						</li>
+						
+					<% }; %>
+														
+					
+					
+				</ul>
+	
+
+
+	
+
+
+	

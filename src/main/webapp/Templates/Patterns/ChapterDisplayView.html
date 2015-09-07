@@ -1,0 +1,67 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+	<div class="menuPull"></div>
+	<div class="pullTab menuPull"><div class="grip"></div><div class= "grip gsmall"></div></div>
+	<table width="100%" style="height:100%;border-spacing:0;" >
+	<tr>
+		<td class="leftPanel">
+			<div style="position:relative;width:100%;height:100%">
+					<div class="rwLeftPanelHeader">
+						 <a class="header-home-link" href="#home"><img src="<%= rwFB.CDN%>/images/icons/homeIconSmall.png"></a>
+						 <div id="navigationButton" class="button menuLaunch">Menu</div>
+						 <div class="rwName beta">
+							  <div class="rwName-label">Successful Thinkers</div>
+							  <div class="rwName-beta">Beta 1.1</div>
+						 </div>
+											
+					</div>
+					
+					<div style="position:absolute;top:50px;bottom:0;width:100%" class="listViewListContainer">
+						<%= listview %>
+					</div>
+			</div>
+		</td>
+		<td class="rightPanel">
+			<div style="position:relative;width:100%;height:100%">
+				<div class ="mainPanelHeader" style="text-align:center;padding-top: 12px;height: 38px;">
+				
+					 <span class="rw_appletMenu" style="float:left">
+					 	<%= render.options.appletMenu.render().el.outerHTML %>
+					 </span>
+					 <span style="position:absolute;left:50%">
+					 	<div style="position:relative;left:-50%;font-size:18pt;">
+					 		<%= title%>
+					 	</div>
+					 	
+					 </span>
+					 <span class="rightMenu">
+						<%= ($.hasVal(render.options.appletMenuRight))?render.options.appletMenuRight.render().el.outerHTML:"" %>
+						<span class="<%=$.getFormattedVal(render.options.tooltipSource,'tooltip','hidden')%>" tooltipSource="<%=$.getAltValue(render.options.tooltipSource,'') %>">
+							<img src="<%= rwFB.CDN%>/images/icons/helpInfo.png" class='contextHelp'>
+						</span>
+						
+					 </span>
+				</div>
+				<div class="mainPanelBody"">
+					
+					<!--<div id="selectorSpacer" style="min-height:8px;">&nbsp;</div>-->
+					<!--<div id="selectorPlaceholder" style="min-height:40px;margin: .5em 0">&nbsp;</div>-->
+					<%= secondTierNav %>
+
+					<div class="profilePlatter">
+	
+	
+					<div id="form1"><%= render.renderDetailBody(0)%></div>
+	
+								
+					
+					</div><!-- close the platter -->
+				</div> <!-- close the main Panel body -->
+				<div class="rw_ViewBar"><%= render.renderViewBar(0) %></div>
+			</td>  <!-- close the main Panel -->
+		</div>
+	</tr>
+	</table>
+
+
+
+

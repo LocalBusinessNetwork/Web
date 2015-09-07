@@ -1,0 +1,46 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+
+<div id="closeLeftMenu" class="closeMenu" style="height: 42px;background-color: #000;position: absolute;top: 0;left: 0;right: 0;"><a class="closeMenu" data-rel="close">
+				<img src="<%= rwFB.CDN%>/images/icons/closeIconWhite.png" ><span>Close Menu</span></a>
+				</div>
+				<div class="<%=(!$.hasVal(rwFB.OrgId))?'nochapter':'haschapter' %>"style="position:absolute; top:42px;left:0;right:0;">
+				
+						<%  
+							for (var i = 0; i < menuNav.length; i++) {
+							var top = menuNav[i];
+							var iconSrc = rwFB.CDN + "/images/icons/" + top.iconSrc;
+							var route = ($.hasVal(top.subMenus))?"expand":top.route;
+							var actionImgClass = ($.hasVal(top.subMenus))?"menuToggle":"menuNavigate";
+							var actionImgSrc = ($.hasVal(top.subMenus))?"expandIconWhite.png":"navigateWhiteIcon.png";
+							actionImgSrc = rwFB.CDN + "/images/icons/" + actionImgSrc;
+						%>
+							<div class="topMenuItem" id="top-<%= top.id %>">
+								
+								<div id="<%= top.id %>" class="menuItemDetail action" route="<%= route %>">
+									<img class="menuIcon" src="<%= iconSrc %>">
+									<span><%= top.label %></span>
+									<img class="<%= actionImgClass %>" src="<%= actionImgSrc %>">
+								</div>
+								<% if ($.hasVal(top.subMenus)) { 
+									var groupId = top.id + "_sub";
+								%>
+									<div id="<%= groupId %>" class="subMenus">
+										<% for (var j=0;j < top.subMenus.length; j++) {
+											var subMenu = top.subMenus[j]; 	
+											iconSrc = rwFB.CDN + "/images/icons/" + subMenu.iconSrc;					
+										%>
+											<div class="menuItemDetail action" route="<%= subMenu.route %>">
+												<img class="menuIcon" src="<%= iconSrc %>">
+												<span><%= subMenu.label %></span>
+												<img class="menuNavigate" src="<%= rwFB.CDN%>/images/icons/navigateBlackIcon.png">
+											</div>
+										<% } %>
+									</div>
+								<% } %>	
+							</div>
+						<% } %>
+						
+						
+		         </div>
+

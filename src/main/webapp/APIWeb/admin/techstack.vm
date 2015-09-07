@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>ReferralWire Inc</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Add some nice styling and functionality.  We'll just use Twitter Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+ 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Nobile:400,700' rel='stylesheet' type='text/css'>
+	<link href='/style/corp.css' rel='stylesheet' type='text/css'>
+	<link rel='shortcut icon' type='image/x-icon' href='/faviconRW.ico' />
+</head>
+
+<body style="overflow-y:scroll">
+	
+    <!-- Menu -->
+  <div class="container-fluid"> 
+  <div class="row" style="background-color:black">&nbsp;</div>
+	<div class="row" style="background-color:black">
+    <table>
+    <tr>
+      <td align="left"><img width="400px" src="//djblw00tnefcx.cloudfront.net/images/mastheadlogo.png"></td>
+        <td width="100%"> 
+          <p style="text-align: left;color:white;vertical-align: bottom;margin-left: 40px;font-size: 25pt;font-family: fantasy;">Developer's Portal </p>
+        </td>
+    </tr>
+    </table>  
+  </div>
+
+  <!-- Menu -->
+  <div class="row">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/APIWeb/admin/apihome.vm">Home</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">White Labeling<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/whitelabel.vm">Overview</a></li>
+                  <li><a href="#">Setting up URLs & SSL</a></li>
+                  <li><a href="#">Setting up Email addresses</a></li>
+                  <li><a href="#">Setting Tenant Records setup</a></li>
+                  <li><a href="#">Customizing Stylesheets</a></li>
+                  <li><a href="#">Customizing HTML Templates</a></li>
+                  <li><a href="#">Customizing Applets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Integration<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/APIWeb/admin/api-reference.vm">REST API reference</a></li>
+                  <li><a href="/APIWeb/admin/javaSDK.vm">Java SDK</a></li>
+                  <li><a href="/APIWeb/admin/javascriptSDK.vm">JavaScript SDK</a></li>
+                  <li><a href="/APIWeb/admin/appadmin.vm">App Setup</a></li>
+                </ul>
+            </li>
+            <li class="active" ><a href="/APIWeb/admin/techstack.vm">Our Tech Stack</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>    
+  </div>
+ 
+  <!-- Body -->
+     
+  <div class="row" style="margin-left:20px;margin-right:20px">
+  <div class="col-md-3" style="margin-top:10px;border-right:1px solid #333;">
+      <div style="margin-top:50px">
+      <p class="lead"> Built on proven tech stack</p>
+      </div>
+      
+      <div style="margin-top:50px">
+      <table class="table">
+        <tr class="success">
+          <td> <strong>Server Stack</strong> </td>
+        </tr>
+        <tr>
+          <td>Apache Tomcat</td>
+        </tr>
+        <tr>
+          <td>Mongo DB</td>
+        </tr>
+        <tr>
+          <td>redis</td>
+        </tr>
+        <tr>
+          <td>Apache Jersey REST Framework</td>
+        </tr>
+        <tr>
+          <td>Apache Shiro Security</td>
+        </tr>
+        <tr>
+          <td>Apache Oltu OAUTH2.0</td>
+        </tr>
+        <tr>
+          <td>Apache Mahout Machine Learning</td>
+        </tr>
+        <tr>
+          <td>Apache Velocity Templates</td>
+        </tr>
+        
+        <tr>
+          <td></td>
+        </tr>
+        
+      </table>
+      </div>
+
+    <div style="margin-top:50px">
+      <table class="table">
+        <tr class="success">
+          <td> <strong>Client Stack</strong> </td>
+        </tr>
+        <tr>
+          <td><a href="https://developer.linkedin.com/">HTML5</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://developers.facebook.com">JQuery</a> </td>
+        </tr>
+         <tr>
+           <td><a href="https://developer.salesforce.com/">JQuery Mobile</a></td>
+          </tr>
+         <tr>
+           <td> <a href="https://stripe.com/">Backbone</a></td>
+          </tr>
+         <tr>
+           <td> <a href="https://stripe.com/">CSS3</a></td>
+          </tr>
+          <tr>
+           <td> <a href="https://stripe.com/">AJAX</a></td>
+          </tr>
+ 
+      </table>
+      </div>
+
+      <div style="margin-top:50px">
+      <table class="table">
+        <tr class="success">
+          <td> <strong>Deployment Stack</strong> </td>
+        </tr>
+        <tr>
+          <td>Amazon EC2 - AMI</td>
+        </tr>
+        <tr>
+          <td>Amazon Beanstalk scaling</td>
+        </tr>
+        <tr>
+          <td>Amazon S3 storage</td>
+        </tr>
+        <tr>
+          <td>Amazon Cloudfront CDN</td>
+        </tr>
+        <tr>
+          <td>Amazon SES mail service</td>
+        </tr>
+        
+        <tr>
+          <td></td>
+        </tr>
+        
+      </table>
+      </div>
+  </div>
+
+  <div class="col-md-9" >
+  <h2> ReferralWire Platform </h2>
+  
+  <p>ReferralWire is a multi-tenant Saas Platform delivered on a continous integration cycle so all our customers get best experience at the same time. Thanks to Open Source Intiatives, ReferralWire Platform has been built on Standards based, Open Source technologies and delivered simultaneoulsy on Web & Mobile devices over a global cloud platform, Amazon AWS.</p> 
+
+  <p>Referralwire features a rich set of developer tools and APIs that help companies manage their partner program, and tightly integrate referral mechanics across their websites, communities, mobile and enterprise applications. </p>
+
+  <p>Built on REST, JavaScript, and open web standards, ReferralWire empowers developers to build delightful user experiences that fit naturally within the flow of their site or app, while ensuring enterprise-hardened, secure management of your partner program. ReferralWire APIs can be accessed by both server-side and page-side developers, empowering companies to make the most of their technical resources.</p>
+
+  <p>All of these developer tools come accompanied by rich documentation, resources, tutorials, quickstarter projects on GIT, and best practices for writing code. These tools are available to all ReferralWire customers inside of the ReferralWire Community.</p>
+
+  <p>ReferralWire REST API is a server-side API that has been designed from the ground up to facilitate partner interactions across your site or app. APIs make it simple to pull ReferralWire data onto a web page or into a mobile site, using an API call to request from the resource as little or as much information as you desire. That’s because APIs supports customizable fields and search specifications. This approach limits the amount of REST calls you need to make to the ReferralWire server, optimizing performance and speed while still ensuring you provide users with all the context you desire when they interact with a ReferralWire Objects. Key Endpoints Found in APIs </p>
+
+  <p>While the APIs provides a powerful interface for server-side developers, the JavaScript Software Development Kit (SDK) provides a robust toolset for page-side developers -- people on your team who utilize popular web development languages like JavaScript, CSS and HTML. These technologies are most often used to build Brannd Owner Partners that interest the end-users on your site or app. The JS SDK can be leveraged in any page-side developer environment, allowing your team to work with their preferred tools. For example, front-end MVC frameworks like backbone and angularJS or JavaScript templating frameworks like handlebars or mustache.js.</p>
+
+  </div>
+  </div>    
+
+</div>
+</div>
+
+<!-- footer -->
+
+<div class="container-fluid" style="background-color:black;text-color:white"> 
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+<h6> <small> <a href="http://www.referralwire.com" target="_blank">ReferralWire Inc © 2014 </a>| <a href="">User Agreement</a> | <a href="">Privacy Policy</a> | <a href="">Copyright Policy</a> | <a href="">API Terms of Use</a> | <a href="">Platform Guidelines</a> </small></h6>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-offset-3 col-md-6">
+ <h4 style="color:white">Powered by</h4>
+
+ <img alt="Amazon" height="30px" src="http://www.servee.com/templates/1009-home/images/feature004.jpg"/>
+
+ <img alt="Tomcat" height="30px" src="http://beginlinux.com/images/server/ubuntu/apache-tomcat-7.gif"/>
+
+ <img alt="mongo" height="30px" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvBehA-U5WK-URN2XexLw2R5gb8HxB6xJCJjBk_yxm3U6wD6dn"/>
+
+ <img alt="java" height="30px" src="http://verse.aasemoon.com/images/e/e8/Sun-java-logo.jpg"/>
+ 
+ <img alt="jersey" height="30px" src="https://jersey.java.net/images/jersey_logo.png"/>
+
+ <img alt="shiro" height="30px" src="https://stormpath.com/images/blog/Apache%20Shiro%20Large.jpg"/>
+
+ </div>
+</div>
+<div class="row">&nbsp;</div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</body>
+</html>

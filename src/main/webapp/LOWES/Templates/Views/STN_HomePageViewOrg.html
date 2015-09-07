@@ -1,0 +1,137 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div data-role="header" class="catalogHeader ui-header ui-bar-a" role="banner" style="height:50px;text-align:center">
+		<span id="navigationButton" class="button menuLaunch home" style="position: absolute;top: 10px;		left: 10px;">Menu</span>
+		<!-- <span class="button" class="button"  style="position:absolute;top: 10px;		left: 10px;" onclick="window.location='#contactList'">Menu</span> -->
+		<!--<a id="navigationButton" href="#" style="background:none;border:none;top:2px;color:gray;vertical-align:top;box-shadow:none"><img src="../../images/mockup/compassButton.png" height:="35px" width="35px"></a>-->
+		<!-- <div id="rwAlerts" style="position: absolute;top: 10px;		right: 10px;">No Alerts</div>	 -->
+		<span class="ui-title" role="heading" aria-level="1" style="font-size:16pt"><font style="font-family: bebasneue; text-transform:uppercase;font-size: 20pt;font-weight: normal;text-shadow: 0 -1px 1px rgba(0,0,0,1);">Successful Thinkers Connect</font></span>
+		<!-- <span style="position:absolute;right:5px;top:15px;text-decoration:underline;cursor:pointer" onclick="window.location='#Profile'">Logout</span> -->
+		<span id="logout" style="cursor:pointer;position:absolute;right:5px;top:10px;padding-top: 5px;padding-bottom: 5px;padding-left: 15px;padding-right: 15px;" class="button" onclick="window.location='#signout'">Logout</span>
+
+</div>
+
+<div style="overflow-y:scroll;bottom:0" class="mainPanelBody">
+	<div class="menuPull"></div>
+	<div class="pullTab menuPull" style="margin-top: -80px;"><div class="grip"></div><div class= "grip gsmall"></div></div>
+	<table width="100%" style="table-layout:fixed" >
+		<tr>
+			<td width="70%" class="dashColumns">
+		
+			<div id="HomePageTitleView" style="margin-top: -20px;" section applet="" template="HomePageTitleSummary" renderer="SimpleView" model="self"></div>
+			
+			
+			
+
+			
+			<div class="newsFeed">
+					<div class="newsFeedTitle"><img src="/images/icons/newspaperWhite.png" class="titleIcon">News feed</div>
+					<div data-role="navbar">
+					    <ul>
+					    	<li><a toggle="ReferralInbox" id="referralTab" class="ui-btn-active referralTab" style="cursor:pointer"><div class="tabIcon">Referrals</div></a></li>
+					        <!--li><a toggle="ActivityList" id="messageTab" style="cursor:pointer" class="messageTab"><div class="tabIcon">Messages</div></a></li -->
+					        <li><a toggle="AttendeeMyExpectedList" id="eventTab" class="eventTab" style="cursor:pointer"><div class="tabIcon">Upcoming Events</div></a></li>
+					    </ul>
+					</div>
+					<div id="ReferralInbox" class="newsFeedList">
+						<!-- 
+						<div style="background-color:white">
+							<table style="width:100%">
+								<tr>
+									<td style="width:50%;text-align:center">
+										<div class="newsFeedLinks" id="refer"><img src="/images/icons/newReferralDarkBlue.png">Make a new referral!</div>
+									</td>
+									<td style="width:50%;text-align:center">
+										<div class="newsFeedLinks"><img src="/images/icons/newMembersDarkBlue.png">Invite a contact!</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						 -->
+						<div id="referralInboxView" section applet="ReferralNewsFeed" act="NewsFeed" template="rwApp.getReferralInboxHomeTemplate" options="filter=false,noRecordsMsg='You have received no referrals in the last two weeks',listItemClass='rw_expandable'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="rw_created_on" sortDir="DESC" progressiveRender="true"></div>
+					</div>
+					 <!-- 
+					<div id="ActivityList" style="display:none;background-color:white;padding-top:5px" class="newsFeedList">
+						<div class="buttonWrap"><input id="postAMessage" type="button" value="post" class="button"></input></div>
+						<textarea id="message" style="height:80px;width: 96%;margin-left: 2%;"rows="" cols=""></textarea>
+						<div section applet="ActivityList" template="RStreamList" renderer="ListView" options="filter=false" model="StandardCollection" sortBy="timestamp" sortDir="DESC" ></div>
+					</div>
+					 -->
+					<div id="AttendeeMyExpectedList" style="display:none;" class="newsFeedList">
+						<div section applet="MyUpcomingEvents" template="EventExpectedExpandList" options="filter=false,noRecordsMsg='You have no upcoming events'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="datetime" sortDir="ASC" progressiveRender="true"></div>
+					</div>
+				</div>
+			
+			
+
+			</td>
+			<td width="30%" style="vertical-align:top">
+
+			
+			<div id="bannerMessage" section  applet="BannerForm" template="STN_BannerMessage" renderer="FormView" model="StandardCollection" numRecords="one"></div>
+			
+			<div data-theme="a" data-content-theme="c" style="max-width:550px" class="cPanel summary" data-collapsed="false">
+				<div class="newsFeedTitle">Last Four Weeks</div>
+				<table style="width:100%">
+
+							<tr>
+								
+								<td class="resultNumber">4</td>
+								<td class="resultLabel">Prospect referrals made by you</td>
+							</tr>
+							<tr>
+								
+								<td class="resultNumber">2</td>
+								<td class="resultLabel">New members recruited by you</td>
+							</tr>
+
+				</table>
+				<table style="width:100%" class="buttonBar">
+							<tr>
+								<td style="width:33%">
+									<div class="buttonContainer">
+										<div class="newsFeedLinks socialButton" id="refer">
+											<img src="/images/icons/newReferralDarkBlue.png">
+										</div>
+										
+									</div>
+									<div class="buttonLabel">
+										 New referral!
+									</div>
+								</td>
+								<td style="width:33%">
+									<div class="buttonContainer">
+										<a href="#facebook">
+										<div class="newsFeedLinks socialButton">
+										<img src="/STN/Images/facebook.png">
+										</div>
+										</a>
+									</div>
+									<div class="buttonLabel">
+										Invite a Facebook Friend
+									</div>
+								</td>
+								<td style="width:33%">
+									<div class="buttonContainer">
+										<a href="#invite_linkedin">
+										<div class="newsFeedLinks socialButton">
+										<img src="/STN/Images/linkedInProfile.png">
+										</div>
+										</a>
+									</div>
+									<div class="buttonLabel">
+										Invite a LinkedIn Contact
+									</div>
+								</td>
+									
+								
+							</tr>	
+				</table>	
+				<!-- <div style="padding: 10px;text-align: center;font-size: 14pt;"><a href="dashboard.html" rel="external" style="font-weight:normal;text-decoration:underline">See the leaderboard for your chapter!</a></div> -->
+				
+			</div>
+
+		</td>
+	</tr>
+</table>
+
+

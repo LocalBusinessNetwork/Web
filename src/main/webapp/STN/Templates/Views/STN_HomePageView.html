@@ -1,0 +1,154 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:34:59 GMT">
+<div data-role="header" class="catalogHeader ui-header ui-bar-a home" role="banner" style="height:50px;text-align:left">
+		<div id="navigationButton" class="button menuLaunch">Menu</div>
+		<div class="headerLogo home"><img src="<%= rwFB.CDN%>/STN/Images/logo.png" alt="Successful Thinkers Network"></div>
+		<div class="poweredBy home">
+			<img src="images/icons/rwWhiteLogo.png" alt="Powered by ReferralWire">
+			<div class="poweredByLabel">
+				<div class="poweredByLabel-top">Powered By</div>
+				<div class="poweredByLabel-bottom">ReferralWire</div>
+			</div>
+			
+		</div>
+		<nav class="homeRightMenu">
+            <ul>
+                <li><a href="javascript:rwApp.showNotifications()" style="margin-top:-5px"><img width="30px" height="30px" src="/images/icons/alert.png" alt="alerts" title="alerts"/><div id="notifications" style="margin-top:-20px;margin-left:25px"></div></a></li>
+            	<li><a href="#Profile">My Account</a></li>
+                <li><a href="#signout">Logout</a></li>
+            </ul>
+        </nav>
+</div>
+
+<div style="overflow-y:scroll;bottom:0" class="mainPanelBody">
+	
+	
+	<div class="content-wrapper">
+    	<div class="main-content-container shadow">
+        	
+            <!-- Left Navigation -->
+            <div class="left-nav">
+            	<ul>
+                    <li class="homeMenu action" route="#memberList">All Members</li>
+                    <li class="homeMenu action" route="#referralLBMyPowerPartners">My Referrals</li>
+                    <li id="speakerList" class="homeMenu action" route="#speakerList">Speakers</li>
+                    <li class="homeMenu action" route="#OrgList">Chapters</li>
+                    <li class="homeMenu action" route="#partnerList">My Address Book</li>
+                    <li class="homeMenu action" route="#AllUpcomingEvents">Events</li>
+                    <li class="homeMenu action" route="#BusinessDirectorySearch">Businesses</li>
+                    <li id="refer">New Referral</li>
+                    <li onclick="window.open('http://resource.successfulthinkersnetwork.com/','_blank')">Resource Site</li>
+                    <li onclick="window.open('http://help.successfulthinkersnetwork.com/','_blank')">Help</li>
+                    <li class="homeMenu action" route="#reports_admin">Administration</li>
+                    <!-- <li class="homeMenu action" route="#metricList">Aggregate Metrics Admin</li>
+                    <li class="homeMenu action" route="#awardList">Awards Admin</li>
+                    <li class="homeMenu action" route="#emailTemplateList">Email Admin</li>
+                    <li class="homeMenu action" route="#imageList">Image Admin</li> -->
+                    
+                </ul>
+            </div>    
+            <!-- END Left Navigation -->
+            
+            <!-- Main Content Area -->
+            <div class="content-area">
+            
+            	<!-- Welcome Message -->
+            	<div id="HomePageTitleView"  section applet="" template="STN_HomePageTitleSummary" renderer="SimpleView" model="self"></div>
+                
+                <hr class="clear" />
+                <!-- END Welcome Message -->
+                
+                <!-- Quick Link Bar -->
+                <div class="quick-links">
+                	<ul>
+                    	<li><a href="#Profile"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_my-profile.png" alt="My Profile"/></a></li>
+                        <li><a href="#OrgList<%= ($.hasVal(rwFB.OrgId))?'/'+rwFB.OrgId:'' %>"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_home-chapter.png" alt="Home Chapter"/></a></li>
+                        <li><a href="#partnerList"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_address-book.png" alt="Address Book"/></a></li>
+                        <li><a href="#memberList"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_find-members.png" alt="Find Members"/></a></li>
+                        <li><a href="#BusinessDirectorySearch"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_find-business.png" alt="Find Business"/></a></li>
+                        <li><a id="refer"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_new-referral.png" alt="Manage Referrals"/></a></li>
+                        <li><a id="inviteWizard"><img src="<%= rwFB.CDN%>/STN/Images/btn_dashboard_invite-new-members.png" alt="Invite New Members"/></a></li>
+                    </ul>
+                </div>
+                <!-- END Quick Link Bar -->
+                
+                <hr class="clear orange" />
+                
+                <!-- Latest News -->
+                
+                <!-- <div id="bannerMessage" section  applet="BannerForm" template="STN_BannerMessage" renderer="FormView" model="StandardCollection" numRecords="one"></div> -->
+                <!-- <div id="incompleteProfile" section  applet="BannerForm" template="STN_BannerMessage" renderer="FormView" model="StandardCollection" numRecords="one"></div> -->
+
+                <div class="mid-section">
+						<div id="incompleteProfile" section  applet="PartyAppletForm" template="STN_MissingInfo" renderer="FormView" model="StandardCollection" numRecords="one"></div>
+						<div id="newMembersTotal" section applet="" template="STN_BoxScoreNewMembers" renderer="SimpleView" model="self"></div>
+		                <div id="newPowerPartners" section applet="" template="STN_BoxScoreNewPowerPartners" renderer="SimpleView" model="self"></div>
+		                <div id="webHitsTotal" section applet="" template="STN_BoxScoreWebProfileHits" renderer="SimpleView" model="self"></div>
+		                <div class="site-link-img"><a href="http://resource.successfulthinkersnetwork.com/" target="_blank"><img src="<%= rwFB.CDN%>/STN/Images/member-resource-site-banner.jpg" alt="Member Resource Site"/></a></div>
+		                <div id="bannerMessage" section  applet="BannerForm" template="STN_BannerMessage" renderer="FormView" model="StandardCollection" numRecords="one"></div>
+                <div class="clear"></div>
+                </div>
+
+                <!-- END Latest News -->
+                
+  
+                
+                
+                <!-- Recent Activity -->
+                <div class="recent-activity-container">
+                	
+                	<!-- <div id="HomePageStats"  section applet="" template="STN_HomePageReferralStats" renderer="SimpleView" model="self"></div> -->
+                	<div class="recentActivity">Recent Activity</div>
+                    
+                    <div id="referralInboxView" section applet="ReferralNewsFeed" act="NewsFeed" template="rwApp.getReferralInboxHomeTemplate" options="filter=false,fillRemainder=true,limit=5,noRecordsMsg='You have received no referrals in the last two weeks',listItemClass='rw_expandable'" renderer="ReferralMgmtListView" model="StandardCollection" sortBy="statusChangeDate" sortDir="DESC" progressiveRender="true"></div>
+                    
+                </div>
+                <!-- END Recent Activity -->
+                
+            </div>
+            <!-- END Main Content Area -->
+            
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="right-content shadow">
+    
+    	<!-- Upcoming Events Container -->
+        <div class="dashboard-events-container">
+        	<div class="header">
+            	<h1>Upcoming Events</h1>
+                <!-- <div class="action"><a href="#">more events</a></div> -->
+                <div class="clear"></div>
+            </div>
+            <div id="UpcomingEvents" section applet="MyUpcomingEvents" template="STN_EventHomeList" options="filter=false,fillRemainder=true,noRecordsMsg='You have no upcoming events',ulClass='upcomingevents'" renderer="ListView" model="StandardCollection" sortBy="denorm_datelong" sortDir="ASC"></div>
+	
+        </div>
+        <!-- END Upcoming Events Container -->     
+        <div id="HomePageUserSummary" section applet="" template="STN_HomePageUserProfile" renderer="SimpleView" model="self"></div>
+        
+		
+		<div id="MyBadges" section applet="" template="STN_HomePageMyBadges" renderer="SimpleView" model="self"></div>
+		
+        <div class="expand-network">
+            <div>
+            <h1>Expand your network!</h1>
+            <div><a class='button' href="<%= rwcore.getLov('ONLINEHELP', 'INVITE_WEB').get('Url')%>" alt="<%= rwcore.getLov('ONLINEHELP', 'INVITE_WEB').get('DisplayVal')%>" target="_blank">Learn More</a>
+            </div>
+            </div>
+            <div>
+                <a href="#facebook/<%= rwFB.uId %>"><img src="<%= rwFB.CDN%>/STN/Images/btn_expand-network_facebook.png"></a>
+            </div>
+            <div>
+                <a href="#invite_linkedin/<%= rwFB.uId %>"><img src="<%= rwFB.CDN%>/STN/Images/btn_expand-network_linkedIn.png"></a>
+            </div>
+            <div>
+                <a href="#partnerList"><img src="<%= rwFB.CDN%>/STN/Images/btn_expand-network_import.png"></a>
+            </div>
+        </div>
+
+    </div>
+			
+</div>			
+<div id="WelcomePage" class="popupApplet welcomeContainer" style="display:none"></div>	
+<div id="HomeModalBackground" style="display:none"></div>	
+

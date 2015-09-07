@@ -1,0 +1,59 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div>
+	<div style="display:inline-block;width:162px;text-align:center;float:left">
+		<img src="Zlhs $.getAltValue(model.get('photoUrl'),'<%= rwFB.CDN%>/images/tallPhotoPlaceholderDisplay.png') Zrhs" style="height:135px">
+	</div>
+	<div style="display:inline-block; vertical-align:top"> 
+		<h1 style="line-height:30px; display:inline">Zlhs $.getAltValue(model.get('firstName'),'') + ' ' + $.getAltValue(model.get('lastName'),'') Zrhs</h1>
+		<p style="font-size:17pt;">Zlhs $.getAltValue(model.get('positions').values[0].title,'')Zrhs</p>
+		<div style="font-size:17pt;">
+			<span style="text-align:left">Zlhs $.getAltValue(model.get('positions').values[0].company.name,'')Zrhs</span>
+			<span style="color: gray;padding-left:50px">Zlhs $.getAltValue(model.get('location').name,'')Zrhs</span>
+		</div>
+							
+	</div>
+	<hr style="border-style:dashed; border-color:gray"></hr>
+				<table class='LinkedInPositions'>
+					<tr>
+						<td class="pLeftCol" >Summary</td>
+						<td>
+							Zlhs $.getLIList(model.get('bio'))Zrhs
+						</td>
+					</tr>
+					<tr>
+						<td class="pLeftCol" >Current</td>
+						<td>
+							<ul>
+								<li>
+									<div class="experienceTitle">Zlhs$.getAltValue(model.get('positions').values[0].title,'') + ' ' + $.getAltValue(model.get('positions').values[0].company.name,'')Zrhs</div>
+									<div>Zlhs$.getAltValue(model.get('positions').values[0].summary,'')Zrhs</div>
+								</li>
+								
+							</ul>
+						</td>
+					</tr>
+					<tr id="positions">
+						<td></td>
+					</tr>
+						
+					<tr>
+						<td class="pLeftCol">Specialties</td>
+						<td>
+							<div>Zlhs$.getAltValue(model.get('specialties'),'')Zrhs</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="pLeftCol">Connections</td>
+						<td>
+							<ul>
+								<li>Zlhs model.get('numConnections')Zrhs Connections</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+
+</div>
+			
+		
+			

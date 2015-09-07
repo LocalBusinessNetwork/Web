@@ -1,0 +1,148 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<table style="width:100%" table-layout:fixed" class="expandableListRow home">
+	<tr>
+		<td style="width:82px;overflow:hidden">
+			<img src="Zlhs $.getAltValue(model.get('contact_photoUrl'),'<%= rwFB.CDN%>/images/icons/User.png')Zrhs" style="height:80px"/>
+		</td>	
+		<td style="padding-top:5px;padding-bottom:5px">
+	 			<!-- for prospect recommendation -->
+	 			<div class="Zlhs $.getConditionalVal(model.get('type'),'CUST_FOR_PART','','hidden') Zrhs">
+		 			<!-- regular -->
+		 			<span class="referralListItemTopLine regular"><a href="#contactList/Zlhs model.get('contactId')Zrhs" class="contactName">Zlhs model.get('contact_fullName')Zrhs</a> Zlhs $.getPositionParentheses(model,'contact_jobTitle','contact_business')Zrhs meets <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaMet')Zrhs</span> of the <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaSpec')Zrhs</span> criteria that Zlhs model.get('partner_firstName')Zrhs looks for in a prospective customer.</span>
+		 			<!-- smartphone -->
+					<span class="referralListItemTopLine phone"><!-- tbd --></span> 	
+					<div class="Zlhs $.getStarClass(model.get('score')) Zrhs"></div>				
+				</div>
+				<!-- for partner recommendation -->
+				<div class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_PART','','hidden') Zrhs">
+		 			<!-- regular -->
+		 			<span class="referralListItemTopLine regular"><a href="#contactList/Zlhs model.get('contactId')Zrhs" class="contactName">Zlhs model.get('contact_fullName')Zrhs</a> Zlhs $.getPositionParentheses(model,'contact_jobTitle','contact_business')Zrhs meets <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaMet')Zrhs</span> of the <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaSpec')Zrhs</span> criteria of an ideal partner for Zlhs model.get('partner_firstName')Zrhs.</span>
+		 			<!-- smartphone -->
+					<span class="referralListItemTopLine phone"><!-- tbd --></span> 	
+					<div class="Zlhs $.getStarClass(model.get('score')) Zrhs"></div>				
+				</div>
+				<!-- for resource recommendation -->
+				<div class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_CUST','','hidden') Zrhs">
+		 			<!-- regular -->
+		 			<span class="referralListItemTopLine regular">Zlhs model.get('partner_firstName')Zrhs meets <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaMet')Zrhs</span> of the <span style="font-size:14pt;font-weight:bold">Zlhs model.get('totalCriteriaSpec')Zrhs</span> criteria that <a href="#contactList/Zlhs model.get('contactId')Zrhs" class="contactName">Zlhs model.get('contact_fullName')Zrhs</a> Zlhs $.getPositionParentheses(model,'contact_jobTitle','contact_business')Zrhs looks for in a prospective customer.</span>
+		 			<!-- smartphone -->
+					<span class="referralListItemTopLine phone"><!-- tbd --></span> 	
+					<div class="Zlhs $.getStarClass(model.get('score')) Zrhs"></div>				
+				</div>
+		</td>
+		
+		<td class="expandCollapseCell" stateCell="Zlhs model.get('id') Zrhs" recommendToggle referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs">
+			<img src="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','<%= rwFB.CDN%>/images/icons/flagRedIconSmall.png','<%= rwFB.CDN%>/images/icons/addIconBlueTall.png') Zrhs">
+			<span toggleAction="Zlhs model.get('status') Zrhs"  style="display:block;font-size:10px;position:absolute;bottom:0;padding-left:12px;color:Zlhs $.getConditionalVal(model.get('status'),'UNREAD','red','#6C9EDA') Zrhs;">Zlhs $.getConditionalVal(model.get('status'),'UNREAD','New!','Expand') Zrhs</span>
+		</td>
+		
+		
+		
+		
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" detailNode="Zlhs model.get('status') Zrhs">
+		<div class="notePaper" style='padding:20px'>
+
+			<table width='100%' class="offer" style="border-spacing:0">
+
+<!-- cat1Name,cat1CriteriaSpec,cat1CriteriaMet -->
+				<tr>
+					<td style="vertical-align:top;">
+						<div class="referralFormSectionTitle">Pre-requisites</div>
+						<% for (var i=1;i <=3;i++) {var name = 'prereq'+i %>
+						<div style="padding:5px; font-size:12pt;" class="Zlhs $.getFormattedVal(model.get('<%= name %>'),'','hidden') Zrhs">
+							<table style="width:100%">
+								<tr>
+									<td style="width:20px;vertical-align: top;"><img style="height: 18px;vertical-align: top;padding-top: 3px;"src="<%= rwFB.CDN%>//images/checkedBox.png"></td>
+									<td>Zlhs $.formatLOV("PREREQ",'<%= name %>',model) Zrhs</td>
+								</tr>
+							</table>
+						</div>
+						<% }; %>
+						
+						<!-- for prospect recommendation -->
+						<div class="Zlhs $.getConditionalVal(model.get('type'),'CUST_FOR_PART','referralFormSectionTitle','hidden') Zrhs">Zlhs $.addPossessiveSuffix(model.get('partner_firstName'))Zrhs Criteria Met by Zlhs model.get('contact_firstName') Zrhs</div>
+						<!-- for partner recommendation -->
+						<div class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_PART','referralFormSectionTitle','hidden') Zrhs">Power Partner Match Indicators</div>
+						<!-- for resource recommendation -->
+						<div class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_CUST','referralFormSectionTitle','hidden') Zrhs">Zlhs $.addPossessiveSuffix(model.get('contact_firstName'))Zrhs Criteria Met by Zlhs model.get('partner_firstName') Zrhs</div>
+						
+						<% for (var i=1;i <= 10;i++) {var name = 'cat'+i+'Name'; var spec = 'cat'+i+'CriteriaSpec'; var met = 'cat'+i+'CriteriaMet' %>
+						
+						<div style="padding:5px; font-size:12pt;" class="Zlhs $.getFormattedVal(model.get('<%= name %>'),'','hidden') Zrhs">
+							<table style="width:100%">
+								<tr>
+									<td style="width: 120px;vertical-align: top;">
+										<div style="position:relative">
+											<span style="position:absolute;height:23px;width:120px;margin-top:0" class="Zlhs $.getStarClass(model.get('<%= met %>')/model.get('<%= spec %>')) Zrhs"></span>
+										</div>
+									</td>
+									<!-- for prospect recommendation -->
+									<td class="Zlhs $.getConditionalVal(model.get('type'),'CUST_FOR_PART','','hidden') Zrhs">Zlhs $.formatLOV("REC_REASON",'<%= name %>',model)  + ' (' + model.get('<%= met %>') + '/' + model.get('<%= spec %>') + ')'Zrhs</td>
+									<!-- for partner recommendation -->
+									<td class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_PART','','hidden') Zrhs">Zlhs $.formatLOV("REC_REASON",'<%= name %>',model) Zrhs</td>
+									<!-- for resource recommendation -->
+									<td class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_CUST','','hidden') Zrhs">Zlhs $.formatLOV("REC_REASON",'<%= name %>',model)  + ' (' + model.get('<%= met %>') + '/' + model.get('<%= spec %>') + ')'Zrhs</td>
+								</tr>
+							</table>
+						</div>
+						<% }; %>
+						
+						<!-- for resource recommendation -->
+						<div class="Zlhs $.getConditionalVal(model.get('type'),'PART_FOR_CUST','referralFormSectionTitle','hidden') Zrhs">Zlhs $.addPossessiveSuffix(model.get('contact_firstName'))Zrhs Qualifications</div>
+						
+						<% for (var i=1;i <= 3;i++) {var name = 'partnerQual'+i; var score = 'partnerQual'+i+'Score'; %>
+						
+						<div style="padding:5px; font-size:12pt;" class="Zlhs $.getFormattedVal(model.get('<%= name %>'),'','hidden') Zrhs">
+							<table style="width:100%">
+								<tr>
+									<td style="width: 120px;vertical-align: top;">
+										<div style="position:relative">
+											<span style="position:absolute;height:23px;width:120px;margin-top:0" class="Zlhs $.getStarClass(model.get('<%= score %>')) Zrhs"></span>
+										</div>
+									</td>
+									<td>Zlhs $.formatLOV("REC_REASON",'<%= name %>',model) Zrhs</td>
+								</tr>
+							</table>
+						</div>
+						<% }; %>
+			
+					</td>
+					
+					
+					<td style="vertical-align:top;width:200px">
+						<div class="referralFormSectionTitle">What do you want to do?</div>
+						<div class="recommendedAction">
+							<img action="refer" recId="Zlhs model.get('id')Zrhs" class="recommendActionButton" src="<%= rwFB.CDN%>/images/icons/phoneNewReferralIcon.png">
+							
+							<!-- for prospect recommendation -->
+							<div class="recommendActionText">Refer</div>
+													
+						
+						</div>
+						<div class="Zlhs $.getConditionalVal(model.get('contact_partnerType'),'REFERRAL_CONTACT','recommendedAction','hidden') Zrhs">
+							<img action="invite" recId="Zlhs model.get('id')Zrhs" class="recommendActionButton" src="<%= rwFB.CDN%>/images/icons/phoneInvite.png">
+							
+							<!-- for prospect recommendation -->
+							<div class="recommendActionText">Invite</div>
+
+						</div>
+						<div class="recommendedAction">
+							<img action="ignoreMyRec" recId="Zlhs model.get('id')Zrhs" class="recommendActionButton" src="<%= rwFB.CDN%>/images/phoneIgnoreRec.png">
+							<div class="recommendActionText">Ignore</div>
+						</div>
+					
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		
+	</div>
+
+
+
+
+

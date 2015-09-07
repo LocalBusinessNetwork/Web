@@ -1,0 +1,11 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; var fldname = f["fldname"]; var required = f["required"]; var readOnlyFld = f["readOnly"];%>
+<% if ( readonly == true  || readOnlyFld == true ) { 
+%>
+<div class="ratingStarContainer">
+	<div class="ratingStarValue" style="width:Zlhs model.get('<%= fldname%>') * 100 Zrhs"></div>
+	<div class="ratingStarBalance" style="width:Zlhs 100-(model.get('<%= fldname%>') * 100) Zrhs"></div>
+</div>
+<% } else { %>
+<input type='number' id='<%= fldname%>' value="" placeholder="<%= (required == true) ? 'required' :'optional'%>"></input>
+<% } %>

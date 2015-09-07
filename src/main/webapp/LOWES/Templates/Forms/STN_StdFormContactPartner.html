@@ -1,0 +1,45 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- STN -->
+<div class="paragraphBlock" style="width:100%">
+       	<!--<img src="images/icons/Contact_jumbo.png"/>-->
+       <table style="width:100%">
+       		<tr>
+       			<td style="width:120px">
+       				<div style="width:120px;overflow:hidden">
+						Zlhs $.getImage(model,'photoUrl_pub','images/icons/UserWBack.png','profilePhoto addressbook')Zrhs
+
+					</div>
+				</td>
+	       
+	       		<td style="vertical-align:top">
+			       	<table class="paragraphBodyText" style="width:100%">
+			          	<tr>
+			          		<td class="Zlhs $.getConditionalVal(model.get('type'),'REFERRAL_PARTNER','paragraphNameText partnerName light','paragraphNameText contactName light')Zrhs">Zlhs $.getConditionalVal(model.get('personalTitle_pub'),'DOCTOR','Dr.','') + ' ' + model.get('firstName_pub') + ' ' + model.get('lastName_pub')Zrhs</td>
+			          	</tr>
+			          	<tr>
+			          		<td>Zlhs $.getPosition(model.get('jobTitle_pub'),model.get('business_pub')) Zrhs </td>
+			          	</tr>
+						
+	      			</table>
+	      		</td>
+	      		
+	      	</tr>
+      </table>
+ </div>
+<div class="cPanel std">
+	<ul data-role="listview" data-inset="true" class="formfields">
+	<% for (var i=0;i < attributes.length;i++) {var a = attributes[i];var aName = a.fldname; if (a.dataType != 'hidden'){%>
+	<li class="Zlhs $.getFormattedVal(model.get('<%= aName %>'),'','remove') Zrhs"><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"] %>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+	<% }}; %>
+	</ul>
+</div>
+
+
+
+<div>
+<ul style="display:none">
+<% for (var i=4;i < attributes.length;i++) {var a = attributes[i]; if (a.dataType =='hidden'){%>
+<li><table width="100%"><tr><td width="25%" align="right" class="label"><span><%= a["label"]%>:</span></td><td width="5%"></td><td width="70%"><%= fieldRenderer(a,true)%></td></tr></table></li>
+<% }}; %>
+</ul>
+</div>

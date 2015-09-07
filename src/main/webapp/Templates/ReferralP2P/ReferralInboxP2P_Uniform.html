@@ -1,0 +1,48 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- ReferralInboxP2P_Uniform.html -->
+<table style="width:100%; table-layout:fixed" class="expandableListRow home">
+	<tr>
+		<td class="expandCollapseCell" stateCell="Zlhs model.get('id') Zrhs" inboxToggle referralStatus="Zlhs $.getP2PAcceptStatus(model) Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs">
+			<img src="Zlhs $.getConditionalVal($.getP2PAcceptStatus(model),'UNREAD','<%= rwFB.CDN%>/images/icons/flagRedIconSmall.png','images/icons/addIconBlueTall.png') Zrhs">
+			<span toggleAction="Zlhs $.getP2PAcceptStatus(model) Zrhs"  style="color:Zlhs $.getConditionalVal($.getP2PAcceptStatus(model),'UNREAD','red','#6C9EDA') Zrhs;">Zlhs $.getConditionalVal($.getP2PAcceptStatus(model),'UNREAD','Accept?','Expand') Zrhs</span>
+		</td>
+		<td style="padding-top:5px;padding-bottom:5px">
+				<div class="Zlhs $.getP2PTopLineClass(model,'isMember') Zrhs"><b>To:</b> You and <a href="#lookupPartnerProfile/Zlhs $.getP2PAttr(model,'toId') + '/' + $.getP2PAttr(model,'to_partyType') Zrhs" class="partnerName">Zlhs $.getP2PAttr(model,'to_fullName')Zrhs</a> <b>From: </b><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a> </div>
+				<div class="Zlhs $.getP2PTopLineClass(model,'isContact') Zrhs"><b>To:</b>You and Zlhs $.getP2PAttr(model,'to_fullName') Zrhs<b>From:</b><a href="#lookupPartnerProfile/Zlhs model.get('fromId') Zrhs" class="partnerName">Zlhs model.get('from_fullName') Zrhs</a></div>
+				<div style="padding-top:5px;">
+					<span class="referralListItemBottomLine"><b>Type: </b><span class="partnerName" style="color:black">Partner Introduction</span><span class="extraRefDetail"></span></span>
+					<span class="referralListItemBottomLine"><b>Status: </b><span class="Zlhs 'status-' + model.get('status') + ' referralType-' + model.get('referralType')Zrhs"> Zlhs $.formatOutBoxStatusShort(model) Zrhs</span>  <span class="extraRefDetail"></span></span>
+					<span class="referralListItemBottomLine"><b>Last Updated: </b>Zlhs $.timeAgo(model.get('statusChangeDate').$date) Zrhs!.  <div style="padding-top:5px;" class="Zlhs $.getConditionalVal(model.get('status'),'UNREAD','extraRefDetail','hidden') Zrhs">Accept the referral connect to Zlhs $.getP2PAttr(model,'to_firstName')Zrhs!</div>
+				</div>
+		</td>
+		
+		<td style="width:82px;overflow:hidden">
+			<img src="Zlhs $.getAltValue(model.get('from_photoUrl'),'<%= rwFB.CDN%>/images/icons/User.png')Zrhs" style="height:80px"/>
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>	
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" class="insetReferralDetail" detailNodeState="hidden" inboxDetailNode="Zlhs model.get('status') Zrhs">
+		<div class="notePaper" style='padding:20px;'>
+			
+			<table width='100%' class="offer" style="border-spacing:0">
+				<tr>
+					<td style='font-size:24pt; font-weight:bold;color:darkblue;font-family:Arial;'>Power Partner Referral</td>
+					
+				</tr>
+				<tr>
+					<td style='border:2px solid darkblue' colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div style="padding:5px; font-size:12pt;min-height:60px;">Zlhs $.getLIList(model.get('comments')) Zrhs</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	</div>
+
+
+
+

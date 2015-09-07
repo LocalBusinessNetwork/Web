@@ -1,0 +1,14 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% var f = attributes; 
+var fldname = f["fldname"]; 
+var required = f["required"]; 
+var readOnlyFld = f["readOnly"]; 
+var max=f["maxLength"];
+var placeholder = ($.hasVal(f["placeholder"]))?f["placeholder"]:(required == true)?'required':'optional';
+%>
+<% if ( readonly == true  || readOnlyFld == true ) { %>
+<span id='<%= fldname%>'></span>
+<% } else { %>
+<input type='text' id='<%= fldname%>' value="" maxlength="<%= ($.hasVal(max))?max:300 %>" placeholder="<%= placeholder%>"></input>
+<% } %>
+

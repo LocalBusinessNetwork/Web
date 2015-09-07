@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Registeration API</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#submit').click(function(e) {
+  e.preventDefault();
+  var first_name=jQuery("input[name=first_name]").val();
+  var last_name=jQuery("input[name=last_name]").val();
+  var email=jQuery("input[name=email]").val();
+  var password=jQuery("input[name=pass]").val();
+  var partner_id=jQuery("input[name=partner_id]").val();
+  var member_partner_id=jQuery("input[name=member_partner_id]").val();
+  var referral_id=jQuery("input[name=referral_id]").val();
+  var api_key=jQuery("input[name=api_key]").val();
+  var base_url=jQuery("select[name='host']").val();
+        var sendData_obj_signup = {
+   first_name:first_name,
+   last_name : last_name,
+   email: email,
+   password : password,
+   partner_id : partner_id,
+   partner_member_id : member_partner_id,
+   referral_id : referral_id
+  };
+
+
+
+  var sendData_obj = { 'X-API-KEY' : api_key, 'signup' : sendData_obj_signup } ;
+
+  jQuery.support.cors= true;
+  $.ajax({
+   crossDomain: true,
+   url: base_url+"/api/register/signup",
+   dataType: "JSON",
+   xhrFields: {
+    withCredentials: true
+     },
+   data: sendData_obj,
+   type: 'POST'
+  }).done(function(res) {
+   if(res.statuscode=='200') {
+     alert("Registration Success");
+   }
+   else {
+    alert("Login Failure");
+   }
+  });
+  });
+ });
+</script>
+<table>
+<form action="" method="post" name="registration">
+<tr><td>First Name</td><td><input type="text" name="first_name" value="John" /></td></tr>
+<tr><td>Last Name</td><td><input type="text" name="last_name" value="Smith"/></td></tr>
+<tr><td>Email</td><td><input type="text" name="email" value="john.smith@referralwire.com"/></td></tr>
+<tr><td>Password</td><td><input type="password" name="pass" value="123456"/></td></tr>
+<tr><td>Partner ID</td><td><input type="text" name="partner_id" value="13" /></td></tr>
+<tr><td>Member Partner ID</td><td><input type="text" name="member_partner_id" value="12345"/></td></tr>
+<tr><td>Referral ID</td><td><input type="text" name="referral_id" value="someid"/></td></tr>
+<tr><td>API Key</td><td><input type="text" name="api_key" value="feae8925f8e9d2e5f361df76be2aca84" /></td></tr>
+<tr><td>Host</td><td><select name="host">
+ <option value="http://staging.smashsolutions.com">Staging</option>
+ <option value="http://www.smashsolutions.com">Live</option>
+</select></td></tr>
+<tr><td colspan="2"><input type="submit" name="submit" value="submit" id="submit" /></td></tr>
+</form></table>
+</body>
+</html>

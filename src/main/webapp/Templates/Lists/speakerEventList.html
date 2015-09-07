@@ -1,0 +1,21 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<a id="Zlhs model.id Zrhs" href="Zlhs '#EventExpected/' + model.get('id') Zrhs" class="masterDetailList">
+	Zlhs $.getImage(model,'photoUrl','<%= rwFB.CDN%>/images/icons/chapterPlaceholder.png','')Zrhs
+	<div>
+		<div class="partnerName eventItem">Zlhs model.get('businessName') Zrhs</div>
+		<p>Zlhs $.formatDateTime(model.get('datetime')) Zrhs </p>
+		<div class="ratingStarContainer">
+			<div class="ratingStarLabel">Speaker Rating: </div>
+			<div class="starFrame Zlhs(!$.hasVal(model.get('speakerRating')))?'hidden':''Zrhs">
+				<img src="<%= rwFB.CDN%>/images/ratingStars.png">
+				<div class="ratingStarValue" style="width:Zlhs (model.get('speakerRating') / 5) * 100 Zrhs"></div>
+				<div class="ratingStarBalance" style="width:Zlhs (1-(model.get('speakerRating') / 5)) * 100 Zrhs"></div>
+			</div>
+			<div class="noRatingLabel Zlhs($.hasVal(model.get('speakerRating')))?'hidden':''Zrhs">No Rating</div>
+		</div>
+		
+		
+	</div>
+</a>
+
+

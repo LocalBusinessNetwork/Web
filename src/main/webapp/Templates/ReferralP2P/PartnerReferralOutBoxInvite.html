@@ -1,0 +1,55 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<!-- PartnerReferralOutBoxInvite.html -->
+
+<table style="width:100%;table-layout:fixed" class="expandableListRow home">
+	<tr>
+		<td class="referralPictureCell">
+			
+			<div class="referralStatusIconFrame iconStatus-Zlhs model.get('status')Zrhs iconRefType-Zlhs model.get('referralType')Zrhs">
+				<img class="referralTypeIcon typeIcon-connection" src="<%= rwFB.CDN%>/STN/Images/activity-icon_connection.png">
+				<img class="referralStatusIcon typeIcon-connection statusIcon-accepted" src="<%= rwFB.CDN%>/STN/Images/activity-icon_CONVERTED.png">
+			</div>
+			
+			<!--<%=fieldRenderer(attributes[3],true)%>-->
+		</td>
+	
+		<td style="padding-top:5px;padding-bottom:5px">
+	 		
+				<span class="referralListItemTopLine">Invitation: My invitation to <a class="partnerName">Zlhs model.get('to_firstName') Zrhs</a></span>
+				<div class="referralListItemBottomLine">Zlhs $.formatOutBoxStatusShort(model) Zrhs</div>
+			
+		</td>
+		
+
+		
+		<td class="expandCollapseCell collapsed" stateCell="Zlhs model.get('id') Zrhs" referralStatus="Zlhs model.get('status') Zrhs" toggleState="collapsed" toggleCID="Zlhs model.cid Zrhs">
+			<div class="accept expand"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/expandIconWhite.png">Expand</div>
+			<div class="accept collapse"> <img style="float:left" class="extraRefDetail" src="<%= rwFB.CDN%>/images/icons/collapseIconWhiteSmall.png">Collapse</div>
+		</td>
+	</tr>		
+</table>
+
+	<div  id="Zlhs model.cid Zrhs_details" objid="Zlhs model.get('id') Zrhs_details" style="display:none; font-family:Comic Sans MS;" detailNodeState="hidden">
+
+		<div class="notePaper referralForm">
+			<table class="offer table">
+				<tr>
+					<td class="referralFormTitle">Invitation</td>
+					
+				</tr>
+				<tr>
+					<td class="referralFormBox" colspan='2'>
+						<!--<div style="font-family:helvetica;color:darkblue">MESSAGE</div>-->
+						<div class="referralFormReason">Zlhs $.getLIList(model.get('comments')) Zrhs</div>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+	</div>
+
+
+
+
+

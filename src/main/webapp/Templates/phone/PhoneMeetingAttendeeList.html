@@ -1,0 +1,42 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<table style="width:100%" table-layout:fixed" class="expandableListRow home">
+	<tr>
+		<td style="width:82px;overflow:hidden">
+			Zlhs $.getImageTN(model,'photoUrl','<%= rwFB.CDN%>/images/icons/UserWBack.png','meetingAttendees ui-li-thumb')Zrhs
+		</td>	
+		<td style="padding-top:5px;padding-bottom:5px; padding-left:5px;">
+	 			<!-- for prospect recommendation -->
+	 			
+	 			<div class="Zlhs ($.hasVal(model.get('guestType')))?model.get('guestType'):'ismember'Zrhs">
+	 			
+		 			<!-- regular -->
+		 			<!-- base case - regular attendee -->
+		 			<div class="referralListItemTopLine regular existingmember"><a href="#PhoneMemberContact/Zlhs model.get('partyId')Zrhs" class="partnerName">Zlhs model.get('fullName')Zrhs</a></div>	 			
+		 			<div class="referralListItemBottomLine regular existingmember"> Zlhs $.getPosition(model.get('jobTitle'),model.get('business'))Zrhs</div>
+		 			
+		 			<!-- floater -->
+		 			<div class="referralListItemTopLine regular floater"><a href="#PhoneMemberContact/Zlhs model.get('partyId')Zrhs" class="partnerName">Zlhs model.get('fullName')Zrhs</a></div>	 			
+		 			<div class="referralListItemBottomLine regular floater"> Zlhs $.getPosition(model.get('jobTitle'),model.get('business'))Zrhs</div>
+					<div class="referralListItemBottomLine regular floater isVisitor">Guest</div>
+		 			
+		 			<!-- new member -->
+		 			<div class="referralListItemTopLine regular newmember"><a class="contactName">Zlhs model.get('fullName')Zrhs</a></div>
+		 			<div class="referralListItemBottomLine regular newmember" style="padding-top:5px"><span style="color:#2E8B57;font-weight:bold;font-size:12pt">New member!&nbsp;</span></div>
+		 			<div class="Zlhs $.getFormattedVal(model.get('newMemberSrc_fullName'),'referralListItemBottomLine regular','hidden')Zrhs referralListItemBottomLine regular newmember" style="padding-top:5px">Invited by: Zlhs model.get('newMemberSrc_fullName') Zrhs</div>
+		 			<!-- smartphone -->
+								
+				</div>
+		</td>
+		
+		<td class="contextActionCell">
+			<div class="Zlhs $.getConditionalVal(model.get('status'),'INVITED','button checkin','hidden') Zrhs" source="thirdParty" checkInButtonId="Zlhs model.get('id') Zrhs" style="padding:10px">Check In</div>
+			<div class="Zlhs $.getConditionalVal(model.get('status'),'CHECKEDIN','button checkout','hidden') Zrhs" source="thirdParty" checkInButtonId="Zlhs model.get('id') Zrhs" style="padding:10px">Remove</div>
+		</td>
+
+	</tr>		
+</table>
+
+
+
+
+

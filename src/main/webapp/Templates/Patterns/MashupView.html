@@ -1,0 +1,82 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+	<table width="100%" style="height:100%;border-spacing:0;" >
+	<tr>
+		<td class="leftPanel">
+			<div style="position:relative;width:100%;height:100%">
+				<div style="height:50px;background-color:firebrick;position:absolute;top:0;width:100%">
+					
+					<span id="navigationButton" class="button menuLaunch" style="position: absolute;top: 10px;left: 10px;background-color: rgb(119, 1, 0);background-image: none;">Menu</span>
+					<span style="position: absolute;top: 10px;right: 20px;color:white;font-size:18pt;font-family:courier;text-shadow: 0 -1px 1px rgba(0,0,0,1);">ReferralWire</span>
+					
+				</div>
+				<div style="position:absolute;overflow-y: scroll;top:50px;bottom:0;width:100%;background-image:url(style/architectTheme/bluePrintBackground.jpg)">
+					<%= listview %>
+				</div>
+			</div>
+			
+		</td>
+		<td class="rightPanel">
+			<div style="position:relative;width:100%;height:100%">
+				<div class ="mainPanelHeader" style="text-align:center;padding-top: 12px;height: 38px;">
+				
+					 <span class="rw_appletMenu" style="float:left">
+					 	<%= render.options.appletMenu.render().el.outerHTML %>
+					 </span>
+					 <span style="position:absolute;left:50%">
+					 	<div style="position:relative;left:-50%;font-size:18pt;">
+					 		<%= title%>
+					 	</div>
+					 	
+					 </span>
+					 <span class="rightMenu">
+						<%= ($.hasVal(render.options.appletMenuRight))?render.options.appletMenuRight.render().el.outerHTML:"" %>
+						<span class="<%=$.getFormattedVal(render.options.tooltipSource,'tooltip','hidden')%>" tooltipSource="<%=$.getAltValue(render.options.tooltipSource,'') %>">
+							<img src="<%= rwFB.CDN%>/images/icons/helpInfo.png" class='contextHelp'>
+						</span>
+						
+					 </span>
+				</div>
+				<div class="mainPanelBody" style="background-image:url(<%= rwFB.CDN%>/images/backgrounds/graphPaperBackground.jpg)">
+					
+					
+					<div id="linkedInSelector" data-role="collapsible" data-theme="a" data-content-theme="c" data-collapsed="true">
+					    <h2><%=render.options.dynamicTitles[0]%></h2>
+					    <div class="choiceList">
+						   <!-- 
+						    <fieldset data-role="controlgroup">
+							<legend></legend>
+								
+						     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+						     	<label for="radio-choice-1">Alex Chervet, Pet Detective, Milwaukee Wisconsin</label>
+						
+						     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+						     	<label for="radio-choice-2">Alex Chervet, International Spy, London, UK</label>
+						
+						     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+						     	<label for="radio-choice-3">Alex Chervet, Astronaut, Houston, TX</label>
+						
+						     	<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
+						     	<label for="radio-choice-4">Alex Chervet, Rock Star, Los Angeles, CA</label>
+						     	
+						     	 
+							</fieldset>
+							 -->
+						</div>
+					</div>
+	
+					
+					<div class="profilePlatter">
+						No information is available.  Note: your browser must allow popups to see LinkedIn information here. See the contextual help on this page for more detail.
+					
+					</div><!-- close the platter -->
+				</div> <!-- close the main Panel body -->
+				<div class="rw_ViewBar"><%= render.renderViewBar(0) %></div>
+			</div>
+		</td>  <!-- close the main Panel -->
+	</tr>
+	</table>
+
+
+
+

@@ -1,0 +1,19 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+			
+
+	<div style="overflow-y: scroll;position: absolute;background-color: white;border-radius: 10px;left: 5px;right: 5px;top:0">
+
+		<!--<div id="customQuestions" class="Zlhs $.getFormattedVal(model.get('question1'),'customQuestionHeader','hidden') Zrhs" > Background information requested by <font style="color:firebrick">Zlhs model.get('to_fullName')Zrhs</font></div>-->
+		<ul data-role="listview" data-inset="true" class="Zlhs $.getFormattedVal(model.get('question1'),'editformfields','hidden') Zrhs">
+		<% var customQStartIndex = 0 /*first custom question in the attribute array*/%>
+			<li class="Zlhs $.getFormattedVal(model.get('question1'),'','hidden') Zrhs" style="padding-left:5px;padding-right:5px"><div><%=fieldRenderer(attributes[customQStartIndex],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+1],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question2'),'','hidden') Zrhs" style="padding-left:5px;padding-right:5px"><div><%=fieldRenderer(attributes[customQStartIndex+2],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+3],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question3'),'','hidden') Zrhs" style="padding-left:5px;padding-right:5px"><div><%=fieldRenderer(attributes[customQStartIndex+4],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+5],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question4'),'','hidden') Zrhs" style="padding-left:5px;padding-right:5px"><div><%=fieldRenderer(attributes[customQStartIndex+6],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+7],false)%></div></li>
+		</ul>
+		<div class="Zlhs $.getFormattedVal(model.get('question1'),'hidden','') Zrhs" style="font-size: 14pt;color: black;font-style: italic;padding: 10px;">
+			This partner doesn't have any custom questions. Click Save to submit the referral.
+		</div>
+
+	</div>
+<!-- includeFieldDescription is in rwapi -->

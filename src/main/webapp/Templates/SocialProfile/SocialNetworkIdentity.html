@@ -1,0 +1,20 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:18:59 GMT">
+<div style="height:100%;width:100%;position:relative;border-radius:4px">
+	<div class="confirmHeader">
+				<span id="pickTitle" class="confirmTitle"><%= options.title%></span>
+	</div>
+	<div class="confirmBody">
+		<div class="confirmMsg">Is this you ?</div>
+		<table width="100%">
+			<tr>
+				<td width="50%" style="text-align:right">
+					<img src="<%= options.src%>"  style="width:100px;height:100px">
+				</td>
+				<td>
+					<div popEvent class="button confirmButton" confirmevent="SocialYes" id="SocialYes">Yes</div>
+					<div popEvent class="button confirmButton" id="SocialNo">No</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

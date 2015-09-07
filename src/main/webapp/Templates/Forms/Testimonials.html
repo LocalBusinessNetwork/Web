@@ -1,0 +1,45 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+
+<div>
+				<!-- this first list is just a placeholder if no testimonials have been provided -->
+				<ul class="Zlhs $.getFormattedVal(model.get('quote1_title'),'hidden','testimonial') Zrhs">	
+					
+					<li style="position:relative;color: gray;border-color: lightgray;box-shadow: 0 0 0;" class="testimonial">
+						<a  style="cursor:pointer" id="edit">
+							<div class="testimonialTitle" style="color:gray">"Quote Title!"</div>
+							<div class="testimonialText" style="color:gray">"Quotation from one or your customers, partners or a publication"</div>
+							<div class="testimonialSource" style="color:gray">-- Source</div>
+						</a>
+					</li>
+				</ul>
+				
+				<ul class="testimonial">
+									
+					<% for (var i=0;i < attributes.length;i=i+3) {
+					var a = attributes[i];
+					var thisTitle = a['fldname'];
+					var b = attributes[i+1]; 
+					var thisText = b['fldname'];
+					var c =  attributes[i+2];
+					var thisSource = c['fldname'];
+					%>
+						<li style="position:relative" class="Zlhs $.getFormattedVal(model.get('<%= thisTitle%>'),'testimonial','hidden')Zrhs">
+							<div class="testimonialTitle">Zlhs model.get('<%= thisTitle%>')Zrhs</div>
+							<div class="testimonialText">Zlhs model.get('<%= thisText%>')Zrhs</div>
+							<div class="testimonialSource">-- Zlhs model.get('<%= thisSource%>')Zrhs</div>
+						</li>
+					<% }; %>
+														
+					
+					
+				</ul>
+				
+
+
+				
+	</div>
+
+	
+
+
+	

@@ -1,0 +1,55 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:34:59 GMT">
+<div style="display:inline-block;padding-top:15px;padding-left:10px;margin-right:10px;color:black;text-shadow:none;border-radius:8px;font-family:century">
+		<div class="attendee-status-Zlhs ($.hasVal(model.get('status')))?model.get('status'):'NONE' Zrhs attendee-type-Zlhs ($.hasVal(model.get('guestType')))?model.get('guestType'):'NONE' Zrhs">
+			<div class="button eventselfcheckin">Check In</div>
+			<h2 class="checkin-confirmation">You have checked in!</h2>
+			<h2 class="checkin-guest">You are a guest</h2>
+		</div>
+		<div></div>
+		<p></p>
+		<a href="#OrgEvents/Zlhs model.get('OrgId') Zrhs" class="eventFormTitle">Zlhs model.get('businessName')Zrhs</a>
+		<a href="#phoneOrgEvents/Zlhs model.get('OrgId') Zrhs" class="eventFormTitle-phone">Zlhs model.get('businessName')Zrhs</a>
+		<div class="eventFormSubTitle">Meeting Details</div>
+		<div class="eventFormSection">
+			<div class="eventFormSectionFloat">
+				<div class="eventFormPhotoFrame">
+				Zlhs $.getImage(model,'photoUrl','images/icons/chapterPlaceholder.png','')Zrhs
+				</div>
+			</div>
+			<div class="eventFormPhotoCaption">
+				<div>Zlhs $.getDateElement(model,"datetime","day")Zrhs</div>
+				<div>Zlhs $.getDateElement(model,"datetime","month") + ' ' + $.getDateElement(model,"datetime","date")Zrhs</div>
+				<div>Zlhs $.getTimeString(model,'datetime')Zrhs</div>
+			</div>
+		</div>
+		<div class="eventFormSubTitle">Agenda</div>
+		<div style="padding-top:10px;padding-bottom:20px;font-family:arial;line-height:14pt">
+			<span class="Zlhs $.getFormattedVal(model.get('agenda'),'','hidden') Zrhs">Zlhs model.get('agenda')Zrhs</span>
+			<span class="Zlhs $.getFormattedVal(model.get('agenda'),'hidden','') Zrhs">To be announced...</span>
+			
+		</div>
+		<div class="eventFormSubTitle">Featuring</div>
+		
+		<div class="eventFormSection">
+			<div class="eventFormSectionFloat">
+				<div class="eventFormPhotoFrame">
+				Zlhs $.getImage(model,'speaker1_photoUrl','images/icons/UserWBack.png','eventSpeakerImage')Zrhs
+				</div>
+			</div>
+			<div class="eventFormPhotoCaption">
+				<div>Zlhs model.get('speaker1_fullName')Zrhs</div>
+			</div>
+			<div class="captionLineTwo">Zlhs model.get('speaker1_business')Zrhs</div>
+		</div>
+
+		<div style="padding-top:10px;padding-bottom:20px;font-family:arial;line-height:14pt">
+			Zlhs model.get('speaker1_bio')Zrhs
+		</div>
+
+
+		
+	
+
+</div>
+
+

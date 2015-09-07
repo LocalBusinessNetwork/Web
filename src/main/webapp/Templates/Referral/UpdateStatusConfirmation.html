@@ -1,0 +1,67 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div style="height:100%;width:100%;position:relative;border-radius:4px">
+
+	<div class="confirmHeader">
+
+				<a popEvent id="cancelPick" confirmevent="cancel" class="button">Cancel</a>
+				<span id="pickTitle" class="confirmTitle">Update</span>
+				
+				
+	</div>
+
+	<div class="confirmBody">
+		<table class="confirmBody-primary-table">
+			<tr>
+				<td class="confirmBody-leftCol">
+					<div class="confirmBody-buttonGroup">
+						<div class="button" popRefreshFunction="rwApp.showRefStatusConfirm('Claimed','ZfromFullName')" confirmevent="save" setfieldlist="status" setvallist="ACCEPTED">Claimed
+							<img class="confirm-StatusSelected confirm-status-ACCEPTED" src="<%= rwFB.CDN%>/STN/Images/circleCheck.png">
+						</div>
+						<div class="button" popRefreshFunction="rwApp.showRefStatusConfirm('Contacted','ZfromFullName')" confirmevent="save" setfieldlist="status" setvallist="CONFIRMED">Contacted
+							<img class="confirm-StatusSelected confirm-status-CONFIRMED" src="<%= rwFB.CDN%>/STN/Images/circleCheck.png">
+						</div>
+						<div class="button" popRefreshFunction="rwApp.showRefStatusConfirm('Converted','ZfromFullName')" confirmevent="save" setfieldlist="status" setvallist="CONVERTED">Converted
+							<img class="confirm-StatusSelected  confirm-status-CONVERTED" src="<%= rwFB.CDN%><%= rwFB.CDN%>/STN/Images/circleCheck.png">
+						</div>
+						<div class="button" popRefreshFunction="rwApp.showRefStatusConfirm('Archived','ZfromFullName')" confirmevent="save" setfieldlist="archiveFlag" setvallist="true">Archived
+						</div>
+						
+					</div>
+					
+				</td>
+				<td class="confirmBody-rightCol">
+					<div>
+						<div class="confirmIntro">Select a new status</div>
+						<div class="arrowFrame">
+							<div class="arrow-left"></div>
+							<div class="arrowBody"></div>
+						</div>
+					</div>
+					<div class="confirmBody-Explanations">
+						<div>
+							<div class="term">"Claimed"</div>
+							<div>Lead has been accepted by you.
+							</div>
+						</div>
+						<hr/>
+						<div>
+							<div class="term">"Contacted"</div>
+							<div>Lead has been contacted by you</div>
+						</div>
+						<hr/>
+						<div>
+							<div class="term">"Converted"</div>
+							<div>Lead has been converted into a sale</div>
+						</div>
+						<hr/>
+						<div>
+							<div class="term">"Archived"</div>
+							<div>Lead has been set aside. ZfromFullName won't be notified.</div>
+						</div>
+					</div>
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

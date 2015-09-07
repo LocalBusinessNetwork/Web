@@ -1,0 +1,82 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div id="PayPal_Header" style="position:relative; width: 98%;height:96%;left:1%;margin-top:1%; background-color:white;z-index:2001;">
+<table width="100%" style="background:blue;">
+<tr><td align="right" colspan=2><a  href="#" id="CancelPPlTxn">Cancel</a></td></tr>
+<tr align="center"><td colspan=2 style="color:white;">Paypal Payment</td><td></td></tr>
+<tr align="center"> <td colspan=2><hr></td> </tr>
+</table>
+
+<div id="Paypal_Step1">
+<table align="center" width="100%" style="background:white;">
+<tr>
+<td align="right"><span>Your Paypal Account ID:&nbsp;&nbsp;</span> </td>
+<td align="left"><span id="paypalId"><%= model.get('from_PaypalId')%></span> </td>
+</tr>
+ 
+<tr>
+<td align="right"><span>Recipient of this transaction:&nbsp;&nbsp;</span> </td>
+<td align="left"><span id="payTo"><%= model.get('to_FullName')%></span> </td>
+</tr>
+
+<tr>
+<td align="right"><span>Paypal id of the recipient: &nbsp;&nbsp;</span> </td>
+<td align="left"><span id="payTo_paypalId"><%= model.get('to_PaypalId')%></span> </td>
+</tr>
+
+<tr>
+<td align="right"><span>Enter $ Amount to be paid: &nbsp;&nbsp;</span></td>
+<td align="left"> <input id="amountToAuthorize" type="text" value="" maxlength="7" size="7" style="width:80px;"></input></td>
+</tr>
+
+<tr align="center"> <td colspan=2><hr></td> </tr>
+
+<tr>
+<td colspan="2" align="center">
+<a href="#" id="authorizePPlTxn" class="button">Authorize</a>
+</td>
+</tr>
+
+</table>
+</div>
+
+<div id="Paypal_Step2" style="display:none">
+
+<table align="center"  width="100%">
+
+<tr>
+<td align="right"><span>Your Paypal Account ID:&nbsp;&nbsp;</span> </td>
+<td align="left"><span id="paypalId"><%= model.get('from_PaypalId') %> </span> </td>
+</tr>
+ 
+<tr>
+<td align="right"><span>Recipient of this transaction:&nbsp;&nbsp;</span> </td>
+<td align="left"><span id="payTo"><%= model.get('to_FullName') %></span> </td>
+</tr>
+<tr>
+
+<td align="right"><span>Paypal id of the recipient:&nbsp;&nbsp;</span> </td>
+<td align="left"><span id="payTo_paypalId"><%= model.get('to_PaypalId')%></span> </td>
+</tr>
+
+<tr>
+<td align="right"><span>$ Amount Authorized:&nbsp;&nbsp; </span></td>
+<td align="left"><span id="amountAuthorized"></span> </td>
+</tr>
+
+<tr>
+<td align="right"><span>Authorization Code: &nbsp;&nbsp;</span></td>
+<td align="left"><span id="payKey"></span></td>
+</tr>
+<tr>
+<td align="right"><span>Please Enter Authorization Code: &nbsp;&nbsp;</span></td>
+<td align="left"><input id="authorizePPlPIN" type="text" value="" maxlength="4" size="4" style="width:60px;"></input></td>
+</tr>
+<tr> <td colspan=2 align="center"><hr></td> </tr>
+<tr align="center"><td colspan=2><a href="#" id="completePPlTxn" class="button">Complete Payment</a></td></tr>
+</table>    
+
+</div>
+
+</div>
+
+

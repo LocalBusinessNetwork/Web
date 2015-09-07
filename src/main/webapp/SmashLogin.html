@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Single Signon API</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/md5.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#submit').click(function(e) {
+		e.preventDefault();
+		var email=jQuery("input[name=email]").val();
+		var password=jQuery("input[name=password]").val();
+		var base_url=jQuery("select[name='slot']").val();
+        var sendData_obj = {
+			email: email,
+			password: calcMD5(password)
+		};
+		jQuery.support.cors= true;
+		$.ajax({
+			crossDomain: true,
+			url: base_url+"/api/signin/login",
+			dataType: "JSON",
+			xhrFields: {
+				withCredentials: true
+			  },
+			data: sendData_obj,
+			type: 'POST'
+		}).done(function(res) {
+			if(res.statuscode=='200') {
+					window.location = base_url+'/contacts';
+			}
+			else {
+				alert("Login Failure");
+			}
+		});
+		});
+	});
+</script>
+	<form name="singlesignon" id="singlesignon" method="post">
+	<table>
+	<tr><td>Email:</td><td><input type="text" name="email" id="email" value="john2.smith@referralwire.com"/></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="password" id="password" value="123456" /></td></tr>
+	<tr><td>Slot</td><td><select name="slot">
+	<option value="http://staging.smashsolutions.com">Staging</option>
+	<option value="http://www.smashsolutions.com">LIVE</option>
+	</select></td></tr>
+	<tr><td colspan="2"><input type="submit" name="submit" value="submit" id="submit" /></td></tr>
+	</table>
+	</form>
+
+</body>
+</html>

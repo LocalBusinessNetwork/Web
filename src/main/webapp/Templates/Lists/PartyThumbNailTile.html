@@ -1,0 +1,19 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div class="imageThumbs">
+				
+		<% for (var i=0;i< parties.length;i++) {
+		var p = parties[i];
+		%>
+			<a href="#memberProfile/<%= p._id.$oid %>">
+				
+				<div class="pthumb">
+					<img src="<%= p.photoUrl %>">
+					<div class="pthumblabel"><%= p.fullName %></div>
+				</div>
+				
+			</a>
+		<% }; %>
+	
+</div>
+
+

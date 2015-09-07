@@ -1,0 +1,50 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<div style="color:white;font-size:16pt;text-align:center;padding-top:10px">
+<!-- Set up your account  -->
+
+</div>
+
+<div style="margin: 15px;border-radius: 8px;padding: 5px;">
+
+
+	<%
+	debugger;
+	var selectedClass = applet.selectedItemClass;
+	var iconDirectory = rwFB.iconDirectory;//"images/icons/" 
+	_.each(attributes, function(a) {
+	var drillDown = a.drilldown;
+	var iconFile = a.iconSrc;
+	var className = "";
+	if (clickRoute == drillDown){
+		iconFile = a.selectedIconSrc;
+		className = selectedClass;
+	}
+	var iconPath = iconDirectory+iconFile;
+	var dKey = a['drilldown_key'];
+	var drillExpr = "";
+	if (dKey != null && dKey !="null")
+		drillExpr = "/Zlhs model.get('"+ dKey+"')Zrhs";
+	%>
+		<a href="#<%= drillDown%><%= drillExpr%>" data-ajax="false" class="verticalNavButtonAnchor" data-icon="custom">
+		<div class="verticalNavButton <%= className %>">
+			<div class="vertNavIcon">
+				<div class="vertNavIconL2">
+					<div class="vertNavIconL3">
+						<img style="width:38px" src="<%=iconPath%>">
+					</div>
+				</div>
+			</div>
+			<div class="vertNavText">
+				<div class="buttonTitle">
+					<%= a['name']%>
+				</div>
+				<div class="buttonSubtext">
+					<%= a['subText']%>
+				</div>
+			</div>
+		</div>
+		</a>
+	<% }); %>
+
+
+<div>

@@ -1,0 +1,16 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+<% if ( readonly == true ) { %>
+<span>Zlhs rwcore.getLovDisplayVal ("<%= model.models[0].get('LovType')%>", model.get('<%= fldname%>'))Zrhs</span>
+<% } else { %>
+
+	 <form>
+	 	<% _.each(model.models, function(l) {  %>
+		    <label>
+		        <input type="radio" fldname="<%= fldname %>" name="<%= l.attributes.GlobalVal %>" id="<%= fldname %>" value="<%= l.attributes.GlobalVal %>" <%= (!_.isUndefined(l.attributes.Disabled))?'disabled':'' %> ><%= l.attributes.DisplayVal %>
+		    </label>
+	    <% }); %>
+	</form>
+
+<% } %>
+ 
+ 

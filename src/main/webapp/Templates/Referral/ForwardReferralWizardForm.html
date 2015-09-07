@@ -1,0 +1,40 @@
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 21 Oct 2013 12:30:59 GMT">
+		
+	<div style="overflow-y: scroll;position: absolute;top: 10px;bottom: 10px;background-color: white;border-radius: 10px;left: 5px;right: 5px">
+		
+		<ul data-role="listview" data-inset="true" class="editformfields">
+		<% for (var i=0;i < (attributes.length-9);i++) {var a = attributes[i]; 
+		var re = new RegExp(/\[(.*?)\]/g);
+			var label = a["label"];
+			var fieldNameAry = label.match(re);
+			if ($.hasVal(fieldNameAry) && fieldNameAry.length > 0){
+				for (j=0;j<fieldNameAry.length;j++){
+					var field = fieldNameAry[j];
+					var fieldName = field.replace("[","");
+					fieldName = fieldName.replace("]","");
+					var getFieldExp = "Zlhs model.get('"+fieldName+"')Zrhs";
+					label = label.replace(field,getFieldExp);
+				}
+			}
+		
+		%>
+		<li class="wizardFormLine"><div><%= label%></div><div><%= fieldRenderer(a,false)%></div></li>
+		<% }; %>
+		</ul>
+		
+		<div id="customQuestions" class="Zlhs $.getFormattedVal(model.get('question1_fwd'),'upsertFormSectionHeader','hidden') Zrhs" >It would help <font style="color:black">Zlhs model.get('to_firstName_fwd')Zrhs</font> to understand the following about Zlhs model.get('contact_firstName')Zrhs:</div>
+		<ul data-role="listview" data-inset="true" class="Zlhs $.getFormattedVal(model.get('question1_fwd'),'editformfields','hidden') Zrhs">
+		<% var customQStartIndex = 4 /*first custom question in the attribute array*/%>
+			<li class="Zlhs $.getFormattedVal(model.get('question1_fwd'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+1],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question2_fwd'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+2],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+3],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question3_fwd'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+4],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+5],false)%></div></li>
+			<li class="Zlhs $.getFormattedVal(model.get('question4_fwd'),'wizardFormLine','hidden') Zrhs"><div><%=fieldRenderer(attributes[customQStartIndex+6],true)%></div><div><%= fieldRenderer(attributes[customQStartIndex+7],false)%></div></li>
+					
+		</ul>
+		<ul data-role="listview" data-inset="true" class="editformfields">
+			<li class="wizardFormLine"><div style="font-weight:bold;padding-bottom:10px;color:black"><%=attributes[attributes.length-1].label%></div><div><%= fieldRenderer(attributes[attributes.length-1],true)%></div></li>
+		</ul>
+
+
+	</div>
+<!-- includeFieldDescription is in rwapi -->
